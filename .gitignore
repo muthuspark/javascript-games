@@ -1,1 +1,5 @@
 /.quarto/
+create_post.py
+_site
+README_files/
+.env

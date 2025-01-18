@@ -7,17 +7,24 @@
     "text": "How to Play\n        \n            Find words from the list below in the grid of letters\n            Words can be placed in any of these directions:\n                \n                    Horizontally (→)\n                    Vertically (↓)\n                    Diagonally (↘ or ↗)\n                    Backwards in any direction (← ↑ ↙ ↖)\n                \n            \n            Click and drag your mouse over the letters to select a word\n            When you find a word, it will be highlighted in green and crossed off the list\n            Find all words to win the game!\n        \n    \n    \n    \n    \n        \n            Words to find:\n        \n        \n            \n        \n    \n    \n    \n        \n            Grid Size: \n        \n        \n            \n        \n    \n    \n    \n        \n            Category:"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Javascript Games",
+    "section": "",
+    "text": "Classic Sudoku Game\n\n\n\nPuzzles\n\n\n\nSudoku is a logic based number placement puzzle. The objective is to fill in the 9x9 grid so that each column, each row, and each of the nine 3x3 boxes (or regions) contains…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWord Search Game\n\n\n\nPuzzles\n\n\n\nFind hidden words in a grid of letters. Perfect for brain training and puzzle enthusiasts!\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "I’m Muthukrishnan, currently working as an Engineering Manager as Sanas AI Inc. I have over 16 years of experience in building scalable SaaS applications from the ground up. Throughout my career, I’ve had the privilege of working in dynamic environments, from startups to established enterprises, contributing to the growth and success of each. As a hands-on leader, I’ve built and scaled applications that have grown from hundreds of users to millions, and I have filed about five patents. These patents cover a range of technologies, from optical character recognition (OCR) to systems for cross-application walkthroughs and UI element retrieval.\nIn my previous role at Whatfix, I’m proud to have architected and launched the Desktop business, which now generates over $2 million in revenue. I built the team from scratch, guiding them to deliver innovative solutions that address real-world challenges. In addition to my leadership role, I remain an individual contributor, often running proof of concepts for potential revenue-generating features.\nMy expertise extends across system design, software architecture, and various programming languages like Java, JavaScript, and Python. I’m deeply committed to process optimization and fostering an agile culture that drives efficiency and quality.\nHaving been a startup founder myself, I understand the nuances of growing a business, and I’ve played a key role in helping two startups scale from early-stage development to Series A and beyond. This blend of technical know-how and entrepreneurial experience fuels my drive to build products that not only solve problems but also create value for businesses and users alike.\nWhen I’m not working, I enjoy sharing my insights with the world through writing on my blog. You can always reach out to me via LinkedIn, my blog, or GitHub for a conversation about technology, engineering management, or the future of SaaS."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Serverless Javascript Games",
+    "objectID": "posts/sudoku/index.html",
+    "href": "posts/sudoku/index.html",
+    "title": "Classic Sudoku Game",
     "section": "",
-    "text": "Word Search Game\n\n\n\nPuzzles\n\n\n\nFind hidden words in a grid of letters. Perfect for brain training and puzzle enthusiasts!\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Easy\n        Medium\n        Hard\n    \n    00:00\n    \n        New Game\n        Check Solution\n        Get Hint"
   }
 ]
