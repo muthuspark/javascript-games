@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "posts/word-search/index.html",
+    "href": "posts/word-search/index.html",
+    "title": "Word Search Game",
+    "section": "",
+    "text": "How to Play\n        \n            Find words from the list below in the grid of letters\n            Words can be placed in any of these directions:\n                \n                    Horizontally (→)\n                    Vertically (↓)\n                    Diagonally (↘ or ↗)\n                    Backwards in any direction (← ↑ ↙ ↖)\n                \n            \n            Click and drag your mouse over the letters to select a word\n            When you find a word, it will be highlighted in green and crossed off the list\n            Find all words to win the game!\n        \n    \n    \n    \n    \n        \n            Words to find:\n        \n        \n            \n        \n    \n    \n    \n        \n            Grid Size: \n        \n        \n            \n        \n    \n    \n    \n        \n            Category:"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Serverless Javascript Games",
+    "section": "",
+    "text": "Word Search Game\n\n\n\nPuzzles\n\n\n\nFind hidden words in a grid of letters. Perfect for brain training and puzzle enthusiasts!\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  }
+]

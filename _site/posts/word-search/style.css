@@ -1,0 +1,112 @@
+.game-container {
+  margin: 0 auto;
+}
+
+.grid {
+  display: inline-grid;
+  gap: 2px;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+}
+
+.cell.selected {
+  background: #a0d8ef;
+}
+
+.cell.found {
+  background: #98FB98;
+}
+
+.word-list {
+  margin-top: 20px;
+}
+
+.word-item {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 15px;
+}
+
+.word-item.found {
+  background: #98FB98;
+  text-decoration: line-through;
+}
+
+.game-container button {
+  margin: 4px;
+  padding: 0px 10px;
+  background: #3d3d3d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-container button:hover {
+  background: #45a049;
+}
+
+.instructions {
+  background: #f8f9fa;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border-left: 4px solid #4CAF50;
+}
+
+.instructions h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.instructions ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.instructions ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding-left: 20px;
+  margin: 5px 0;
+}
+
+.instructions ul li {
+  background: #e9ecef;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin: 0;
+}
+.optiongrid {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.active-btn {
+  background: #59a61a !important;
+}

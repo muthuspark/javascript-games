@@ -1,0 +1,71 @@
+---
+title: "Word Search Game"
+image: thumbnail.png
+description: Find hidden words in a grid of letters. Perfect for brain training and puzzle enthusiasts!
+categories: [ Puzzles ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script src="script.js"></script>
+---
+
+```{=html}
+<div class="game-container">
+    <div class="instructions">
+        <h2>How to Play</h2>
+        <ol>
+            <li>Find words from the list below in the grid of letters</li>
+            <li>Words can be placed in any of these directions:
+                <ul>
+                    <li>Horizontally (→)</li>
+                    <li>Vertically (↓)</li>
+                    <li>Diagonally (↘ or ↗)</li>
+                    <li>Backwards in any direction (← ↑ ↙ ↖)</li>
+                </ul>
+            </li>
+            <li>Click and drag your mouse over the letters to select a word</li>
+            <li>When you find a word, it will be highlighted in green and crossed off the list</li>
+            <li>Find all words to win the game!</li>
+        </ol>
+    </div>
+    <div id="grid" class="grid"></div>
+    <hr>
+    <div class="optiongrid">
+        <div class="label">
+            Words to find:
+        </div>
+        <div>
+            <div id="wordList" class="word-list"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="optiongrid">
+        <div class="label">
+            Grid Size: 
+        </div>
+        <div>
+            <div id="gridSize" class="grid-size"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="optiongrid">
+        <div class="label">
+            Category:
+        </div>
+        <div>
+            <div id="categoryButtons"></div>
+        </div>
+    </div>
+    <div id="toast"></div>
+</div>
+
+<script type="text/javascript">
+   // Start new game when page loads
+   setTimeout(() => {
+        // Initialize game
+        const game = new WordSearchGame();
+        game.newGame();
+
+   }, 1000); 
+</script>
+```

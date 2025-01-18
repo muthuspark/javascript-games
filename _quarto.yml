@@ -1,0 +1,29 @@
+project:
+  type: website
+
+website:
+  title: "Serverless Javascript Games"
+  reader-mode: false
+  open-graph: true
+  google-analytics: 
+    tracking-id: ''
+  site-url: 'https://games.muthu.co'
+  site-path: '/'
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/muthuspark
+      - icon: twitter
+        href: https://twitter.com/krimuthu
+format:
+  html:
+    theme: litera
+    css: styles.css
+    lang: en
+    toc: true
+    image: false
+    mermaid:
+      theme: neutral
+
+

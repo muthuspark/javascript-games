@@ -1,0 +1,26 @@
+/* css styles */
+#toast {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: #59a61a;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 17px;
+  }
+  
+  #toast.show {
+    visibility: visible;
+    animation: fadeInOut 3s;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+  }
