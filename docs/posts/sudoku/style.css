@@ -1,0 +1,140 @@
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.difficulty-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sudoku {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.sudoku button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sudoku button:hover {
+    background-color: #45a049;
+}
+
+.sudoku button.difficulty {
+    background-color: #666;
+}
+
+.sudoku button.difficulty.selected {
+    background-color: #4CAF50;
+}
+
+.sudoku button.difficulty.easy:hover {
+    background-color: #4CAF50;
+}
+
+.sudoku button.difficulty.medium:hover {
+    background-color: #ff9800;
+}
+
+.sudoku button.difficulty.hard:hover {
+    background-color: #f44336;
+}
+
+.sudoku button.difficulty.selected.medium {
+    background-color: #ff9800;
+}
+
+.sudoku button.difficulty.selected.hard {
+    background-color: #f44336;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    gap: 1px;
+    background-color: #999;
+    border: 2px solid #333;
+    padding: 0;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+}
+
+.cell:focus {
+    background-color: #e0e0e0;
+    outline: none;
+}
+
+.cell.given {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.cell.invalid {
+    color: red;
+}
+
+.grid > :nth-child(9n+1) {
+    border-left: 2px solid #333;
+}
+
+.grid > :nth-child(9n) {
+    border-right: 2px solid #333;
+}
+
+.grid > :nth-child(3n) {                                    /* Right border for every third column */
+    border-right: 2px solid #333;
+}
+
+.grid > :nth-child(9n+1) {                                 /* Left border for first column in each row */
+    border-left: 2px solid #333;
+}
+
+.grid > :nth-child(n+19):nth-child(-n+27),                /* Bottom border first third */
+.grid > :nth-child(n+46):nth-child(-n+54),               /* Bottom border middle third */
+.grid > :nth-child(n+73):nth-child(-n+81) {             /* Bottom border last third */
+    border-bottom: 2px solid #333;
+}
+
+
+.grid > :nth-child(3n) {
+    border-right: 2px solid #333;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.timer {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: monospace;
+}

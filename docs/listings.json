@@ -1,0 +1,11 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/connect4/index.html",
+      "/posts/sudoku/index.html",
+      "/posts/word-search/index.html",
+      "/posts/maze/index.html"
+    ]
+  }
+]

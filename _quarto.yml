@@ -1,14 +1,16 @@
 project:
   type: website
+  output-dir: docs
 
 website:
+  favicon: favicon.ico
   title: "Javascript Games"
   reader-mode: false
   open-graph: true
   page-navigation: true
   page-footer: "Copyright 2025, Muthukrishnan" 
   google-analytics: 
-    tracking-id: ''
+    tracking-id: 'G-BH3P7R68Z6'
   site-url: 'https://games.muthu.co'
   site-path: '/'
   navbar:
@@ -29,7 +31,5 @@ format:
     - text: |
         <link rel="stylesheet" href="/posts/global.css"></link>
         <script type="text/javascript" src="/posts/global.js"></script>
-    mermaid:
-      theme: neutral
 
 
