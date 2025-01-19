@@ -6,7 +6,7 @@ let startTime;
 let hintsRemaining;
 
 const difficulties = {
-    easy: { cellsToRemove: 30, maxHints: 50 },
+    easy: { cellsToRemove: 30, maxHints: 2 },
     medium: { cellsToRemove: 45, maxHints: 2 },
     hard: { cellsToRemove: 55, maxHints: 1 }
 };

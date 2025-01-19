@@ -12,6 +12,13 @@
     margin-bottom: 20px;
 }
 
+.sudoku {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
 .sudoku button {
     padding: 10px 20px;
     font-size: 16px;
@@ -63,6 +70,7 @@
     border: 2px solid #333;
     padding: 0;
     width: fit-content;
+    margin: 0 auto;
 }
 
 .cell {

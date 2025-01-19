@@ -3,7 +3,8 @@
     "listing": "/index.html",
     "items": [
       "/posts/sudoku/index.html",
-      "/posts/word-search/index.html"
+      "/posts/word-search/index.html",
+      "/posts/maze/index.html"
     ]
   }
 ]

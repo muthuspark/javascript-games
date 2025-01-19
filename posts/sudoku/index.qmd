@@ -19,7 +19,6 @@ include-before-body:
     <div class="timer" id="timer">00:00</div>
     <div class="controls">
         <button onclick="newGame()">New Game</button>
-        <button onclick="checkSolution()">Check Solution</button>
         <button onclick="hint()">Get Hint</button>
     </div>
     <div class="grid" id="grid"></div>

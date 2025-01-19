@@ -5,6 +5,8 @@ website:
   title: "Javascript Games"
   reader-mode: false
   open-graph: true
+  page-navigation: true
+  page-footer: "Copyright 2025, Muthukrishnan" 
   google-analytics: 
     tracking-id: ''
   site-url: 'https://games.muthu.co'
@@ -23,6 +25,10 @@ format:
     lang: en
     toc: true
     image: false
+    include-before-body:
+    - text: |
+        <link rel="stylesheet" href="/posts/global.css"></link>
+        <script type="text/javascript" src="/posts/global.js"></script>
     mermaid:
       theme: neutral
 
