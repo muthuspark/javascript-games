@@ -376,7 +376,7 @@ class WordSearchGame {
 
         if (this.foundWords.size === this.words.length) {
             setTimeout(() => {
-                alert('Congratulations! You found all words!');
+                showWinMessage('Congratulations! You found all words!');
             }, 100);
         }
     }
@@ -387,31 +387,4 @@ class WordSearchGame {
         });
         this.selectedCells = [];
     }
-
-    // Utility functions
-    showToast(message) {
-        const toast = document.getElementById('toast');
-        toast.textContent = message;
-        toast.className = 'show';
-
-        setTimeout(() => {
-            toast.className = toast.className.replace('show', '');
-        }, 3000);
-    }
-}
-
-// // Initialize game
-// const game = new WordSearchGame();
-// window.onload = () => {
-//     document.getElementById('categoryButtons').appendChild(createCategoryButtons());
-//     game.newGame();
-// };
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.className = 'show';
-
-    setTimeout(() => {
-        toast.className = toast.className.replace('show', '');
-    }, 3000); // Toast will disappear after 3 seconds
 }

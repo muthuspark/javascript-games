@@ -1,0 +1,58 @@
+---
+title: "Connect 4"
+image: thumbnail.png
+description: A two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to be the first to form a horizontal, vertical, or diagonal line of four discs.
+categories: [ Puzzles ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script src="script.js"></script>
+---
+
+```{=html}
+ <div id="connect4">
+    <div class="instructions">
+        <h2>How to Play</h2>
+        <ol>
+            <li>The game is played between two players: <span class="highlight">Player 1</span> and <span class="highlight">Player 2</span>.</li>
+            <li>Each player takes turns choosing one of the 7 columns and drops their disc into it. <span class="highlight">Player 1</span> uses <span class="highlight">red discs</span>, and <span class="highlight">Player 2</span> uses <span class="highlight">yellow discs</span>.</li>
+            <li>The discs fall straight down to the next available space in the column.</li>
+            <li>The goal is to form a line of four discs of your own color. This line can be horizontal, vertical, or diagonal.</li>
+            <li>If all the spaces on the grid are filled and neither player has connected four discs, the game ends in a draw.</li>
+        </ol>
+        <h2>Winning the Game</h2>
+        <p>A player wins by forming a continuous line of four of their discs either horizontally, vertically, or diagonally. The first player to do so is declared the winner!</p>
+    </div>
+
+    <div class="box-left">
+        <table id="game_board" ></table>
+    </div>
+
+    <div class="box-right">
+        <div id="options">
+            <p class="header">Difficulty</p>
+            <p>
+                <select id="difficulty" autocomplete="off">
+                    <option value="1">Level 1</option>
+                    <option value="2">Level 2 (Passive)</option>
+                    <option value="3">Level 3</option>
+                    <option value="4" selected="selected">Level 4 (Easy)</option>
+                    <option value="5">Level 5</option>
+                    <option value="6">Level 6 (Moderate)</option>
+                    <option value="7">Level 7</option>
+                    <option value="8">Level 8 (Tougher)</option>
+                </select>
+            </p>
+            <p><button onclick="Game.restartGame();" type="submit">Restart game</button></p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+   // Start new game when page loads
+   setTimeout(() => {
+        // Initialize the game
+        Start();
+   }, 1000);
+</script>
+```

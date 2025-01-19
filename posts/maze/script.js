@@ -95,7 +95,7 @@ function movePlayer(dx, dy) {
 
         // Check for win
         if (newX === endPos.x && newY === endPos.y) {
-            displayWinMessage('You conquered the maze!');
+            showWinMessage('You conquered the maze!');
         }
     }
 }
