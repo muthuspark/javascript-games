@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/typing-speed/index.html",
       "/posts/connect4/index.html",
+      "/posts/tic-tac-toe/index.html",
       "/posts/sudoku/index.html",
       "/posts/word-search/index.html",
       "/posts/maze/index.html"

@@ -1,0 +1,82 @@
+---
+title: "Typing Speed Challenge"
+image: thumbnail.png
+description: A game that measures how fast and accurately the player can type a passage of text.
+categories: [ Challenge ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script type="text/javascript" src="https://unpkg.com/txtgen/dist/txtgen.min.js"></script>
+        <script src="script.js"></script>
+---
+
+```{=html}
+<div class="instructions">
+    <h2>How to Play</h2>
+    <ol>
+        <li>Click on the paragraph and start typing, as you type you would start seeing the focus shifting to the next character.</li>
+        <li>You have 60 seconds to type all the sentences you see.</li>
+    </ol>
+</div>
+<div id="typingspeed">
+    <div class="wrapper">
+      <input type="text" class="input-field">
+      <div class="content-box">
+        <div class="typing-text">
+          <p></p>
+        </div>
+        <div class="content">
+          <ul class="result-details">
+            <li class="time">
+              Time Left: <span><b>60</b>s</span>
+            </li>
+            <li class="mistake">
+              Mistakes: <span>0</span>
+            </li>
+            <li class="wpm">
+              Words Per Minute: <span>0</span>
+            </li>
+            <li class="cpm">
+              Characters Per Minute: <span>0</span>
+            </li>
+          </ul>
+          <button>Try Again</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scorecard">
+        <h2>Scorecard</h2>
+        <div id="scorecard" class="grid">
+            <div class="g-col-6">
+                <table class="table" id="history">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>WPM</th>
+                            <th>CPM</th>
+                            <th>Mistakes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="g-col-6" id="chart">
+                <div class="grid">
+                    <div id="wpm" class="g-col-4"></div>
+                    <div id="cpm" class="g-col-4"></div>
+                    <div id="mistakes" class="g-col-4"></div>
+                <div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(() => {
+        const game = new TypingGame();
+    }, 200);
+</script>
+```

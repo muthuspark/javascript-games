@@ -1,0 +1,48 @@
+---
+title: "Advanced Tic-Tac-Toe"
+image: thumbnail.png
+description: A simple two-player game where each player takes turns marking a 3x3, 4x5, 5x5 grid with "X" or "O." The goal is to get three of their marks in a row, column, or diagonal.
+categories: [ Puzzles ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script src="script.js"></script>
+---
+
+
+```{=html}
+<div class="instructions">
+    <h2>How to Play</h2>
+    <ol>
+        <li>The game is played on a 3x3, 4x4 or 5x5 grid.</li>
+        <li>Players take turns marking an empty cell with their symbol (X or O).</li>
+        <li>The goal is to be the first player to form a straight line of 3,4 or 5 of your symbols.</li>
+        <li>The line can be horizontal, vertical, or diagonal.</li>
+        <li>If all squares are filled and no player has formed a line of their symbols, the game is a draw.</li>
+    </ol>
+</div>
+<div class="controls">
+    <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+    <select id="gridSize">
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5">5x5</option>
+    </select>
+    <button onclick="startNewGame()">New Game</button>
+</div>
+<div id="gameBoard" class="game-board"></div>
+<div id="status" class="status"></div>
+
+
+<script type="text/javascript">
+   // Start new game when page loads
+   setTimeout(() => {
+        // Initialize the game
+        startNewGame();
+   }, 1000);
+</script>
+```
