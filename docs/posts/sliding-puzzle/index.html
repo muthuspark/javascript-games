@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="A 3x3 or 4x4 or bigger grid puzzle where the player slides tiles around to put them in numerical or image order.">
 
-<title>Brain Busters - Javascript Games</title>
+<title>Sliding Puzzle – Brain Busters - Javascript Games</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +24,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6ea9c6420bca81aafdcd2eff8704c72b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6ea9c6420bca81aafdcd2eff8704c72b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BH3P7R68Z6"></script>
 
 <script type="text/javascript">
@@ -108,39 +78,14 @@ gtag('js', new Date());
 gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="– Brain Busters - Javascript Games">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Sliding Puzzle – Brain Busters - Javascript Games">
+<meta property="og:description" content="A 3x3 or 4x4 or bigger grid puzzle where the player slides tiles around to put them in numerical or image order.">
+<meta property="og:image" content="https://games.muthu.co/posts/sliding-puzzle/thumbnail.png">
 <meta property="og:site_name" content="Brain Busters - Javascript Games">
+<meta property="og:image:height" content="447">
+<meta property="og:image:width" content="448">
 </head>
 
 <body class="nav-fixed">
@@ -150,7 +95,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Brain Busters - Javascript Games</span>
     </a>
   </div>
@@ -161,7 +106,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -182,220 +127,93 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Q2hhbGxlbmdl">Challenge <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHV6emxlcw==">Puzzles <span class="quarto-category-count">(6)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
-<link rel="stylesheet" href="./posts/global.css">
-<script type="text/javascript" src="./posts/global.js"></script>
+<main class="content" id="quarto-document-content">
+<link rel="stylesheet" href="../../posts/global.css">
+<script type="text/javascript" src="../../posts/global.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sliding Puzzle</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Puzzles</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A 3x3 or 4x4 or bigger grid puzzle where the player slides tiles around to put them in numerical or image order.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="instructions">
+    <h2 class="anchored">How to Play</h2>
+    <ol>
+        <li>Select your desired level from the dropdown</li>
+        <li>Click "New Game" or "Shuffle" to mix up the tiles</li>
+        <li>Try to arrange the numbers in order with the empty space in the bottom right</li>
+    </ol>
+</div>
+ <div class="game-container">
+    <div class="controls">
+        <select id="levelSelect" class="level-select" onchange="changeLevel()">
+            <option value="1">Level 1 (3x3)</option>
+            <option value="2">Level 2 (3x4)</option>
+            <option value="3">Level 3 (4x4)</option>
+            <option value="4">Level 4 (4x5)</option>
+            <option value="5">Level 5 (5x5)</option>
+            <option value="6">Level 6 (5x6)</option>
+            <option value="7">Level 7 (6x6)</option>
+            <option value="8">Level 8 (6x7)</option>
+            <option value="9">Level 9 (7x7)</option>
+            <option value="10">Level 10 (7x8)</option>
+        </select>
+        <button onclick="newGame()">New Game</button>
+        <button onclick="shuffleBoard()">Shuffle</button>
+        <button onclick="startSolving()" class="solve" id="solveButton">Ai Solve Puzzle</button>
+    </div>
+    <div class="stats">
+        <div>Moves: <span id="moveCount">0</span></div>
+        <div>Best Score: <span id="bestScore">-</span></div>
+    </div>
+    <div id="solvingStatus" class="solving-status" style="display: none;">
+        Solving puzzle...
+    </div>
+    <div class="board"></div>
+    <div id="winMessage" class="winner" style="display: none;">
+        Congratulations! You completed the level!
+    </div>
+</div>
+<script>
+    setTimeout(() => {
+        newGame();
+    }, 200);
+</script>
 
 
 
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Q2hhbGxlbmdl" data-listing-file-modified-sort="1737426958700" data-listing-reading-time-sort="5" data-listing-word-count-sort="816">
-<a href="./posts/typing-speed/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/typing-speed/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Typing Speed Challenge
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Q2hhbGxlbmdl'); return false;">
-Challenge
-</div>
-</div>
-<div class="card-text listing-description">
-A game that measures how fast and accurately the player can type a passage of text.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="UHV6emxlcw==" data-listing-file-modified-sort="1737278144136" data-listing-reading-time-sort="3" data-listing-word-count-sort="590">
-<a href="./posts/connect4/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/connect4/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Connect 4
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('UHV6emxlcw=='); return false;">
-Puzzles
-</div>
-</div>
-<div class="card-text listing-description">
-A two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to be the first to form a horizontal, vertical, or diagonal line of four…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UHV6emxlcw==" data-listing-file-modified-sort="1737279494509" data-listing-reading-time-sort="2" data-listing-word-count-sort="244">
-<a href="./posts/tic-tac-toe/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/tic-tac-toe/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Advanced Tic-Tac-Toe
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('UHV6emxlcw=='); return false;">
-Puzzles
-</div>
-</div>
-<div class="card-text listing-description">
-A simple two-player game where each player takes turns marking a 3x3, 4x5, 5x5 grid with “X” or “O.” The goal is to get three of their marks in a row, column, or diagonal.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="UHV6emxlcw==" data-listing-file-modified-sort="1737430620338" data-listing-reading-time-sort="2" data-listing-word-count-sort="380">
-<a href="./posts/sliding-puzzle/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/sliding-puzzle/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Sliding Puzzle
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('UHV6emxlcw=='); return false;">
-Puzzles
-</div>
-</div>
-<div class="card-text listing-description">
-A 3x3 or 4x4 or bigger grid puzzle where the player slides tiles around to put them in numerical or image order.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="UHV6emxlcw==" data-listing-file-modified-sort="1737265120043" data-listing-reading-time-sort="1" data-listing-word-count-sort="129">
-<a href="./posts/sudoku/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/sudoku/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Classic Sudoku Game
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('UHV6emxlcw=='); return false;">
-Puzzles
-</div>
-</div>
-<div class="card-text listing-description">
-Sudoku is a logic based number placement puzzle. The objective is to fill in the 9x9 grid so that each column, each row, and each of the nine 3x3 boxes (or regions) contains…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="UHV6emxlcw==" data-listing-file-modified-sort="1737218935620" data-listing-reading-time-sort="3" data-listing-word-count-sort="563">
-<a href="./posts/word-search/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/word-search/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Word Search Game
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('UHV6emxlcw=='); return false;">
-Puzzles
-</div>
-</div>
-<div class="card-text listing-description">
-Find hidden words in a grid of letters. Perfect for brain training and puzzle enthusiasts!
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="UHV6emxlcw==" data-listing-file-modified-sort="1737264742737" data-listing-reading-time-sort="3" data-listing-word-count-sort="426">
-<a href="./posts/maze/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/maze/thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Square Maze
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('UHV6emxlcw=='); return false;">
-Puzzles
-</div>
-</div>
-<div class="card-text listing-description">
-Players navigate through a maze to reach the exit. The maze can be randomly generated, and the player moves using keyboard controls.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
