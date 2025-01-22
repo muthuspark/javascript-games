@@ -75,5 +75,54 @@
     "title": "Word Search Game",
     "section": "",
     "text": "How to Play\n        \n            Find words from the list below in the grid of letters\n            Words can be placed in any of these directions:\n                \n                    Horizontally (→)\n                    Vertically (↓)\n                    Diagonally (↘ or ↗)\n                    Backwards in any direction (← ↑ ↙ ↖)\n                \n            \n            Click and drag your mouse over the letters to select a word\n            When you find a word, it will be highlighted in green and crossed off the list\n            Find all words to win the game!\n        \n    \n    \n    \n    \n        \n            Words to find:\n        \n        \n            \n        \n    \n    \n    \n        \n            Grid Size: \n        \n        \n            \n        \n    \n    \n    \n        \n            Category:"
+  },
+  {
+    "objectID": "README.html#features",
+    "href": "README.html#features",
+    "title": "Javascript Games by Muthu",
+    "section": "Features",
+    "text": "Features\n\nCollection of fun and interactive web-based games\nBuilt using HTML, CSS, JavaScript\nResponsive design for seamless gameplay on desktop and mobile devices\nContinuous updates with new games and improvements"
+  },
+  {
+    "objectID": "README.html#games-available",
+    "href": "README.html#games-available",
+    "title": "Javascript Games by Muthu",
+    "section": "Games Available",
+    "text": "Games Available"
+  },
+  {
+    "objectID": "README.html#getting-started",
+    "href": "README.html#getting-started",
+    "title": "Javascript Games by Muthu",
+    "section": "Getting Started",
+    "text": "Getting Started\nIf you’d like to explore or contribute to the source code, follow these steps:\n\nInstall Quarto\n\nThis project is built using Quarto, a scientific and technical publishing system that allows you to create websites, blogs, and other types of content from plain text files.\nBefore you begin, ensure you have the following installed:\n\nQuarto CLI: Install Quarto by following the instructions for your operating system.\nNode.js: If your site uses custom scripts or dependencies managed via Node.js.\nGit: To clone the repository and push your changes to GitHub.\n\n\nClone the repository:\ngit clone https://github.com/muthuspark/javascript-games.git\nNavigate to the project directory:\ncd javascript-games\nYou can use the following Quarto command to serve the site locally, so you can preview changes in real-time:\nquarto preview"
+  },
+  {
+    "objectID": "README.html#contributing",
+    "href": "README.html#contributing",
+    "title": "Javascript Games by Muthu",
+    "section": "Contributing",
+    "text": "Contributing\nContributions are welcome! If you have ideas for new games or improvements to the existing ones, feel free to fork the repository and create a pull request.\n\nFork the project.\nCreate your feature branch (git checkout -b feature/AmazingGame).\nCommit your changes (git commit -m 'Add an amazing new game').\nPush to the branch (git push origin feature/AmazingGame).\nOpen a pull request."
+  },
+  {
+    "objectID": "README.html#license",
+    "href": "README.html#license",
+    "title": "Javascript Games by Muthu",
+    "section": "License",
+    "text": "License\nThis project is licensed under the MIT License - see the LICENSE file for details."
+  },
+  {
+    "objectID": "README.html#contact",
+    "href": "README.html#contact",
+    "title": "Javascript Games by Muthu",
+    "section": "Contact",
+    "text": "Contact\nFor any inquiries or feedback, feel free to reach out via the email on my profile.\nEnjoy the games and happy coding!"
+  },
+  {
+    "objectID": "README.html#available-games",
+    "href": "README.html#available-games",
+    "title": "Javascript Games by Muthu",
+    "section": "Available Games",
+    "text": "Available Games\n\n1. Magic Square\nCategory: Puzzles\nA magic square is a grid of numbers where the sum of the numbers in each row, column, and diagonal is the same.\n\n\n2. Typing Speed Challenge\nCategory: Challenge\nTest your typing speed and accuracy by typing a passage of text as quickly as you can.\n\n\n3. Connect 4\nCategory: Puzzles\nA two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to form a horizontal, vertical, or diagonal line of four discs.\n\n\n4. Minesweeper\nCategory: Puzzles\nReveal squares on a grid while avoiding hidden mines. Numbers indicate how many mines are adjacent to a revealed square.\n\n\n5. Advanced Tic-Tac-Toe\nCategory: Puzzles\nA two-player game where players mark a grid (3x3, 4x5, or 5x5) with “X” or “O.” The goal is to get three marks in a row, column, or diagonal.\n\n\n6. Sliding Puzzle\nCategory: Puzzles\nSlide tiles around on a grid (3x3, 4x4, or larger) to arrange them in numerical or image order.\n\n\n7. Classic Sudoku Game\nCategory: Puzzles\nA logic-based number placement puzzle. Fill a 9x9 grid so that each row, column, and 3x3 region contains the digits 1-9 without repetition.\n\n\n8. Word Search Game\nCategory: Puzzles\nFind hidden words in a grid of letters. A fun way to train your brain and puzzle skills!\n\n\n9. Square Maze\nCategory: Puzzles\nNavigate through a randomly generated maze to reach the exit. Use keyboard controls to guide your way."
   }
 ]
