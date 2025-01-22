@@ -52,6 +52,10 @@ Find hidden words in a grid of letters. A fun way to train your brain and puzzle
 **Category**: Puzzles  
 Navigate through a randomly generated maze to reach the exit. Use keyboard controls to guide your way.
 
+### 10. Latin Square
+**Category**: Puzzles  
+A Latin Square is a grid where each row and column contains each symbol exactly once
+
 
 ## Getting Started
 

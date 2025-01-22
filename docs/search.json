@@ -1,82 +1,5 @@
 [
   {
-    "objectID": "posts/maze/index.html",
-    "href": "posts/maze/index.html",
-    "title": "Square Maze",
-    "section": "",
-    "text": "How to Play\n        \n            Select a maze size from the dropdown menu\n            Click \"Generate Maze\" to create a new maze\n            Use arrow keys or WASD to move the player (red square)\n            Reach the green end point to win\n            Click \"Reset Player\" to return to start position\n            Generate a new maze anytime for a fresh challenge\n        \n    \n\n    \n        \n            \n                10x10\n                20x20\n                30X30\n                40X40\n                50X50\n                60X60\n                70X70\n                80X80\n                90X90\n            \n            Generate Maze\n            Reset Player"
-  },
-  {
-    "objectID": "posts/sudoku/index.html",
-    "href": "posts/sudoku/index.html",
-    "title": "Classic Sudoku Game",
-    "section": "",
-    "text": "Easy\n        Medium\n        Hard\n    \n    00:00\n    \n        New Game\n        Get Hint"
-  },
-  {
-    "objectID": "posts/tic-tac-toe/index.html",
-    "href": "posts/tic-tac-toe/index.html",
-    "title": "Advanced Tic-Tac-Toe",
-    "section": "",
-    "text": "How to Play\n    \n        The game is played on a 3x3, 4x4 or 5x5 grid.\n        Players take turns marking an empty cell with their symbol (X or O).\n        The goal is to be the first player to form a straight line of 3,4 or 5 of your symbols.\n        The line can be horizontal, vertical, or diagonal.\n        If all squares are filled and no player has formed a line of their symbols, the game is a draw.\n    \n\n\n    \n        Easy\n        Medium\n        Hard\n    \n    \n        3x3\n        4x4\n        5x5\n    \n    New Game"
-  },
-  {
-    "objectID": "posts/connect4/index.html",
-    "href": "posts/connect4/index.html",
-    "title": "Connect 4",
-    "section": "",
-    "text": "How to Play\n        \n            The game is played between two players: Player 1 and Player 2.\n            Each player takes turns choosing one of the 7 columns and drops their disc into it. Player 1 uses red discs, and Player 2 uses yellow discs.\n            The discs fall straight down to the next available space in the column.\n            The goal is to form a line of four discs of your own color. This line can be horizontal, vertical, or diagonal.\n            If all the spaces on the grid are filled and neither player has connected four discs, the game ends in a draw.\n        \n        Winning the Game\n        A player wins by forming a continuous line of four of their discs either horizontally, vertically, or diagonally. The first player to do so is declared the winner!\n    \n\n    \n        \n    \n\n    \n        \n            Difficulty\n            \n                \n                    Level 1\n                    Level 2 (Passive)\n                    Level 3\n                    Level 4 (Easy)\n                    Level 5\n                    Level 6 (Moderate)\n                    Level 7\n                    Level 8 (Tougher)\n                \n            \n            Restart game"
-  },
-  {
-    "objectID": "posts/magicsquare/index.html",
-    "href": "posts/magicsquare/index.html",
-    "title": "Magic Square",
-    "section": "",
-    "text": "Easy (3x3)\n    Medium (4x4)\n    Hard (5x5)\n    New Game\n    Hint\n    Solve\n\nMagic Sum: 0"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "I’m Muthukrishnan, currently working as an Engineering Manager as Sanas AI Inc. I have over 16 years of experience in building scalable SaaS applications from the ground up. Throughout my career, I’ve had the privilege of working in dynamic environments, from startups to established enterprises, contributing to the growth and success of each. As a hands-on leader, I’ve built and scaled applications that have grown from hundreds of users to millions, and I have filed about five patents. These patents cover a range of technologies, from optical character recognition (OCR) to systems for cross-application walkthroughs and UI element retrieval.\nIn my previous role at Whatfix, I’m proud to have architected and launched the Desktop business, which now generates over $2 million in revenue. I built the team from scratch, guiding them to deliver innovative solutions that address real-world challenges. In addition to my leadership role, I remain an individual contributor, often running proof of concepts for potential revenue-generating features.\nMy expertise extends across system design, software architecture, and various programming languages like Java, JavaScript, and Python. I’m deeply committed to process optimization and fostering an agile culture that drives efficiency and quality.\nHaving been a startup founder myself, I understand the nuances of growing a business, and I’ve played a key role in helping two startups scale from early-stage development to Series A and beyond. This blend of technical know-how and entrepreneurial experience fuels my drive to build products that not only solve problems but also create value for businesses and users alike.\nWhen I’m not working, I enjoy sharing my insights with the world through writing on my blog. You can always reach out to me via LinkedIn, my blog, or GitHub for a conversation about technology, engineering management, or the future of SaaS."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Brain Busters - Javascript Games",
-    "section": "",
-    "text": "Magic Square\n\n\n\nPuzzles\n\n\n\nA magic square is a square grid of numbers where the sum of the numbers in each row, column, and diagonal is the same. The sum of the numbers in a magic square is called…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTyping Speed Challenge\n\n\n\nChallenge\n\n\n\nA game that measures how fast and accurately the player can type a passage of text.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnect 4\n\n\n\nPuzzles\n\n\n\nA two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to be the first to form a horizontal, vertical, or diagonal line of four…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMinesweeper\n\n\n\nPuzzles\n\n\n\nA grid-based puzzle where the player reveals squares, trying to avoid hidden mines while uncovering numbers that indicate nearby mines.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced Tic-Tac-Toe\n\n\n\nPuzzles\n\n\n\nA simple two-player game where each player takes turns marking a 3x3, 4x5, 5x5 grid with “X” or “O.” The goal is to get three of their marks in a row, column, or diagonal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSliding Puzzle\n\n\n\nPuzzles\n\n\n\nA 3x3 or 4x4 or bigger grid puzzle where the player slides tiles around to put them in numerical or image order.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClassic Sudoku Game\n\n\n\nPuzzles\n\n\n\nSudoku is a logic based number placement puzzle. The objective is to fill in the 9x9 grid so that each column, each row, and each of the nine 3x3 boxes (or regions) contains…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWord Search Game\n\n\n\nPuzzles\n\n\n\nFind hidden words in a grid of letters. Perfect for brain training and puzzle enthusiasts!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSquare Maze\n\n\n\nPuzzles\n\n\n\nPlayers navigate through a maze to reach the exit. The maze can be randomly generated, and the player moves using keyboard controls.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/typing-speed/index.html",
-    "href": "posts/typing-speed/index.html",
-    "title": "Typing Speed Challenge",
-    "section": "",
-    "text": "How to Play\n    \n        Click on the paragraph and start typing, as you type you would start seeing the focus shifting to the next character.\n        You have 60 seconds to type all the sentences you see.\n    \n\n\n    \n      \n      \n        \n          \n        \n        \n          \n            \n              Time Left: 60s\n            \n            \n              Mistakes: 0\n            \n            \n              Words Per Minute: 0\n            \n            \n              Characters Per Minute: 0\n            \n          \n          Try Again\n        \n      \n    \n\n    \n        Scorecard\n        \n            \n                \n\n\n\n\nWPM\nCPM\nMistakes"
-  },
-  {
-    "objectID": "posts/minesweeper/index.html",
-    "href": "posts/minesweeper/index.html",
-    "title": "Minesweeper",
-    "section": "",
-    "text": "Easy\n        Medium\n        Hard\n    \n    New Game"
-  },
-  {
-    "objectID": "posts/sliding-puzzle/index.html",
-    "href": "posts/sliding-puzzle/index.html",
-    "title": "Sliding Puzzle",
-    "section": "",
-    "text": "How to Play\n    \n        Select your desired level from the dropdown\n        Click \"New Game\" or \"Shuffle\" to mix up the tiles\n        Try to arrange the numbers in order with the empty space in the bottom right\n    \n\n \n    \n        \n            Level 1 (3x3)\n            Level 2 (3x4)\n            Level 3 (4x4)\n            Level 4 (4x5)\n            Level 5 (5x5)\n            Level 6 (5x6)\n            Level 7 (6x6)\n            Level 8 (6x7)\n            Level 9 (7x7)\n            Level 10 (7x8)\n        \n        New Game\n        Shuffle\n        Ai Solve Puzzle\n    \n    \n        Moves: 0\n        Best Score: -\n    \n    \n        Solving puzzle...\n    \n    \n    \n        Congratulations! You completed the level!"
-  },
-  {
-    "objectID": "posts/word-search/index.html",
-    "href": "posts/word-search/index.html",
-    "title": "Word Search Game",
-    "section": "",
-    "text": "How to Play\n        \n            Find words from the list below in the grid of letters\n            Words can be placed in any of these directions:\n                \n                    Horizontally (→)\n                    Vertically (↓)\n                    Diagonally (↘ or ↗)\n                    Backwards in any direction (← ↑ ↙ ↖)\n                \n            \n            Click and drag your mouse over the letters to select a word\n            When you find a word, it will be highlighted in green and crossed off the list\n            Find all words to win the game!\n        \n    \n    \n    \n    \n        \n            Words to find:\n        \n        \n            \n        \n    \n    \n    \n        \n            Grid Size: \n        \n        \n            \n        \n    \n    \n    \n        \n            Category:"
-  },
-  {
     "objectID": "README.html#features",
     "href": "README.html#features",
     "title": "Javascript Games by Muthu",
@@ -89,6 +12,13 @@
     "title": "Javascript Games by Muthu",
     "section": "Games Available",
     "text": "Games Available"
+  },
+  {
+    "objectID": "README.html#available-games",
+    "href": "README.html#available-games",
+    "title": "Javascript Games by Muthu",
+    "section": "Available Games",
+    "text": "Available Games\n\n1. Magic Square\nCategory: Puzzles\nA magic square is a grid of numbers where the sum of the numbers in each row, column, and diagonal is the same.\n\n\n2. Typing Speed Challenge\nCategory: Challenge\nTest your typing speed and accuracy by typing a passage of text as quickly as you can.\n\n\n3. Connect 4\nCategory: Puzzles\nA two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to form a horizontal, vertical, or diagonal line of four discs.\n\n\n4. Minesweeper\nCategory: Puzzles\nReveal squares on a grid while avoiding hidden mines. Numbers indicate how many mines are adjacent to a revealed square.\n\n\n5. Advanced Tic-Tac-Toe\nCategory: Puzzles\nA two-player game where players mark a grid (3x3, 4x5, or 5x5) with “X” or “O.” The goal is to get three marks in a row, column, or diagonal.\n\n\n6. Sliding Puzzle\nCategory: Puzzles\nSlide tiles around on a grid (3x3, 4x4, or larger) to arrange them in numerical or image order.\n\n\n7. Classic Sudoku Game\nCategory: Puzzles\nA logic-based number placement puzzle. Fill a 9x9 grid so that each row, column, and 3x3 region contains the digits 1-9 without repetition.\n\n\n8. Word Search Game\nCategory: Puzzles\nFind hidden words in a grid of letters. A fun way to train your brain and puzzle skills!\n\n\n9. Square Maze\nCategory: Puzzles\nNavigate through a randomly generated maze to reach the exit. Use keyboard controls to guide your way.\n\n\n10. Latin Square\nCategory: Puzzles\nA Latin Square is a grid where each row and column contains each symbol exactly once"
   },
   {
     "objectID": "README.html#getting-started",
@@ -119,10 +49,87 @@
     "text": "Contact\nFor any inquiries or feedback, feel free to reach out via the email on my profile.\nEnjoy the games and happy coding!"
   },
   {
-    "objectID": "README.html#available-games",
-    "href": "README.html#available-games",
-    "title": "Javascript Games by Muthu",
-    "section": "Available Games",
-    "text": "Available Games\n\n1. Magic Square\nCategory: Puzzles\nA magic square is a grid of numbers where the sum of the numbers in each row, column, and diagonal is the same.\n\n\n2. Typing Speed Challenge\nCategory: Challenge\nTest your typing speed and accuracy by typing a passage of text as quickly as you can.\n\n\n3. Connect 4\nCategory: Puzzles\nA two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to form a horizontal, vertical, or diagonal line of four discs.\n\n\n4. Minesweeper\nCategory: Puzzles\nReveal squares on a grid while avoiding hidden mines. Numbers indicate how many mines are adjacent to a revealed square.\n\n\n5. Advanced Tic-Tac-Toe\nCategory: Puzzles\nA two-player game where players mark a grid (3x3, 4x5, or 5x5) with “X” or “O.” The goal is to get three marks in a row, column, or diagonal.\n\n\n6. Sliding Puzzle\nCategory: Puzzles\nSlide tiles around on a grid (3x3, 4x4, or larger) to arrange them in numerical or image order.\n\n\n7. Classic Sudoku Game\nCategory: Puzzles\nA logic-based number placement puzzle. Fill a 9x9 grid so that each row, column, and 3x3 region contains the digits 1-9 without repetition.\n\n\n8. Word Search Game\nCategory: Puzzles\nFind hidden words in a grid of letters. A fun way to train your brain and puzzle skills!\n\n\n9. Square Maze\nCategory: Puzzles\nNavigate through a randomly generated maze to reach the exit. Use keyboard controls to guide your way."
+    "objectID": "posts/word-search/index.html",
+    "href": "posts/word-search/index.html",
+    "title": "Word Search Game",
+    "section": "",
+    "text": "How to Play\n        \n            Find words from the list below in the grid of letters\n            Words can be placed in any of these directions:\n                \n                    Horizontally (→)\n                    Vertically (↓)\n                    Diagonally (↘ or ↗)\n                    Backwards in any direction (← ↑ ↙ ↖)\n                \n            \n            Click and drag your mouse over the letters to select a word\n            When you find a word, it will be highlighted in green and crossed off the list\n            Find all words to win the game!\n        \n    \n    \n    \n    \n        \n            Words to find:\n        \n        \n            \n        \n    \n    \n    \n        \n            Grid Size: \n        \n        \n            \n        \n    \n    \n    \n        \n            Category:"
+  },
+  {
+    "objectID": "posts/sliding-puzzle/index.html",
+    "href": "posts/sliding-puzzle/index.html",
+    "title": "Sliding Puzzle",
+    "section": "",
+    "text": "How to Play\n    \n        Select your desired level from the dropdown\n        Click \"New Game\" or \"Shuffle\" to mix up the tiles\n        Try to arrange the numbers in order with the empty space in the bottom right\n    \n\n \n    \n        \n            Level 1 (3x3)\n            Level 2 (3x4)\n            Level 3 (4x4)\n            Level 4 (4x5)\n            Level 5 (5x5)\n            Level 6 (5x6)\n            Level 7 (6x6)\n            Level 8 (6x7)\n            Level 9 (7x7)\n            Level 10 (7x8)\n        \n        New Game\n        Shuffle\n        Ai Solve Puzzle\n    \n    \n        Moves: 0\n        Best Score: -\n    \n    \n        Solving puzzle...\n    \n    \n    \n        Congratulations! You completed the level!"
+  },
+  {
+    "objectID": "posts/minesweeper/index.html",
+    "href": "posts/minesweeper/index.html",
+    "title": "Minesweeper",
+    "section": "",
+    "text": "Easy\n        Medium\n        Hard\n    \n    New Game"
+  },
+  {
+    "objectID": "posts/connect4/index.html",
+    "href": "posts/connect4/index.html",
+    "title": "Connect 4",
+    "section": "",
+    "text": "How to Play\n        \n            The game is played between two players: Player 1 and Player 2.\n            Each player takes turns choosing one of the 7 columns and drops their disc into it. Player 1 uses red discs, and Player 2 uses yellow discs.\n            The discs fall straight down to the next available space in the column.\n            The goal is to form a line of four discs of your own color. This line can be horizontal, vertical, or diagonal.\n            If all the spaces on the grid are filled and neither player has connected four discs, the game ends in a draw.\n        \n        Winning the Game\n        A player wins by forming a continuous line of four of their discs either horizontally, vertically, or diagonally. The first player to do so is declared the winner!\n    \n\n    \n        \n    \n\n    \n        \n            Difficulty\n            \n                \n                    Level 1\n                    Level 2 (Passive)\n                    Level 3\n                    Level 4 (Easy)\n                    Level 5\n                    Level 6 (Moderate)\n                    Level 7\n                    Level 8 (Tougher)\n                \n            \n            Restart game"
+  },
+  {
+    "objectID": "posts/magicsquare/index.html",
+    "href": "posts/magicsquare/index.html",
+    "title": "Magic Square",
+    "section": "",
+    "text": "Easy (3x3)\n    Medium (4x4)\n    Hard (5x5)\n    New Game\n    Hint\n    Solve\n\nMagic Sum: 0"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m Muthukrishnan, currently working as an Engineering Manager as Sanas AI Inc. I have over 16 years of experience in building scalable SaaS applications from the ground up. Throughout my career, I’ve had the privilege of working in dynamic environments, from startups to established enterprises, contributing to the growth and success of each. As a hands-on leader, I’ve built and scaled applications that have grown from hundreds of users to millions, and I have filed about five patents. These patents cover a range of technologies, from optical character recognition (OCR) to systems for cross-application walkthroughs and UI element retrieval.\nIn my previous role at Whatfix, I’m proud to have architected and launched the Desktop business, which now generates over $2 million in revenue. I built the team from scratch, guiding them to deliver innovative solutions that address real-world challenges. In addition to my leadership role, I remain an individual contributor, often running proof of concepts for potential revenue-generating features.\nMy expertise extends across system design, software architecture, and various programming languages like Java, JavaScript, and Python. I’m deeply committed to process optimization and fostering an agile culture that drives efficiency and quality.\nHaving been a startup founder myself, I understand the nuances of growing a business, and I’ve played a key role in helping two startups scale from early-stage development to Series A and beyond. This blend of technical know-how and entrepreneurial experience fuels my drive to build products that not only solve problems but also create value for businesses and users alike.\nWhen I’m not working, I enjoy sharing my insights with the world through writing on my blog. You can always reach out to me via LinkedIn, my blog, or GitHub for a conversation about technology, engineering management, or the future of SaaS."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Brain Busters - Javascript Games",
+    "section": "",
+    "text": "Magic Square\n\n\n\nPuzzles\n\n\n\nA magic square is a square grid of numbers where the sum of the numbers in each row, column, and diagonal is the same. The sum of the numbers in a magic square is called…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTyping Speed Challenge\n\n\n\nChallenge\n\n\n\nA game that measures how fast and accurately the player can type a passage of text.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnect 4\n\n\n\nPuzzles\n\n\n\nA two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to be the first to form a horizontal, vertical, or diagonal line of four…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLatin Square Puzzle\n\n\n\nPuzzles\n\n\n\nA Latin Square is a grid where each row and column contains each symbol exactly once.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMinesweeper\n\n\n\nPuzzles\n\n\n\nA grid-based puzzle where the player reveals squares, trying to avoid hidden mines while uncovering numbers that indicate nearby mines.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced Tic-Tac-Toe\n\n\n\nPuzzles\n\n\n\nA simple two-player game where each player takes turns marking a 3x3, 4x5, 5x5 grid with “X” or “O.” The goal is to get three of their marks in a row, column, or diagonal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSliding Puzzle\n\n\n\nPuzzles\n\n\n\nA 3x3 or 4x4 or bigger grid puzzle where the player slides tiles around to put them in numerical or image order.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClassic Sudoku Game\n\n\n\nPuzzles\n\n\n\nSudoku is a logic based number placement puzzle. The objective is to fill in the 9x9 grid so that each column, each row, and each of the nine 3x3 boxes (or regions) contains…\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWord Search Game\n\n\n\nPuzzles\n\n\n\nFind hidden words in a grid of letters. Perfect for brain training and puzzle enthusiasts!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSquare Maze\n\n\n\nPuzzles\n\n\n\nPlayers navigate through a maze to reach the exit. The maze can be randomly generated, and the player moves using keyboard controls.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/typing-speed/index.html",
+    "href": "posts/typing-speed/index.html",
+    "title": "Typing Speed Challenge",
+    "section": "",
+    "text": "How to Play\n    \n        Click on the paragraph and start typing, as you type you would start seeing the focus shifting to the next character.\n        You have 60 seconds to type all the sentences you see.\n    \n\n\n    \n      \n      \n        \n          \n        \n        \n          \n            \n              Time Left: 60s\n            \n            \n              Mistakes: 0\n            \n            \n              Words Per Minute: 0\n            \n            \n              Characters Per Minute: 0\n            \n          \n          Try Again\n        \n      \n    \n\n    \n        Scorecard\n        \n            \n                \n\n\n\n\nWPM\nCPM\nMistakes"
+  },
+  {
+    "objectID": "posts/latin-square/index.html",
+    "href": "posts/latin-square/index.html",
+    "title": "Latin Square Puzzle",
+    "section": "",
+    "text": "How to Play\n        Fill in the grid so that each number appears exactly once in each row and column.\n        1. Click an empty cell to select it\n        2. Click a number from the number pad to fill the cell\n        3. Use hints if you get stuck\n        4. Complete the grid without any conflicts to win!\n    \n\n    \n        3x3\n        4x4\n        5x5\n    \n\n    \n    \n\n    \n        Get Hint\n        Check Solution\n        Reset"
+  },
+  {
+    "objectID": "posts/tic-tac-toe/index.html",
+    "href": "posts/tic-tac-toe/index.html",
+    "title": "Advanced Tic-Tac-Toe",
+    "section": "",
+    "text": "How to Play\n    \n        The game is played on a 3x3, 4x4 or 5x5 grid.\n        Players take turns marking an empty cell with their symbol (X or O).\n        The goal is to be the first player to form a straight line of 3,4 or 5 of your symbols.\n        The line can be horizontal, vertical, or diagonal.\n        If all squares are filled and no player has formed a line of their symbols, the game is a draw.\n    \n\n\n    \n        Easy\n        Medium\n        Hard\n    \n    \n        3x3\n        4x4\n        5x5\n    \n    New Game"
+  },
+  {
+    "objectID": "posts/sudoku/index.html",
+    "href": "posts/sudoku/index.html",
+    "title": "Classic Sudoku Game",
+    "section": "",
+    "text": "Easy\n        Medium\n        Hard\n    \n    00:00\n    \n        New Game\n        Get Hint"
+  },
+  {
+    "objectID": "posts/maze/index.html",
+    "href": "posts/maze/index.html",
+    "title": "Square Maze",
+    "section": "",
+    "text": "How to Play\n        \n            Select a maze size from the dropdown menu\n            Click \"Generate Maze\" to create a new maze\n            Use arrow keys or WASD to move the player (red square)\n            Reach the green end point to win\n            Click \"Reset Player\" to return to start position\n            Generate a new maze anytime for a fresh challenge\n        \n    \n\n    \n        \n            \n                10x10\n                20x20\n                30X30\n                40X40\n                50X50\n                60X60\n                70X70\n                80X80\n                90X90\n            \n            Generate Maze\n            Reset Player"
   }
 ]

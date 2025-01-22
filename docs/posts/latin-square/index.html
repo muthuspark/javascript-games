@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="A Latin Square is a grid where each row and column contains each symbol exactly once.">
 
-<title>readme – Brain Busters - Javascript Games</title>
+<title>Latin Square Puzzle – Brain Busters - Javascript Games</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,60 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6ea9c6420bca81aafdcd2eff8704c72b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6ea9c6420bca81aafdcd2eff8704c72b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,10 +79,13 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Brain Busters - Javascript Games">
-<meta property="og:description" content="">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Latin Square Puzzle – Brain Busters - Javascript Games">
+<meta property="og:description" content="A Latin Square is a grid where each row and column contains each symbol exactly once.">
+<meta property="og:image" content="https://games.muthu.co/posts/latin-square/thumbnail.png">
 <meta property="og:site_name" content="Brain Busters - Javascript Games">
+<meta property="og:image:height" content="219">
+<meta property="og:image:width" content="219">
 </head>
 
 <body class="nav-fixed">
@@ -125,7 +95,7 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Brain Busters - Javascript Games</span>
     </a>
   </div>
@@ -136,7 +106,7 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -160,158 +130,80 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#javascript-games-by-muthu" id="toc-javascript-games-by-muthu" class="nav-link active" data-scroll-target="#javascript-games-by-muthu">Javascript Games by Muthu</a>
-  <ul class="collapse">
-  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a></li>
-  <li><a href="#games-available" id="toc-games-available" class="nav-link" data-scroll-target="#games-available">Games Available</a></li>
-  <li><a href="#available-games" id="toc-available-games" class="nav-link" data-scroll-target="#available-games">Available Games</a>
-  <ul class="collapse">
-  <li><a href="#magic-square" id="toc-magic-square" class="nav-link" data-scroll-target="#magic-square">1. Magic Square</a></li>
-  <li><a href="#typing-speed-challenge" id="toc-typing-speed-challenge" class="nav-link" data-scroll-target="#typing-speed-challenge">2. Typing Speed Challenge</a></li>
-  <li><a href="#connect-4" id="toc-connect-4" class="nav-link" data-scroll-target="#connect-4">3. Connect 4</a></li>
-  <li><a href="#minesweeper" id="toc-minesweeper" class="nav-link" data-scroll-target="#minesweeper">4. Minesweeper</a></li>
-  <li><a href="#advanced-tic-tac-toe" id="toc-advanced-tic-tac-toe" class="nav-link" data-scroll-target="#advanced-tic-tac-toe">5. Advanced Tic-Tac-Toe</a></li>
-  <li><a href="#sliding-puzzle" id="toc-sliding-puzzle" class="nav-link" data-scroll-target="#sliding-puzzle">6. Sliding Puzzle</a></li>
-  <li><a href="#classic-sudoku-game" id="toc-classic-sudoku-game" class="nav-link" data-scroll-target="#classic-sudoku-game">7. Classic Sudoku Game</a></li>
-  <li><a href="#word-search-game" id="toc-word-search-game" class="nav-link" data-scroll-target="#word-search-game">8. Word Search Game</a></li>
-  <li><a href="#square-maze" id="toc-square-maze" class="nav-link" data-scroll-target="#square-maze">9. Square Maze</a></li>
-  <li><a href="#latin-square" id="toc-latin-square" class="nav-link" data-scroll-target="#latin-square">10. Latin Square</a></li>
-  </ul></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
-<link rel="stylesheet" href="./posts/global.css">
-<script type="text/javascript" src="./posts/global.js"></script>
+<main class="content" id="quarto-document-content">
+<link rel="stylesheet" href="../../posts/global.css">
+<script type="text/javascript" src="../../posts/global.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Latin Square Puzzle</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Puzzles</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A Latin Square is a grid where each row and column contains each symbol exactly once.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="javascript-games-by-muthu" class="level1">
-<h1>Javascript Games by Muthu</h1>
-<p><a href="https://games.muthu.co/"><img src="https://img.shields.io/badge/GitHub-Pages-blue.svg" class="img-fluid" alt="Javscript Games"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" class="img-fluid" alt="License"></a></p>
-<p>Welcome to the <strong>Javscript Games by Muthu</strong> project! This repository contains various games built with purely javascript, html and css. You can explore and play the games directly on the <a href="https://games.muthu.co/">Javscript Games site</a>.</p>
-<section id="features" class="level2">
-<h2 class="anchored" data-anchor-id="features">Features</h2>
-<ul>
-<li>Collection of fun and interactive web-based games</li>
-<li>Built using HTML, CSS, JavaScript</li>
-<li>Responsive design for seamless gameplay on desktop and mobile devices</li>
-<li>Continuous updates with new games and improvements</li>
-</ul>
-</section>
-<section id="games-available" class="level2">
-<h2 class="anchored" data-anchor-id="games-available">Games Available</h2>
-</section>
-<section id="available-games" class="level2">
-<h2 class="anchored" data-anchor-id="available-games">Available Games</h2>
-<section id="magic-square" class="level3">
-<h3 class="anchored" data-anchor-id="magic-square">1. Magic Square</h3>
-<p><strong>Category</strong>: Puzzles<br>
-A magic square is a grid of numbers where the sum of the numbers in each row, column, and diagonal is the same.</p>
-</section>
-<section id="typing-speed-challenge" class="level3">
-<h3 class="anchored" data-anchor-id="typing-speed-challenge">2. Typing Speed Challenge</h3>
-<p><strong>Category</strong>: Challenge<br>
-Test your typing speed and accuracy by typing a passage of text as quickly as you can.</p>
-</section>
-<section id="connect-4" class="level3">
-<h3 class="anchored" data-anchor-id="connect-4">3. Connect 4</h3>
-<p><strong>Category</strong>: Puzzles<br>
-A two-player game where players take turns dropping colored discs into a 7x6 grid. The objective is to form a horizontal, vertical, or diagonal line of four discs.</p>
-</section>
-<section id="minesweeper" class="level3">
-<h3 class="anchored" data-anchor-id="minesweeper">4. Minesweeper</h3>
-<p><strong>Category</strong>: Puzzles<br>
-Reveal squares on a grid while avoiding hidden mines. Numbers indicate how many mines are adjacent to a revealed square.</p>
-</section>
-<section id="advanced-tic-tac-toe" class="level3">
-<h3 class="anchored" data-anchor-id="advanced-tic-tac-toe">5. Advanced Tic-Tac-Toe</h3>
-<p><strong>Category</strong>: Puzzles<br>
-A two-player game where players mark a grid (3x3, 4x5, or 5x5) with “X” or “O.” The goal is to get three marks in a row, column, or diagonal.</p>
-</section>
-<section id="sliding-puzzle" class="level3">
-<h3 class="anchored" data-anchor-id="sliding-puzzle">6. Sliding Puzzle</h3>
-<p><strong>Category</strong>: Puzzles<br>
-Slide tiles around on a grid (3x3, 4x4, or larger) to arrange them in numerical or image order.</p>
-</section>
-<section id="classic-sudoku-game" class="level3">
-<h3 class="anchored" data-anchor-id="classic-sudoku-game">7. Classic Sudoku Game</h3>
-<p><strong>Category</strong>: Puzzles<br>
-A logic-based number placement puzzle. Fill a 9x9 grid so that each row, column, and 3x3 region contains the digits 1-9 without repetition.</p>
-</section>
-<section id="word-search-game" class="level3">
-<h3 class="anchored" data-anchor-id="word-search-game">8. Word Search Game</h3>
-<p><strong>Category</strong>: Puzzles<br>
-Find hidden words in a grid of letters. A fun way to train your brain and puzzle skills!</p>
-</section>
-<section id="square-maze" class="level3">
-<h3 class="anchored" data-anchor-id="square-maze">9. Square Maze</h3>
-<p><strong>Category</strong>: Puzzles<br>
-Navigate through a randomly generated maze to reach the exit. Use keyboard controls to guide your way.</p>
-</section>
-<section id="latin-square" class="level3">
-<h3 class="anchored" data-anchor-id="latin-square">10. Latin Square</h3>
-<p><strong>Category</strong>: Puzzles<br>
-A Latin Square is a grid where each row and column contains each symbol exactly once</p>
-</section>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>If you’d like to explore or contribute to the source code, follow these steps:</p>
-<ol type="1">
-<li>Install Quarto</li>
-</ol>
-<p>This project is built using <a href="https://quarto.org/">Quarto</a>, a scientific and technical publishing system that allows you to create websites, blogs, and other types of content from plain text files.</p>
-<p>Before you begin, ensure you have the following installed:</p>
-<ul>
-<li><strong><a href="https://quarto.org/docs/get-started/">Quarto CLI</a>:</strong> Install Quarto by following the instructions for your operating system.</li>
-<li><strong><a href="https://nodejs.org/en/download/">Node.js</a>:</strong> If your site uses custom scripts or dependencies managed via Node.js.</li>
-<li><strong><a href="https://git-scm.com/">Git</a>:</strong> To clone the repository and push your changes to GitHub.</li>
-</ul>
-<ol start="2" type="1">
-<li><p>Clone the repository:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/muthuspark/javascript-games.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Navigate to the project directory:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> javascript-games</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>You can use the following Quarto command to serve the site locally, so you can preview changes in real-time:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-</section>
-<section id="contributing" class="level2">
-<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
-<p>Contributions are welcome! If you have ideas for new games or improvements to the existing ones, feel free to fork the repository and create a pull request.</p>
-<ol type="1">
-<li>Fork the project.</li>
-<li>Create your feature branch (<code>git checkout -b feature/AmazingGame</code>).</li>
-<li>Commit your changes (<code>git commit -m 'Add an amazing new game'</code>).</li>
-<li>Push to the branch (<code>git push origin feature/AmazingGame</code>).</li>
-<li>Open a pull request.</li>
-</ol>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
-</section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>For any inquiries or feedback, feel free to reach out via the email on my profile.</p>
-<p>Enjoy the games and happy coding!</p>
+</header>
 
 
-</section>
-</section>
+<div class="container">
+    <div class="instructions">
+        <h2 class="anchored">How to Play</h2>
+        <p>Fill in the grid so that each number appears exactly once in each row and column.</p>
+        <p>1. Click an empty cell to select it</p>
+        <p>2. Click a number from the number pad to fill the cell</p>
+        <p>3. Use hints if you get stuck</p>
+        <p>4. Complete the grid without any conflicts to win!</p>
+    </div>
+
+    <div class="level-select">
+        <button onclick="setLevel(3)">3x3</button>
+        <button onclick="setLevel(4)">4x4</button>
+        <button onclick="setLevel(5)">5x5</button>
+    </div>
+
+    <div class="number-select" id="numberSelect"></div>
+    <div class="grid" id="grid"></div>
+
+    <div class="controls">
+        <button onclick="getHint()">Get Hint</button>
+        <button onclick="checkSolution()">Check Solution</button>
+        <button onclick="resetPuzzle()">Reset</button>
+    </div>
+
+    <div class="status" id="status"></div>
+</div>
+
+<script>
+    setTimeout(() => {
+        // Initialize the game
+        initializePuzzle();
+        renderGrid();
+    }, 200);
+</script>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
