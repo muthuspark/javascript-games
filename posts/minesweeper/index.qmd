@@ -1,0 +1,31 @@
+---
+title: "Minesweeper"
+image: thumbnail.png
+description: A grid-based puzzle where the player reveals squares, trying to avoid hidden mines while uncovering numbers that indicate nearby mines.
+categories: [ Puzzles ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script src="script.js"></script>
+---
+
+```{=html}
+<div class="controls">
+    <div class="difficulty-buttons">
+        <button class="btn btn-success" onclick="setDifficulty('easy')">Easy</button>
+        <button class="btn btn-warning" onclick="setDifficulty('medium')">Medium</button>
+        <button class="btn btn-danger" onclick="setDifficulty('hard')">Hard</button>
+    </div>
+    <button class="btn btn-info" onclick="initGame()">New Game</button>
+    <div id="mine-count"></div>
+</div>
+<div id="status" class="status"></div>
+<div id="game-board" class="game-board"></div>
+
+<script>
+    setTimeout(() => {
+        // Initialize the game when the page loads
+        initGame();
+    }, 200);
+</script>
+```

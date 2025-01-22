@@ -2,8 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/magicsquare/index.html",
       "/posts/typing-speed/index.html",
       "/posts/connect4/index.html",
+      "/posts/minesweeper/index.html",
       "/posts/tic-tac-toe/index.html",
       "/posts/sliding-puzzle/index.html",
       "/posts/sudoku/index.html",

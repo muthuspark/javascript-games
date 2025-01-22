@@ -1,0 +1,33 @@
+---
+title: "Magic Square"
+image: thumbnail.png
+description: A magic square is a square grid of numbers where the sum of the numbers in each row, column, and diagonal is the same.  The sum of the numbers in a magic square is called the magic constant.
+categories: [ Puzzles ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script src="script.js"></script>
+---
+
+```{=html}
+<div class="controls">
+    <button class="easy" onclick="setDifficulty(3)">Easy (3x3)</button>
+    <button class="medium" onclick="setDifficulty(4)">Medium (4x4)</button>
+    <button class="hard" onclick="setDifficulty(5)">Hard (5x5)</button>
+    <button class="new-game" onclick="initGame()">New Game</button>
+    <button class="hint" onclick="giveHint()">Hint</button>
+    <button class="solve" onclick="solve()">Solve</button>
+</div>
+<h3>Magic Sum: <span id="magic-sum">0</span></h3>
+<div id="status" class="status"></div>
+
+<div class="align-center">
+    <div id="game-board" class="game-board"></div>
+</div>
+
+<script>
+    setTimeout(() => {
+        initGame();
+    }, 200);
+</script>
+```
