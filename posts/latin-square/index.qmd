@@ -1,0 +1,49 @@
+---
+title: "Latin Square Puzzle"
+image: thumbnail.png
+description: A Latin Square is a grid where each row and column contains each symbol exactly once.
+categories: [ Puzzles ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script src="script.js"></script>
+---
+
+
+```{=html}
+<div class="container">
+    <div class="instructions">
+        <h2>How to Play</h2>
+        <p>Fill in the grid so that each number appears exactly once in each row and column.</p>
+        <p>1. Click an empty cell to select it</p>
+        <p>2. Click a number from the number pad to fill the cell</p>
+        <p>3. Use hints if you get stuck</p>
+        <p>4. Complete the grid without any conflicts to win!</p>
+    </div>
+
+    <div class="level-select">
+        <button onclick="setLevel(3)">3x3</button>
+        <button onclick="setLevel(4)">4x4</button>
+        <button onclick="setLevel(5)">5x5</button>
+    </div>
+
+    <div class="number-select" id="numberSelect"></div>
+    <div class="grid" id="grid"></div>
+
+    <div class="controls">
+        <button onclick="getHint()">Get Hint</button>
+        <button onclick="checkSolution()">Check Solution</button>
+        <button onclick="resetPuzzle()">Reset</button>
+    </div>
+
+    <div class="status" id="status"></div>
+</div>
+
+<script>
+    setTimeout(() => {
+        // Initialize the game
+        initializePuzzle();
+        renderGrid();
+    }, 200);
+</script>
+```
