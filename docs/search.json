@@ -130,7 +130,7 @@
     "href": "posts/sliding-puzzle/index.html",
     "title": "Sliding Puzzle",
     "section": "",
-    "text": "How to Play\n    \n        Select your desired level from the dropdown\n        Click \"New Game\" or \"Shuffle\" to mix up the tiles\n        Try to arrange the numbers in order with the empty space in the bottom right\n    \n\n \n    \n        \n            Level 1 (3x3)\n            Level 2 (3x4)\n            Level 3 (4x4)\n            Level 4 (4x5)\n            Level 5 (5x5)\n            Level 6 (5x6)\n            Level 7 (6x6)\n            Level 8 (6x7)\n            Level 9 (7x7)\n            Level 10 (7x8)\n        \n        New Game\n        Shuffle\n        Ai Solve Puzzle\n    \n    \n        Moves: 0\n        Best Score: -\n    \n    \n        Solving puzzle...\n    \n    \n    \n        Congratulations! You completed the level!"
+    "text": "How to Play\n    \n        Select your desired level from the dropdown\n        Click \"New Game\" or \"Shuffle\" to mix up the tiles\n        Try to arrange the numbers in order with the empty space in the bottom right\n    \n\n \n    \n        \n            Level 1 (3x3)\n            Level 2 (3x4)\n            Level 3 (4x4)\n            Level 4 (4x5)\n            Level 5 (5x5)\n            Level 6 (5x6)\n            Level 7 (6x6)\n            Level 8 (6x7)\n            Level 9 (7x7)\n            Level 10 (7x8)\n        \n        New Game\n        Shuffle\n        Ai Solve Puzzle\n    \n    \n        Moves: 0\n        Best Score: -\n    \n    \n        Solving puzzle..."
   },
   {
     "objectID": "posts/word-search/index.html",

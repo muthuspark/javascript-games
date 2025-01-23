@@ -71,7 +71,7 @@ function handleTileClick(row, col) {
                 bestScores[currentLevel] = moveCount;
                 updateBestScore();
             }
-            document.getElementById('winMessage').style.display = 'block';
+            showWinMessage('You solved this level! Try beating your best score.');
         }
     }
 }
@@ -147,7 +147,7 @@ function shuffleBoard() {
 
     moveCount = 0;
     document.getElementById('moveCount').textContent = moveCount;
-    document.getElementById('winMessage').style.display = 'none';
+    hideWinMessage();
 }
 
 function changeLevel() {

@@ -44,9 +44,6 @@ include-before-body:
         Solving puzzle...
     </div>
     <div class="board"></div>
-    <div id="winMessage" class="winner" style="display: none;">
-        Congratulations! You completed the level!
-    </div>
 </div>
 <script>
     setTimeout(() => {
