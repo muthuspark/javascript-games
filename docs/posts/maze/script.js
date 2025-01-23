@@ -141,3 +141,12 @@ function resetPlayer() {
 
 // Initialize game
 document.addEventListener('keydown', handleKeyPress);
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowUp' && !event.shiftKey) {
+      event.preventDefault(); 
+    }
+    if (event.key === 'ArrowDown' && !event.shiftKey) {
+        event.preventDefault(); 
+    }
+  });

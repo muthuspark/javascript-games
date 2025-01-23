@@ -9,7 +9,6 @@ include-before-body:
         <script src="script.js"></script>
 ---
 
-
 ```{=html}
 <div class="maze">
     <div class="instructions">
@@ -23,7 +22,6 @@ include-before-body:
             <li>Generate a new maze anytime for a fresh challenge</li>
         </ol>
     </div>
-
     <div class="game-container">
         <div class="controls">
             <select id="mazeSize">
@@ -43,7 +41,6 @@ include-before-body:
         <canvas id="mazeCanvas"></canvas>
     </div>
 </div>
-
 <script type="text/javascript">
    // Start new game when page loads
 window.onload = function () {

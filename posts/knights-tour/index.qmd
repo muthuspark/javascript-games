@@ -22,7 +22,7 @@ include-before-body:
             <li>Yellow squares show possible moves</li>
         </ol>
     </div>
-    
+
     <div class="board" id="board"></div>
     <div class="controls">
         <button onclick="resetGame()">New Game</button>

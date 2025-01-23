@@ -116,7 +116,7 @@
     "href": "posts/knights-tour/index.html",
     "title": "Knight’s Tour",
     "section": "",
-    "text": "How to Play\n        Move the knight to visit every square exactly once on the chessboard.\n        \n            Click highlighted squares to move the knight\n            Visit all squares to win\n            Try to complete the tour in the shortest time\n            Green squares show visited positions\n            Yellow squares show possible moves\n        \n    \n    \n    \n    \n        New Game\n        Show Hint"
+    "text": "How to Play\n        Move the knight to visit every square exactly once on the chessboard.\n        \n            Click highlighted squares to move the knight\n            Visit all squares to win\n            Try to complete the tour in the shortest time\n            Green squares show visited positions\n            Yellow squares show possible moves\n        \n    \n\n    \n    \n        New Game\n        Show Hint"
   },
   {
     "objectID": "posts/minesweeper/index.html",
@@ -144,6 +144,6 @@
     "href": "posts/maze/index.html",
     "title": "Square Maze",
     "section": "",
-    "text": "How to Play\n        \n            Select a maze size from the dropdown menu\n            Click \"Generate Maze\" to create a new maze\n            Use arrow keys or WASD to move the player (red square)\n            Reach the green end point to win\n            Click \"Reset Player\" to return to start position\n            Generate a new maze anytime for a fresh challenge\n        \n    \n\n    \n        \n            \n                10x10\n                20x20\n                30X30\n                40X40\n                50X50\n                60X60\n                70X70\n                80X80\n                90X90\n            \n            Generate Maze\n            Reset Player"
+    "text": "How to Play\n        \n            Select a maze size from the dropdown menu\n            Click \"Generate Maze\" to create a new maze\n            Use arrow keys or WASD to move the player (red square)\n            Reach the green end point to win\n            Click \"Reset Player\" to return to start position\n            Generate a new maze anytime for a fresh challenge\n        \n    \n    \n        \n            \n                10x10\n                20x20\n                30X30\n                40X40\n                50X50\n                60X60\n                70X70\n                80X80\n                90X90\n            \n            Generate Maze\n            Reset Player"
   }
 ]
