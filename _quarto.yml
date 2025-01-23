@@ -17,7 +17,7 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/muthuspark
+        href: https://github.com/muthuspark/javascript-games
       - icon: twitter
         href: https://twitter.com/krimuthu
 format:

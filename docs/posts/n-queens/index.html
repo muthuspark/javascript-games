@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A simple two-player game where each player takes turns marking a 3x3, 4x5, 5x5 grid with “X” or “O.” The goal is to get three of their marks in a row, column, or diagonal.">
+<meta name="description" content="N-Queens puzzle game where the player needs to place queens on a chess board without them threatening each other.">
 
-<title>Advanced Tic-Tac-Toe – Brain Busters - Javascript Games</title>
+<title>N-Queens puzzle – Brain Busters - Javascript Games</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,12 +80,12 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Advanced Tic-Tac-Toe – Brain Busters - Javascript Games">
-<meta property="og:description" content="A simple two-player game where each player takes turns marking a 3x3, 4x5, 5x5 grid with “X” or “O.” The goal is to get three of their marks in a row, column, or diagonal.">
-<meta property="og:image" content="https://games.muthu.co/posts/tic-tac-toe/thumbnail.png">
+<meta property="og:title" content="N-Queens puzzle – Brain Busters - Javascript Games">
+<meta property="og:description" content="N-Queens puzzle game where the player needs to place queens on a chess board without them threatening each other.">
+<meta property="og:image" content="https://games.muthu.co/posts/n-queens/thumbnail.png">
 <meta property="og:site_name" content="Brain Busters - Javascript Games">
-<meta property="og:image:height" content="306">
-<meta property="og:image:width" content="292">
+<meta property="og:image:height" content="383">
+<meta property="og:image:width" content="383">
 </head>
 
 <body class="nav-fixed">
@@ -142,7 +142,7 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Advanced Tic-Tac-Toe</h1>
+<h1 class="title">N-Queens puzzle</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Puzzles</div>
   </div>
@@ -150,7 +150,7 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    A simple two-player game where each player takes turns marking a 3x3, 4x5, 5x5 grid with “X” or “O.” The goal is to get three of their marks in a row, column, or diagonal.
+    N-Queens puzzle game where the player needs to place queens on a chess board without them threatening each other.
   </div>
 </div>
 
@@ -167,40 +167,45 @@ gtag('config', 'G-BH3P7R68Z6', { 'anonymize_ip': true});
 </header>
 
 
-<div class="instructions">
-    <h2 class="anchored">How to Play</h2>
-    <ol>
-        <li>The game is played on a 3x3, 4x4 or 5x5 grid.</li>
-        <li>Players take turns marking an empty cell with their symbol (X or O).</li>
-        <li>The goal is to be the first player to form a straight line of 3,4 or 5 of your symbols.</li>
-        <li>The line can be horizontal, vertical, or diagonal.</li>
-        <li>If all squares are filled and no player has formed a line of their symbols, the game is a draw.</li>
-    </ol>
-</div>
-<div class="controls">
-    <select id="difficulty">
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-    </select>
-    <select id="gridSize">
-        <option value="3">3x3</option>
-        <option value="4">4x4</option>
-        <option value="5">5x5</option>
-    </select>
-    <button onclick="startNewGame()">New Game</button>
-</div>
-<div id="gameBoard" class="game-board"></div>
-<div id="status" class="status"></div>
+<div class="container">    
+    <div class="instructions">
+        <h2 class="anchored">How to Play</h2>
+        <p>Place N queens on an NxN chess board where no two queens threaten each other.</p>
+        <ol>
+            <li>Click a cell to place or remove a queen</li>
+            <li>Queens cannot share the same row, column, or diagonal</li>
+            <li>Threatened squares will be highlighted in red</li>
+            <li>Place all queens without conflicts to win!</li>
+        </ol>
+    </div>
 
+    <div class="level-select">
+        <button onclick="setLevel(4)">4x4</button>
+        <button onclick="setLevel(5)">5x5</button>
+        <button onclick="setLevel(6)">6x6</button>
+        <button onclick="setLevel(8)">8x8</button>
+    </div>
 
-<script type="text/javascript">
-   // Start new game when page loads
-   setTimeout(() => {
-        // Initialize the game
-        startNewGame();
-   }, 1000);
+    <div class="queen-count" id="queenCount"></div>
+    <div class="board" id="board"></div>
+
+    <div class="controls">
+        <button onclick="getHint()">Get Hint</button>
+        <button onclick="checkSolution()">Check Solution</button>
+        <button onclick="resetPuzzle()">Reset</button>
+    </div>
+
+    <div class="status" id="status"></div>
+</div>
+
+<script>
+    setTimeout(() => {
+        // Initialize the game when the page loads
+        initializePuzzle();
+    }, 200);
 </script>
+
+
 
 
 

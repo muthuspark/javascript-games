@@ -56,6 +56,10 @@ Navigate through a randomly generated maze to reach the exit. Use keyboard contr
 **Category**: Puzzles  
 A Latin Square is a grid where each row and column contains each symbol exactly once
 
+### 11. N-Queens Puzzle
+**Category**: Puzzles  
+N-Queens puzzle game where the player needs to place queens on a chess board without them threatening each other.
+
 
 ## Getting Started
 

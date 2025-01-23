@@ -1,0 +1,52 @@
+---
+title: "N-Queens puzzle"
+image: thumbnail.png
+description: N-Queens puzzle game where the player needs to place queens on a chess board without them threatening each other.
+categories: [ Puzzles ]
+include-before-body:
+    - text: |
+        <link rel="stylesheet" href="style.css"></script>
+        <script src="script.js"></script>
+---
+
+```{=html}
+<div class="container">    
+    <div class="instructions">
+        <h2>How to Play</h2>
+        <p>Place N queens on an NxN chess board where no two queens threaten each other.</p>
+        <ol>
+            <li>Click a cell to place or remove a queen</li>
+            <li>Queens cannot share the same row, column, or diagonal</li>
+            <li>Threatened squares will be highlighted in red</li>
+            <li>Place all queens without conflicts to win!</li>
+        </ol>
+    </div>
+
+    <div class="level-select">
+        <button onclick="setLevel(4)">4x4</button>
+        <button onclick="setLevel(5)">5x5</button>
+        <button onclick="setLevel(6)">6x6</button>
+        <button onclick="setLevel(8)">8x8</button>
+    </div>
+
+    <div class="queen-count" id="queenCount"></div>
+    <div class="board" id="board"></div>
+
+    <div class="controls">
+        <button onclick="getHint()">Get Hint</button>
+        <button onclick="checkSolution()">Check Solution</button>
+        <button onclick="resetPuzzle()">Reset</button>
+    </div>
+
+    <div class="status" id="status"></div>
+</div>
+
+<script>
+    setTimeout(() => {
+        // Initialize the game when the page loads
+        initializePuzzle();
+    }, 200);
+</script>
+
+
+```

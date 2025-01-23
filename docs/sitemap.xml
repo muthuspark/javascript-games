@@ -2,51 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://games.muthu.co/README.html</loc>
-    <lastmod>2025-01-22T22:50:52.836Z</lastmod>
+    <lastmod>2025-01-23T00:07:31.372Z</lastmod>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/word-search/index.html</loc>
-    <lastmod>2025-01-18T16:48:55.620Z</lastmod>
+    <loc>https://games.muthu.co/posts/n-queens/index.html</loc>
+    <lastmod>2025-01-23T00:05:01.281Z</lastmod>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/sliding-puzzle/index.html</loc>
-    <lastmod>2025-01-21T03:37:00.338Z</lastmod>
-  </url>
-  <url>
-    <loc>https://games.muthu.co/posts/minesweeper/index.html</loc>
-    <lastmod>2025-01-22T03:40:30.193Z</lastmod>
-  </url>
-  <url>
-    <loc>https://games.muthu.co/posts/connect4/index.html</loc>
-    <lastmod>2025-01-19T09:15:44.136Z</lastmod>
-  </url>
-  <url>
-    <loc>https://games.muthu.co/posts/magicsquare/index.html</loc>
-    <lastmod>2025-01-22T22:18:58.477Z</lastmod>
-  </url>
-  <url>
-    <loc>https://games.muthu.co/about.html</loc>
-    <lastmod>2025-01-18T17:23:30.688Z</lastmod>
-  </url>
-  <url>
-    <loc>https://games.muthu.co/index.html</loc>
-    <lastmod>2025-01-18T11:34:03.575Z</lastmod>
-  </url>
-  <url>
-    <loc>https://games.muthu.co/posts/typing-speed/index.html</loc>
-    <lastmod>2025-01-21T02:35:58.700Z</lastmod>
-  </url>
-  <url>
-    <loc>https://games.muthu.co/posts/latin-square/index.html</loc>
-    <lastmod>2025-01-22T22:48:21.312Z</lastmod>
+    <loc>https://games.muthu.co/posts/sudoku/index.html</loc>
+    <lastmod>2025-01-19T05:38:40.043Z</lastmod>
   </url>
   <url>
     <loc>https://games.muthu.co/posts/tic-tac-toe/index.html</loc>
     <lastmod>2025-01-19T09:38:14.509Z</lastmod>
   </url>
   <url>
-    <loc>https://games.muthu.co/posts/sudoku/index.html</loc>
-    <lastmod>2025-01-19T05:38:40.043Z</lastmod>
+    <loc>https://games.muthu.co/posts/latin-square/index.html</loc>
+    <lastmod>2025-01-23T00:01:17.321Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/typing-speed/index.html</loc>
+    <lastmod>2025-01-21T02:35:58.700Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/index.html</loc>
+    <lastmod>2025-01-18T11:34:03.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/about.html</loc>
+    <lastmod>2025-01-18T17:23:30.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/magicsquare/index.html</loc>
+    <lastmod>2025-01-22T22:18:58.477Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/connect4/index.html</loc>
+    <lastmod>2025-01-19T09:15:44.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/minesweeper/index.html</loc>
+    <lastmod>2025-01-22T03:40:30.193Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/sliding-puzzle/index.html</loc>
+    <lastmod>2025-01-21T03:37:00.338Z</lastmod>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/word-search/index.html</loc>
+    <lastmod>2025-01-18T16:48:55.620Z</lastmod>
   </url>
   <url>
     <loc>https://games.muthu.co/posts/maze/index.html</loc>
