@@ -1,0 +1,156 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.reaction-box {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    margin: 20px 0;
+    user-select: none;
+}
+
+.reaction-box.waiting {
+    background: #3498db;
+}
+
+.reaction-box.ready {
+    background: #e74c3c;
+}
+
+.reaction-box.go {
+    background: #2ecc71;
+}
+
+.reaction-box.result {
+    background: #3498db;
+}
+
+.reaction-box.too_early {
+    background: #e67e22;
+}
+
+.reaction-box .message {
+    color: white;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.reaction-box .result-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.reaction-box .time {
+    color: white;
+    font-size: 3em;
+    font-weight: normal;
+}
+
+.reaction-box .rating {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.3em;
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    font-size: 1.1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stats > div {
+    text-align: center;
+}
+
+.stats .label {
+    color: #666;
+    font-size: 0.85em;
+    margin-bottom: 3px;
+}
+
+.stats .value {
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 1em;
+    background: #95a5a6;
+    border: none;
+    color: white;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #7f8c8d;
+}
+
+.instructions {
+    max-width: 450px;
+    text-align: center;
+    color: #666;
+    font-size: 0.95em;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.scale {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.scale-item {
+    text-align: center;
+}
+
+.scale-item .time-range {
+    font-weight: normal;
+    color: #2c3e50;
+}
+
+@media (max-width: 500px) {
+    .reaction-box {
+        height: 250px;
+    }
+
+    .reaction-box .message {
+        font-size: 1.4em;
+    }
+
+    .reaction-box .time {
+        font-size: 2.5em;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+}

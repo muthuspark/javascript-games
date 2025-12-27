@@ -104,6 +104,38 @@ export const games = [
     description: 'Flip cards to find matching pairs. Train your memory with this classic concentration game. Multiple grid sizes from easy to challenging.',
     thumbnail: 'thumbnail.png',
     categories: ['Puzzles', 'Memory Games', 'Classic Games']
+  },
+  {
+    slug: 'hangman',
+    title: 'Hangman Game - Word Guessing Puzzle',
+    shortTitle: 'Hangman',
+    description: 'Guess the hidden word one letter at a time. Classic word guessing game with multiple categories including animals, countries, foods, and more.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Word Games', 'Classic Games', 'Educational']
+  },
+  {
+    slug: 'lights-out',
+    title: 'Lights Out Puzzle - Turn Off All Lights',
+    shortTitle: 'Lights Out',
+    description: 'Toggle lights to turn them all off. Clicking a light switches it and adjacent lights. A classic logic puzzle with multiple grid sizes.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Logic Games']
+  },
+  {
+    slug: 'simon-says',
+    title: 'Simon Says Game - Memory Sequence Game',
+    shortTitle: 'Simon Says',
+    description: 'Watch the color sequence and repeat it back. Each round adds one more color. How long can you keep up? Classic memory game with sound.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Memory Games', 'Classic Games', 'Challenge']
+  },
+  {
+    slug: 'reaction-time',
+    title: 'Reaction Time Test - Test Your Reflexes',
+    shortTitle: 'Reaction Time',
+    description: 'Test how fast you can react! Wait for the screen to turn green, then click as quickly as possible. Track your average and best reaction times.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Challenge', 'Reflex Games', 'Skills']
   }
 ]
 

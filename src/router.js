@@ -14,7 +14,11 @@ const gamePages = {
   'n-queens': () => import('./pages/games/NQueensPage.vue'),
   'knights-tour': () => import('./pages/games/KnightsTourPage.vue'),
   'typing-speed': () => import('./pages/games/TypingSpeedPage.vue'),
-  'memory-match': () => import('./pages/games/MemoryMatchPage.vue')
+  'memory-match': () => import('./pages/games/MemoryMatchPage.vue'),
+  'hangman': () => import('./pages/games/HangmanPage.vue'),
+  'lights-out': () => import('./pages/games/LightsOutPage.vue'),
+  'simon-says': () => import('./pages/games/SimonSaysPage.vue'),
+  'reaction-time': () => import('./pages/games/ReactionTimePage.vue')
 }
 
 const routes = [

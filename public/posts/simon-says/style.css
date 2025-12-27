@@ -1,0 +1,185 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.simon-board {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 20px auto;
+}
+
+.simon-btn {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 4px solid #333;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    opacity: 0.7;
+}
+
+.simon-btn:hover {
+    opacity: 0.85;
+}
+
+.simon-btn.active {
+    opacity: 1;
+    transform: scale(1.02);
+    box-shadow: 0 0 30px currentColor;
+}
+
+.simon-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.simon-btn.error {
+    opacity: 1;
+}
+
+#green {
+    top: 0;
+    left: 0;
+    background: #2ecc71;
+    border-radius: 150px 0 0 0;
+    color: #2ecc71;
+}
+
+#green.active {
+    background: #58d68d;
+}
+
+#red {
+    top: 0;
+    right: 0;
+    background: #e74c3c;
+    border-radius: 0 150px 0 0;
+    color: #e74c3c;
+}
+
+#red.active {
+    background: #ec7063;
+}
+
+#yellow {
+    bottom: 0;
+    left: 0;
+    background: #f1c40f;
+    border-radius: 0 0 0 150px;
+    color: #f1c40f;
+}
+
+#yellow.active {
+    background: #f4d03f;
+}
+
+#blue {
+    bottom: 0;
+    right: 0;
+    background: #3498db;
+    border-radius: 0 0 150px 0;
+    color: #3498db;
+}
+
+#blue.active {
+    background: #5dade2;
+}
+
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: #2c3e50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.center-circle span {
+    color: white;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 1em;
+    background: #3498db;
+    border: none;
+    color: white;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#strictBtn {
+    background: #95a5a6;
+}
+
+#strictBtn.active {
+    background: #e74c3c;
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
+.status {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin: 15px 0;
+    min-height: 30px;
+}
+
+.instructions {
+    max-width: 400px;
+    text-align: center;
+    color: #666;
+    font-size: 0.95em;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 400px) {
+    .simon-board {
+        width: 280px;
+        height: 280px;
+    }
+
+    .simon-btn {
+        width: 130px;
+        height: 130px;
+    }
+
+    .center-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .center-circle span {
+        font-size: 1.5em;
+    }
+}

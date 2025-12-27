@@ -27,7 +27,11 @@ export default defineConfig({
         '/posts/n-queens/',
         '/posts/knights-tour/',
         '/posts/typing-speed/',
-        '/posts/memory-match/'
+        '/posts/memory-match/',
+        '/posts/hangman/',
+        '/posts/lights-out/',
+        '/posts/simon-says/',
+        '/posts/reaction-time/'
       ]
     }
   }

@@ -1,0 +1,173 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hangman-svg {
+    width: 200px;
+    height: 250px;
+    margin: 20px 0;
+}
+
+.hangman-svg line,
+.hangman-svg circle {
+    stroke: #2c3e50;
+    stroke-width: 3;
+    fill: none;
+}
+
+.hangman-svg #head,
+.hangman-svg #body,
+.hangman-svg #leftArm,
+.hangman-svg #rightArm,
+.hangman-svg #leftLeg,
+.hangman-svg #rightLeg {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.word-display {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.letter {
+    font-size: 2em;
+    font-weight: normal;
+    min-width: 40px;
+    text-align: center;
+    border-bottom: 3px solid #2c3e50;
+    padding: 5px;
+}
+
+.letter.revealed {
+    color: #27ae60;
+}
+
+.letter.missed {
+    color: #e74c3c;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-width: 500px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.key {
+    width: 40px;
+    height: 45px;
+    font-size: 1.1em;
+    font-weight: normal;
+    border: 1px solid #bdc3c7;
+    background: #ecf0f1;
+    color: #2c3e50;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.2s;
+}
+
+.key:hover {
+    background: #bdc3c7;
+}
+
+.key.correct {
+    background: #27ae60;
+    color: white;
+    border-color: #27ae60;
+    cursor: default;
+}
+
+.key.wrong {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+    cursor: default;
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-container button {
+    padding: 10px 25px;
+    font-size: 1em;
+    background: #3498db;
+    border: none;
+    color: white;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.game-container button:hover {
+    background: #2980b9;
+}
+
+.stats {
+    display: flex;
+    gap: 25px;
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.hint {
+    color: #7f8c8d;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.info {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+.message {
+    font-size: 1.3em;
+    padding: 15px 25px;
+    margin: 15px 0;
+    display: none;
+}
+
+.message.win {
+    background: #d5f5e3;
+    color: #27ae60;
+}
+
+.message.lose {
+    background: #fadbd8;
+    color: #e74c3c;
+}
+
+@media (max-width: 500px) {
+    .key {
+        width: 32px;
+        height: 38px;
+        font-size: 0.95em;
+    }
+
+    .letter {
+        font-size: 1.5em;
+        min-width: 30px;
+    }
+
+    .hangman-svg {
+        width: 150px;
+        height: 190px;
+    }
+}
