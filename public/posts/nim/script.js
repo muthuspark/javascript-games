@@ -22,7 +22,71 @@
         for (let i = 0; i < numPiles; i++) {
             newPiles.push(Math.floor(Math.random() * 7) + 1); // 1-7 objects
         }
+
+        // In hard mode, ensure AI has the advantage (nim-sum = 0)
+        // This means the first player (human) is in a losing position
+        if (difficulty === 'hard') {
+            return generateLosingPosition(numPiles);
+        }
+
         return newPiles;
+    }
+
+    function generateLosingPosition(numPiles) {
+        // Generate a position where nim-sum = 0 (losing for first player)
+        // This gives AI the winning advantage with perfect play
+        const piles = [];
+
+        // Generate n-1 random piles
+        for (let i = 0; i < numPiles - 1; i++) {
+            piles.push(Math.floor(Math.random() * 7) + 1);
+        }
+
+        // Calculate what the last pile needs to be for nim-sum = 0
+        const currentXor = piles.reduce((acc, p) => acc ^ p, 0);
+
+        // Last pile must equal the XOR of all other piles
+        let lastPile = currentXor;
+
+        // Ensure last pile is within valid range (1-7)
+        // If not, regenerate
+        if (lastPile < 1 || lastPile > 7) {
+            // Try adjusting one of the existing piles
+            for (let i = 0; i < piles.length; i++) {
+                for (let newVal = 1; newVal <= 7; newVal++) {
+                    const testPiles = [...piles];
+                    testPiles[i] = newVal;
+                    const testXor = testPiles.reduce((acc, p) => acc ^ p, 0);
+                    if (testXor >= 1 && testXor <= 7) {
+                        piles[i] = newVal;
+                        lastPile = testXor;
+                        break;
+                    }
+                }
+                if (lastPile >= 1 && lastPile <= 7) break;
+            }
+        }
+
+        // If still invalid, use a known losing position
+        if (lastPile < 1 || lastPile > 7) {
+            // Classic losing positions (nim-sum = 0)
+            const knownPositions = [
+                [1, 2, 3],
+                [1, 4, 5],
+                [2, 4, 6],
+                [1, 2, 3, 4, 4],
+                [3, 5, 6],
+                [2, 5, 7],
+                [1, 6, 7],
+                [3, 4, 7],
+                [1, 2, 1, 2],
+                [2, 2, 4, 4]
+            ];
+            return knownPositions[Math.floor(Math.random() * knownPositions.length)];
+        }
+
+        piles.push(lastPile);
+        return piles;
     }
 
     function calculateNimSum() {
