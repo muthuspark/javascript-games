@@ -66,7 +66,7 @@ const relatedGames = computed(() => {
 }
 
 .related-game-card .card-img-top {
-  height: 100px;
+  height: 160px;
   object-fit: cover;
   border-bottom: 1px solid #ccc;
   filter: grayscale(20%);

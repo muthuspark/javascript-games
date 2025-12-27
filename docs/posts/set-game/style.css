@@ -13,16 +13,19 @@
 
 #board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px;
     padding: 15px;
     background: #34495e;
-    max-width: 520px;
+    width: 100%;
+    max-width: 560px;
     margin: 20px auto;
+    box-sizing: border-box;
 }
 
-.card {
-    width: 120px;
+#board .card {
+    width: 100%;
+    max-width: 120px;
     height: 80px;
     background: #fff;
     border: 3px solid #bdc3c7;
@@ -31,30 +34,31 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
-.card:hover {
+#board .card:hover {
     border-color: #3498db;
     transform: translateY(-2px);
 }
 
-.card.selected {
+#board .card.selected {
     border-color: #3498db;
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
 }
 
-.card.valid {
+#board .card.valid {
     border-color: #27ae60;
     background: #d5f4e0;
 }
 
-.card.invalid {
+#board .card.invalid {
     border-color: #e74c3c;
     background: #fde2e2;
     animation: shake 0.3s ease;
 }
 
-.card.hint {
+#board .card.hint {
     border-color: #f39c12;
     box-shadow: 0 0 10px rgba(243, 156, 18, 0.6);
 }
@@ -133,8 +137,8 @@
         padding: 10px;
     }
 
-    .card {
-        width: 95px;
+    #board .card {
+        max-width: 95px;
         height: 65px;
     }
 
@@ -164,8 +168,8 @@
 }
 
 @media (max-width: 400px) {
-    .card {
-        width: 80px;
+    #board .card {
+        max-width: 80px;
         height: 55px;
     }
 
@@ -196,12 +200,12 @@
 
 /* Touch device optimizations */
 @media (hover: none) {
-    .card:hover {
+    #board .card:hover {
         border-color: #bdc3c7;
         transform: none;
     }
 
-    .card.selected:hover {
+    #board .card.selected:hover {
         border-color: #3498db;
     }
 }
