@@ -76,7 +76,7 @@ import GameCard from '../components/GameCard.vue'
 const faqs = [
   {
     question: 'Are these games free to play?',
-    answer: 'Yes! All our games are completely free to play. No downloads, no registration, and no hidden costs. Just open your browser and start playing.'
+    answer: 'Yes! All the games are completely free to play. No downloads, no registration, and no hidden costs. Just open your browser and start playing.'
   },
   {
     question: 'Do I need to download anything?',
