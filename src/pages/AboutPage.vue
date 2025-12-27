@@ -17,7 +17,7 @@
             <div class="profile-info">
               <h1 itemprop="name">Muthukrishnan</h1>
               <p class="tagline" itemprop="description">
-                Engineering Manager, Patent Holder & Game Developer
+                Software Engineer, Researcher and Author
               </p>
               <nav class="social-links" aria-label="Social media links">
                 <a

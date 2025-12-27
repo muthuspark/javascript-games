@@ -25,3 +25,4 @@ README_files/
 **/*.quarto_ipynb
 .venv
 prompts.txt
+build_more.sh
