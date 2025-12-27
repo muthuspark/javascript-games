@@ -11,6 +11,7 @@ function initializeGame() {
     gameState = Array(size * size).fill('');
     gameActive = true;
     currentPlayer = 'X';
+    GamePopup.hide();
 
     // Update grid CSS
     const gameBoard = document.getElementById('gameBoard');
@@ -47,13 +48,27 @@ function makeMove(index) {
 
     if (checkWinner()) {
         gameActive = false;
-        updateStatus(`Player ${currentPlayer} wins!`);
+        if (currentPlayer === 'X') {
+            GamePopup.show({
+                title: 'Congratulations!',
+                message: 'You win!',
+                showConfetti: true
+            });
+        } else {
+            GamePopup.show({
+                title: 'Better luck next time!',
+                message: 'Computer wins!'
+            });
+        }
         return;
     }
 
     if (!gameState.includes('')) {
         gameActive = false;
-        updateStatus("It's a draw!");
+        GamePopup.show({
+            title: 'Tie!',
+            message: "It's a draw!"
+        });
         return;
     }
 }
