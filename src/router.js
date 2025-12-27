@@ -22,7 +22,8 @@ const gamePages = {
   'whack-a-mole': () => import('./pages/games/WhackAMolePage.vue'),
   'mastermind': () => import('./pages/games/MastermindPage.vue'),
   'bulls-and-cows': () => import('./pages/games/BullsAndCowsPage.vue'),
-  'nim': () => import('./pages/games/NimPage.vue')
+  'nim': () => import('./pages/games/NimPage.vue'),
+  'dots-and-boxes': () => import('./pages/games/DotsAndBoxesPage.vue')
 }
 
 const routes = [

@@ -35,7 +35,8 @@ export default defineConfig({
         '/posts/whack-a-mole/',
         '/posts/mastermind/',
         '/posts/bulls-and-cows/',
-        '/posts/nim/'
+        '/posts/nim/',
+        '/posts/dots-and-boxes/'
       ]
     }
   }

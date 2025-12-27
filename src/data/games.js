@@ -168,6 +168,14 @@ export const games = [
     description: 'Play Nim against AI. Take objects from piles strategically - whoever takes the last object loses. A classic mathematical strategy game.',
     thumbnail: 'thumbnail.png',
     categories: ['Strategy Games', 'Logic Games', 'Classic Games']
+  },
+  {
+    slug: 'dots-and-boxes',
+    title: 'Dots and Boxes Game - Connect the Dots',
+    shortTitle: 'Dots and Boxes',
+    description: 'Play Dots and Boxes against AI. Draw lines between dots to complete boxes and score points. Classic pencil-and-paper strategy game.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Strategy Games', 'Classic Games', 'Puzzles']
   }
 ]
 
