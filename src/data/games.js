@@ -136,6 +136,14 @@ export const games = [
     description: 'Test how fast you can react! Wait for the screen to turn green, then click as quickly as possible. Track your average and best reaction times.',
     thumbnail: 'thumbnail.png',
     categories: ['Challenge', 'Reflex Games', 'Skills']
+  },
+  {
+    slug: 'whack-a-mole',
+    title: 'Whack-a-Mole Game - Test Your Speed',
+    shortTitle: 'Whack-a-Mole',
+    description: 'Whack the moles as they pop up from their holes! A classic arcade game that tests your reflexes. Score as many points as you can in 30 seconds.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Reflex Games', 'Classic Games', 'Challenge']
   }
 ]
 

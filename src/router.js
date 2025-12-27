@@ -18,7 +18,8 @@ const gamePages = {
   'hangman': () => import('./pages/games/HangmanPage.vue'),
   'lights-out': () => import('./pages/games/LightsOutPage.vue'),
   'simon-says': () => import('./pages/games/SimonSaysPage.vue'),
-  'reaction-time': () => import('./pages/games/ReactionTimePage.vue')
+  'reaction-time': () => import('./pages/games/ReactionTimePage.vue'),
+  'whack-a-mole': () => import('./pages/games/WhackAMolePage.vue')
 }
 
 const routes = [

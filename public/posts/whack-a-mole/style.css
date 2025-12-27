@@ -1,0 +1,170 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#moleGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    background: #8B4513;
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background: #3d2314;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: inset 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.mole {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background: #8B7355;
+    border-radius: 50% 50% 45% 45%;
+    transition: bottom 0.1s ease-out;
+    cursor: pointer;
+}
+
+.mole::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    width: 12px;
+    height: 12px;
+    background: #2c2c2c;
+    border-radius: 50%;
+    box-shadow: 34px 0 0 #2c2c2c;
+}
+
+.mole::after {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 12px;
+    background: #5c4033;
+    border-radius: 50%;
+}
+
+.mole.active {
+    bottom: 15px;
+}
+
+.mole.whacked {
+    bottom: -60px;
+    background: #ff6b6b;
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.stats > div {
+    text-align: center;
+}
+
+.stats .label {
+    color: #666;
+    font-size: 0.85em;
+    margin-bottom: 3px;
+}
+
+.stats .value {
+    font-size: 1.4em;
+    color: #2c3e50;
+    font-weight: normal;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    background: #27ae60;
+    border: none;
+    color: white;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #219a52;
+}
+
+.message {
+    font-size: 1.3em;
+    color: #2c3e50;
+    margin: 15px 0;
+    display: none;
+}
+
+.instructions {
+    max-width: 400px;
+    text-align: center;
+    color: #666;
+    font-size: 0.95em;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 400px) {
+    #moleGrid {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .hole {
+        width: 80px;
+        height: 80px;
+    }
+
+    .mole {
+        width: 55px;
+        height: 55px;
+        bottom: -50px;
+    }
+
+    .mole.active {
+        bottom: 10px;
+    }
+
+    .mole.whacked {
+        bottom: -50px;
+    }
+
+    .mole::before {
+        top: 12px;
+        left: 8px;
+        width: 10px;
+        height: 10px;
+        box-shadow: 27px 0 0 #2c2c2c;
+    }
+
+    .mole::after {
+        top: 28px;
+        width: 14px;
+        height: 10px;
+    }
+}

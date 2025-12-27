@@ -31,7 +31,8 @@ export default defineConfig({
         '/posts/hangman/',
         '/posts/lights-out/',
         '/posts/simon-says/',
-        '/posts/reaction-time/'
+        '/posts/reaction-time/',
+        '/posts/whack-a-mole/'
       ]
     }
   }
