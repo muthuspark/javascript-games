@@ -96,6 +96,14 @@ export const games = [
     description: 'Test your typing speed and accuracy. Measure words per minute (WPM) and characters per minute (CPM) with 60-second challenges.',
     thumbnail: 'thumbnail.png',
     categories: ['Challenge', 'Educational', 'Skills']
+  },
+  {
+    slug: 'memory-match',
+    title: 'Memory Match Game - Card Matching Puzzle',
+    shortTitle: 'Memory Match',
+    description: 'Flip cards to find matching pairs. Train your memory with this classic concentration game. Multiple grid sizes from easy to challenging.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Memory Games', 'Classic Games']
   }
 ]
 

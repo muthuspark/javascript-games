@@ -26,7 +26,8 @@ export default defineConfig({
         '/posts/magicsquare/',
         '/posts/n-queens/',
         '/posts/knights-tour/',
-        '/posts/typing-speed/'
+        '/posts/typing-speed/',
+        '/posts/memory-match/'
       ]
     }
   }

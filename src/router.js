@@ -13,7 +13,8 @@ const gamePages = {
   'magicsquare': () => import('./pages/games/MagicSquarePage.vue'),
   'n-queens': () => import('./pages/games/NQueensPage.vue'),
   'knights-tour': () => import('./pages/games/KnightsTourPage.vue'),
-  'typing-speed': () => import('./pages/games/TypingSpeedPage.vue')
+  'typing-speed': () => import('./pages/games/TypingSpeedPage.vue'),
+  'memory-match': () => import('./pages/games/MemoryMatchPage.vue')
 }
 
 const routes = [
