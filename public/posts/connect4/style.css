@@ -275,10 +275,66 @@ select {
 
     .box-left {
         float: none;
+        padding: 0.5rem;
     }
 
     .box-right {
         display: block;
         float: none;
+    }
+
+    #game_board {
+        border-spacing: 6px;
+    }
+
+    #game_board td {
+        width: clamp(35px, 12vw, 50px);
+        height: clamp(35px, 12vw, 50px);
+    }
+
+    #coin {
+        width: clamp(36px, 12vw, 51px);
+        height: clamp(36px, 12vw, 51px);
+    }
+
+    #options {
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+
+    select {
+        width: 100%;
+        max-width: 200px;
+        min-height: 44px;
+        font-size: 14px;
+    }
+
+    .save {
+        width: 100%;
+        max-width: 200px;
+        min-height: 44px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #game_board {
+        border-spacing: 4px;
+    }
+
+    #game_board td {
+        width: 32px;
+        height: 32px;
+    }
+
+    #coin {
+        width: 33px;
+        height: 33px;
+    }
+
+    .box-left {
+        padding: 0.375rem;
     }
 }

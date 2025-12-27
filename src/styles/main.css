@@ -15,7 +15,7 @@
   --color-text-muted: #666666;
   --color-border: #cccccc;
   --color-border-light: #e0e0e0;
-  --font-family-base: "Sniglet", sans-serif;
+  --font-family-base: "Source Sans 3", sans-serif;
   --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --border-width: 1px;
   --border-style: solid;
@@ -313,6 +313,14 @@ textarea:focus {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .card-body {
+    padding: 0.875rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -320,9 +328,83 @@ textarea:focus {
     font-size: 14px;
   }
 
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .controls {
+    gap: 0.375rem;
+  }
+
   .controls button {
     flex: 1 1 auto;
-    min-width: 80px;
+    min-width: 70px;
+    padding: 0.625rem 0.75rem;
+    min-height: 44px;
+    font-size: 0.8rem;
+  }
+
+  button,
+  .btn {
+    min-height: 44px;
+    padding: 0.625rem 1rem;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.625rem;
+    min-height: 44px;
+  }
+
+  .status {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  #toast {
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    min-width: auto;
+    bottom: 1rem;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.1rem; }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .controls button {
+    min-width: 60px;
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Touch Device Optimizations --- */
+@media (hover: none) and (pointer: coarse) {
+  button:hover,
+  .btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-text);
+  }
+
+  button:active,
+  .btn:active {
+    background-color: var(--color-black);
+    color: var(--color-white);
   }
 }
 

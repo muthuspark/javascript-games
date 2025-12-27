@@ -81,3 +81,46 @@ button:hover {
 .n6 { color: darkcyan; }
 .n7 { color: black; }
 .n8 { color: gray; }
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .controls {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .difficulty-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        min-height: 44px;
+        padding: 10px 14px;
+    }
+
+    .cell {
+        width: clamp(24px, 7vw, 30px);
+        height: clamp(24px, 7vw, 30px);
+        font-size: clamp(10px, 3vw, 14px);
+    }
+
+    .status {
+        margin: 15px 10px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 360px) {
+    .cell {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

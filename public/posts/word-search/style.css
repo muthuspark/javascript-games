@@ -72,3 +72,48 @@
 .active-btn {
   background: #4CAF50 !important;
 }
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .grid {
+        padding: 5px;
+    }
+
+    .cell {
+        width: clamp(25px, 6vw, 40px);
+        height: clamp(25px, 6vw, 40px);
+        font-size: clamp(10px, 3vw, 16px);
+    }
+
+    .word-item {
+        margin: 3px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .game-container button {
+        min-height: 40px;
+        padding: 8px 12px;
+        margin: 3px;
+        font-size: 12px;
+    }
+
+    .optiongrid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cell {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+    }
+
+    .word-item {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+}

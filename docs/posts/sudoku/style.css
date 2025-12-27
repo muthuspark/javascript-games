@@ -138,3 +138,57 @@
     margin-bottom: 20px;
     font-variant-numeric: tabular-nums;
 }
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: repeat(9, clamp(32px, 9vw, 50px));
+    }
+
+    .cell {
+        width: clamp(32px, 9vw, 50px);
+        height: clamp(32px, 9vw, 50px);
+        font-size: clamp(14px, 4vw, 20px);
+    }
+
+    .controls {
+        gap: 5px;
+    }
+
+    .difficulty-controls {
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sudoku button {
+        padding: 8px 12px;
+        font-size: 14px;
+        min-height: 44px;
+    }
+
+    .timer {
+        font-size: 20px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .grid {
+        grid-template-columns: repeat(9, 30px);
+    }
+
+    .cell {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .sudoku button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

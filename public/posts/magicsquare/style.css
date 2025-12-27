@@ -117,3 +117,43 @@ button:hover {
     align-items: center;
     justify-content: center;
 }
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .controls {
+        gap: 10px;
+        margin: 15px 10px;
+    }
+
+    button {
+        min-height: 44px;
+        padding: 10px 14px;
+    }
+
+    .info-panel {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .cell {
+        width: clamp(45px, 18vw, 60px);
+        height: clamp(45px, 18vw, 60px);
+        font-size: clamp(1em, 4vw, 1.5em);
+    }
+
+    .cell input {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 360px) {
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

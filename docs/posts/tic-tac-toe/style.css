@@ -54,3 +54,40 @@ button:hover {
     font-size: 20px;
     font-weight: normal;
 }
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .controls {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    select, button {
+        min-height: 44px;
+        font-size: 14px;
+    }
+
+    .cell {
+        width: clamp(50px, 20vw, 60px);
+        height: clamp(50px, 20vw, 60px);
+        font-size: clamp(18px, 6vw, 24px);
+    }
+
+    .status {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .cell {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    select, button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
