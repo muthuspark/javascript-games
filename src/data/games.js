@@ -152,6 +152,14 @@ export const games = [
     description: 'Crack the secret color code in 10 guesses or less. Use logic and deduction from feedback pegs to figure out the hidden pattern.',
     thumbnail: 'thumbnail.png',
     categories: ['Puzzles', 'Logic Games', 'Classic Games']
+  },
+  {
+    slug: 'bulls-and-cows',
+    title: 'Bulls and Cows - Number Guessing Game',
+    shortTitle: 'Bulls and Cows',
+    description: 'Guess the secret number using logic and deduction. Bulls mean correct digit in correct position, cows mean correct digit in wrong position.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Logic Games', 'Number Games']
   }
 ]
 

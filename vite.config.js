@@ -33,7 +33,8 @@ export default defineConfig({
         '/posts/simon-says/',
         '/posts/reaction-time/',
         '/posts/whack-a-mole/',
-        '/posts/mastermind/'
+        '/posts/mastermind/',
+        '/posts/bulls-and-cows/'
       ]
     }
   }
