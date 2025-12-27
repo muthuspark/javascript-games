@@ -126,8 +126,8 @@ function submitGuess() {
         gamesWon++;
         gamesPlayed++;
         updateStats();
+        showMessage('You cracked the code in ' + guesses.length + ' guesses!', 'success');
         revealCode();
-        showWinMessage('You cracked the code in ' + guesses.length + ' guesses!');
         return;
     }
 
@@ -135,8 +135,8 @@ function submitGuess() {
         gameOver = true;
         gamesPlayed++;
         updateStats();
+        showMessage('Game over! The code was hidden above.', 'error');
         revealCode();
-        showLostMessage('The secret code has been revealed above.');
         return;
     }
 

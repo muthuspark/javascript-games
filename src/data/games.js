@@ -160,6 +160,14 @@ export const games = [
     description: 'Guess the secret number using logic and deduction. Bulls mean correct digit in correct position, cows mean correct digit in wrong position.',
     thumbnail: 'thumbnail.png',
     categories: ['Puzzles', 'Logic Games', 'Number Games']
+  },
+  {
+    slug: 'nim',
+    title: 'Nim Game - Strategic Object Removal',
+    shortTitle: 'Nim',
+    description: 'Play Nim against AI. Take objects from piles strategically - whoever takes the last object loses. A classic mathematical strategy game.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Strategy Games', 'Logic Games', 'Classic Games']
   }
 ]
 

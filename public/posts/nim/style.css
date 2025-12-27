@@ -1,0 +1,217 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.difficulty-select {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 2px solid #3498db;
+    background: white;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #2ecc71;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #27ae60;
+}
+
+button:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.game-status {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message {
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    display: none;
+    text-align: center;
+}
+
+.message.error {
+    background: #e74c3c;
+    color: white;
+}
+
+.message.success {
+    background: #2ecc71;
+    color: white;
+}
+
+.piles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.pile {
+    background: #ecf0f1;
+    border: 3px solid #bdc3c7;
+    padding: 15px;
+    min-width: 100px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.pile:hover:not(.empty) {
+    border-color: #3498db;
+    background: #e8f4fc;
+}
+
+.pile.selected {
+    border-color: #2ecc71;
+    background: #d5f5e3;
+}
+
+.pile.empty {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pile.ai-selecting {
+    border-color: #e74c3c;
+    background: #fadbd8;
+}
+
+.pile-label {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.pile-objects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    min-height: 40px;
+    margin-bottom: 10px;
+}
+
+.object {
+    width: 20px;
+    height: 20px;
+    background: #3498db;
+    border: 2px solid #2980b9;
+}
+
+.pile-count {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.take-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.take-section h3 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+}
+
+#takeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.take-btn {
+    background: #3498db;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+.take-btn:hover {
+    background: #2980b9;
+}
+
+.hint {
+    color: #7f8c8d;
+    margin: 0;
+    font-style: italic;
+}
+
+.rules {
+    background: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.rules h4 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.rules ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.rules li {
+    margin: 5px 0;
+    color: #555;
+    line-height: 1.4;
+}
+
+@media (max-width: 500px) {
+    .piles-container {
+        gap: 15px;
+    }
+
+    .pile {
+        min-width: 80px;
+        padding: 10px;
+    }
+
+    .object {
+        width: 16px;
+        height: 16px;
+    }
+
+    .take-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
