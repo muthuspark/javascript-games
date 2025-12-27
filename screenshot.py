@@ -17,7 +17,7 @@ def screenshot_element(selector: str, output_dir: str):
         browser.close()
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 3:
         print("Usage: python screenshot.py <url> <css_selector> <output_dir>")
         sys.exit(1)
     
