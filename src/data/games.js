@@ -144,6 +144,14 @@ export const games = [
     description: 'Whack the moles as they pop up from their holes! A classic arcade game that tests your reflexes. Score as many points as you can in 30 seconds.',
     thumbnail: 'thumbnail.png',
     categories: ['Reflex Games', 'Classic Games', 'Challenge']
+  },
+  {
+    slug: 'mastermind',
+    title: 'Mastermind Game - Code Breaking Puzzle',
+    shortTitle: 'Mastermind',
+    description: 'Crack the secret color code in 10 guesses or less. Use logic and deduction from feedback pegs to figure out the hidden pattern.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Logic Games', 'Classic Games']
   }
 ]
 

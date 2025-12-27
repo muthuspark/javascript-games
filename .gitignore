@@ -24,3 +24,4 @@ create_post.py
 README_files/
 **/*.quarto_ipynb
 .venv
+prompts.txt

@@ -19,7 +19,8 @@ const gamePages = {
   'lights-out': () => import('./pages/games/LightsOutPage.vue'),
   'simon-says': () => import('./pages/games/SimonSaysPage.vue'),
   'reaction-time': () => import('./pages/games/ReactionTimePage.vue'),
-  'whack-a-mole': () => import('./pages/games/WhackAMolePage.vue')
+  'whack-a-mole': () => import('./pages/games/WhackAMolePage.vue'),
+  'mastermind': () => import('./pages/games/MastermindPage.vue')
 }
 
 const routes = [
