@@ -139,9 +139,16 @@ function checkSolution() {
         }
     }
 
-    document.getElementById('status').textContent = isValid ?
-        'Congratulations! You solved the puzzle!' :
-        'Some queens are threatening each other. Try again!';
+    if (isValid) {
+        GamePopup.show({
+            title: 'Congratulations!',
+            message: 'You solved the N-Queens puzzle!',
+            showConfetti: true
+        });
+    } else {
+        document.getElementById('status').textContent =
+            'Some queens are threatening each other. Try again!';
+    }
 }
 
 // Provide a hint by placing a queen in a valid position

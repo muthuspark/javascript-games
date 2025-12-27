@@ -72,7 +72,11 @@ function handleTileClick(row, col) {
                 bestScores[currentLevel] = moveCount;
                 updateBestScore();
             }
-            showWinMessage('You solved this level! Try beating your best score.');
+            GamePopup.show({
+                title: 'Congratulations!',
+                message: 'You solved this level! Try beating your best score.',
+                showConfetti: true
+            });
         }
     }
 }
@@ -148,7 +152,7 @@ function shuffleBoard() {
 
     moveCount = 0;
     document.getElementById('moveCount').textContent = moveCount;
-    hideWinMessage();
+    GamePopup.hide();
 }
 
 function changeLevel() {

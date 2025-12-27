@@ -83,7 +83,11 @@
 
         if (result.bulls === digitCount) {
             gameOver = true;
-            showWinMessage(`You guessed ${secretNumber} in ${guesses.length} tries!`);
+            GamePopup.show({
+                title: 'Congratulations!',
+                message: `You guessed ${secretNumber} in ${guesses.length} tries!`,
+                showConfetti: true
+            });
             document.getElementById('guessInput').disabled = true;
             document.getElementById('guessBtn').disabled = true;
         } else if (guesses.length >= maxGuesses) {
@@ -178,7 +182,7 @@
         input.addEventListener('keypress', handleKeyPress);
 
         updateGuessCount();
-        hideWinMessage();
+        GamePopup.hide();
 
         input.focus();
     }

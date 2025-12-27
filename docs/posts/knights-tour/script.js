@@ -58,8 +58,11 @@ function handleMove(row, col) {
 }
 
 function handleWin() {
-    document.getElementById('status').textContent =
-        `Congratulations! You completed the tour!`;
+    GamePopup.show({
+        title: 'Congratulations!',
+        message: 'You completed the Knight\'s Tour!',
+        showConfetti: true
+    });
 }
 
 function handleLoss() {

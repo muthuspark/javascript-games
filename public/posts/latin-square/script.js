@@ -122,7 +122,11 @@ function placeNumber(num) {
     renderGrid();
 
     if (checkWin()) {
-        document.getElementById('status').textContent = 'Congratulations! You solved the puzzle!';
+        GamePopup.show({
+            title: 'Congratulations!',
+            message: 'You solved the Latin Square puzzle!',
+            showConfetti: true
+        });
     }
 }
 

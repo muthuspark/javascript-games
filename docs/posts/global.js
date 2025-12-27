@@ -1,78 +1,72 @@
-// Alert message system
-const showWinMessage = (message) => {
-    if (!message) {
-        throw new Error('message should not be null or undefined');
-    }
-    window.confettiManager.addConfetti();
-    const winMessageHTML = document.createElement('div');
-    winMessageHTML.id = 'winMessage';
-    winMessageHTML.className = 'win-message';
-    winMessageHTML.innerHTML = `
-        <h2>Congratulations!</h2>
-        <p>${message}</p>
-        <button onclick="hideWinMessage()">Play Again</button>
-    `;
+// Unified Game Popup System
+const GamePopup = {
+    overlay: null,
+    popup: null,
 
-    const previousWinMessage = document.getElementById('winMessage');
-    if (previousWinMessage) {
-        previousWinMessage.remove();
-    }
+    init() {
+        if (this.overlay) return;
 
-    document.body.appendChild(winMessageHTML);
-    winMessageHTML.style.display = 'block';
+        // Create overlay
+        this.overlay = document.createElement('div');
+        this.overlay.className = 'game-popup-overlay';
+        this.overlay.id = 'gamePopupOverlay';
+        this.overlay.addEventListener('click', (e) => {
+            if (e.target === this.overlay) {
+                this.hide();
+            }
+        });
+
+        // Create popup container
+        this.popup = document.createElement('div');
+        this.popup.className = 'game-popup';
+        this.popup.id = 'gamePopup';
+
+        document.body.appendChild(this.overlay);
+        document.body.appendChild(this.popup);
+    },
+
+    show({ title, message = '', buttons = [{ text: 'Play Again', onClick: null }], showConfetti = false }) {
+        this.init();
+
+        if (showConfetti) {
+            window.confettiManager.addConfetti();
+        }
+
+        const buttonsHTML = buttons.map((btn, i) =>
+            `<button data-popup-btn="${i}">${btn.text}</button>`
+        ).join('');
+
+        this.popup.innerHTML = `
+            <h2>${title}</h2>
+            ${message ? `<p>${message}</p>` : ''}
+            <div class="game-popup-actions">${buttonsHTML}</div>
+        `;
+
+        // Attach button handlers
+        buttons.forEach((btn, i) => {
+            const btnEl = this.popup.querySelector(`[data-popup-btn="${i}"]`);
+            if (btnEl) {
+                btnEl.addEventListener('click', () => {
+                    this.hide();
+                    if (btn.onClick) btn.onClick();
+                });
+            }
+        });
+
+        // Show with animation
+        requestAnimationFrame(() => {
+            this.overlay.classList.add('visible');
+            this.popup.classList.add('visible');
+        });
+    },
+
+    hide() {
+        if (this.overlay) this.overlay.classList.remove('visible');
+        if (this.popup) this.popup.classList.remove('visible');
+    }
 };
 
-const showLostMessage = (message) => {
-    if (!message) {
-        throw new Error('message should not be null or undefined');
-    }
-
-    const winMessageHTML = document.createElement('div');
-    winMessageHTML.id = 'winMessage';
-    winMessageHTML.className = 'win-message';
-    winMessageHTML.innerHTML = `
-        <h2>Better luck next time!</h2>
-        <p>${message}</p>
-        <button onclick="hideWinMessage()">Play Again</button>
-    `;
-
-    const previousWinMessage = document.getElementById('winMessage');
-    if (previousWinMessage) {
-        previousWinMessage.remove();
-    }
-
-    document.body.appendChild(winMessageHTML);
-    winMessageHTML.style.display = 'block';
-};
-
-const showTieMessage = () => {
-    if (!message) {
-        throw new Error('message should not be null or undefined');
-    }
-
-    const winMessageHTML = document.createElement('div');
-    winMessageHTML.id = 'winMessage';
-    winMessageHTML.className = 'win-message';
-    winMessageHTML.innerHTML = `
-        <h2>Tie!</h2>
-        <button onclick="hideWinMessage()">Play Again</button>
-    `;
-
-    const previousWinMessage = document.getElementById('winMessage');
-    if (previousWinMessage) {
-        previousWinMessage.remove();
-    }
-
-    document.body.appendChild(winMessageHTML);
-    winMessageHTML.style.display = 'block';
-};
-
-const hideWinMessage = () => {
-    const winMessage = document.getElementById('winMessage');
-    if (winMessage) {
-        winMessage.style.display = 'none';
-    }
-}
+window.GamePopup = GamePopup;
 
 
 

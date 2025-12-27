@@ -34,7 +34,7 @@
         gameOver = false;
         isAiTurn = false;
 
-        hideWinMessage();
+        GamePopup.hide();
         render();
         updateStatus();
         updateScores();
@@ -332,11 +332,21 @@
 
     function announceWinner() {
         if (scores[1] > scores[2]) {
-            showWinMessage(`You win ${scores[1]} to ${scores[2]}!`);
+            GamePopup.show({
+                title: 'Congratulations!',
+                message: `You win ${scores[1]} to ${scores[2]}!`,
+                showConfetti: true
+            });
         } else if (scores[2] > scores[1]) {
-            showLostMessage(`AI wins ${scores[2]} to ${scores[1]}.`);
+            GamePopup.show({
+                title: 'Better luck next time!',
+                message: `AI wins ${scores[2]} to ${scores[1]}.`
+            });
         } else {
-            showWinMessage(`It's a tie! ${scores[1]} - ${scores[2]}`);
+            GamePopup.show({
+                title: 'Tie!',
+                message: `It's a tie! ${scores[1]} - ${scores[2]}`
+            });
         }
     }
 

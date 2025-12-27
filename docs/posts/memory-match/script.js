@@ -167,7 +167,11 @@ function endGame() {
         updateBestScore();
     }
 
-    showWinMessage(`Completed in ${moves} moves and ${formatTime(seconds)}!`);
+    GamePopup.show({
+        title: 'Congratulations!',
+        message: `Completed in ${moves} moves and ${formatTime(seconds)}!`,
+        showConfetti: true
+    });
 }
 
 function formatTime(totalSeconds) {
@@ -177,17 +181,6 @@ function formatTime(totalSeconds) {
         return `${mins}m ${secs}s`;
     }
     return `${secs}s`;
-}
-
-function showWinMessage(message) {
-    const winnerElement = document.getElementById('winner');
-    winnerElement.textContent = message;
-    winnerElement.style.display = 'block';
-}
-
-function hideWinMessage() {
-    const winnerElement = document.getElementById('winner');
-    winnerElement.style.display = 'none';
 }
 
 function changeLevel() {
@@ -207,7 +200,7 @@ function newGame() {
     updateMoves();
     updateTimer();
     updateBestScore();
-    hideWinMessage();
+    GamePopup.hide();
     createBoard();
 }
 

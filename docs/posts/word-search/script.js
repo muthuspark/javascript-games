@@ -377,7 +377,11 @@ class WordSearchGame {
 
         if (this.foundWords.size === this.words.length) {
             setTimeout(() => {
-                showWinMessage('Congratulations! You found all words!');
+                GamePopup.show({
+                    title: 'Congratulations!',
+                    message: 'You found all words!',
+                    showConfetti: true
+                });
             }, 100);
         }
     }

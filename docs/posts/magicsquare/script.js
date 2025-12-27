@@ -160,7 +160,11 @@ function handleInput(event) {
         board[row][col] = value;
         checkBoard();
         if (isBoardComplete() && isBoardCorrect()) {
-            updateStatus('Congratulations! You solved the magic square!');
+            GamePopup.show({
+                title: 'Congratulations!',
+                message: 'You solved the magic square!',
+                showConfetti: true
+            });
         }
     }
 }

@@ -19,7 +19,7 @@
         gameOver = false;
         isAiTurn = false;
 
-        hideWinMessage();
+        GamePopup.hide();
         render();
         updateStatus();
     }
@@ -42,9 +42,16 @@
             gameOver = true;
             render();
             if (currentPlayer === 1) {
-                showWinMessage('You connected top to bottom! You win!');
+                GamePopup.show({
+                    title: 'Congratulations!',
+                    message: 'You connected top to bottom! You win!',
+                    showConfetti: true
+                });
             } else {
-                showLostMessage('AI connected left to right. AI wins!');
+                GamePopup.show({
+                    title: 'Better luck next time!',
+                    message: 'AI connected left to right. AI wins!'
+                });
             }
             return;
         }
@@ -73,7 +80,10 @@
             if (checkWin(2)) {
                 gameOver = true;
                 render();
-                showLostMessage('AI connected left to right. AI wins!');
+                GamePopup.show({
+                    title: 'Better luck next time!',
+                    message: 'AI connected left to right. AI wins!'
+                });
                 isAiTurn = false;
                 return;
             }

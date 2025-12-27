@@ -374,20 +374,30 @@ Game.prototype.updateStatus = function () {
     if (that.board.score() == -that.score) {
         that.status = 1;
         that.markWin();
-        showWinMessage("You have won!");
+        GamePopup.show({
+            title: 'Congratulations!',
+            message: 'You have won!',
+            showConfetti: true
+        });
     }
 
     // Computer won
     if (that.board.score() == that.score) {
         that.status = 2;
         that.markWin();
-        showLostMessage("You have lost!");
+        GamePopup.show({
+            title: 'Better luck next time!',
+            message: 'You have lost!'
+        });
     }
 
     // Tie
     if (that.board.isFull()) {
         that.status = 3;
-        showTieMessage();
+        GamePopup.show({
+            title: 'Tie!',
+            message: 'The game ended in a draw.'
+        });
     }
 }
 

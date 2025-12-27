@@ -227,11 +227,14 @@ function checkSolution() {
         }
     }
 
-    const messageElement = document.getElementById('message');
     if (complete && correct) {
         clearInterval(timerInterval);
         const timeStr = document.getElementById('timer').textContent;
-        messageElement.textContent = `Congratulations! You solved the ${currentDifficulty} puzzle in ${timeStr}!`;
+        GamePopup.show({
+            title: 'Congratulations!',
+            message: `You solved the ${currentDifficulty} puzzle in ${timeStr}!`,
+            showConfetti: true
+        });
     }
 }
 

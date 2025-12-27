@@ -10,7 +10,7 @@
         currentPlayer = 'human';
         gameOver = false;
         selectedPile = null;
-        hideWinMessage();
+        GamePopup.hide();
         render();
         updateStatus();
     }
@@ -81,9 +81,16 @@
         if (piles.every(p => p === 0)) {
             gameOver = true;
             if (currentPlayer === 'human') {
-                showLostMessage('You took the last object. The AI wins!');
+                GamePopup.show({
+                    title: 'Better luck next time!',
+                    message: 'You took the last object. The AI wins!'
+                });
             } else {
-                showWinMessage('The AI took the last object. You win!');
+                GamePopup.show({
+                    title: 'Congratulations!',
+                    message: 'The AI took the last object. You win!',
+                    showConfetti: true
+                });
             }
             return true;
         }

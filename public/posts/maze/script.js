@@ -96,7 +96,11 @@ function movePlayer(dx, dy) {
 
         // Check for win
         if (newX === endPos.x && newY === endPos.y) {
-            showWinMessage('You conquered the maze!');
+            GamePopup.show({
+                title: 'Congratulations!',
+                message: 'You conquered the maze!',
+                showConfetti: true
+            });
         }
     }
 }
@@ -137,7 +141,7 @@ function generateNewMaze() {
 function resetPlayer() {
     playerPos = { x: 1, y: 1 };
     drawMaze();
-    hideWinMessage();
+    GamePopup.hide();
 }
 
 // Initialize game
