@@ -1,0 +1,223 @@
+#game_main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-controls label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.game-controls select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.game-controls select:hover {
+    border-color: #3498db;
+}
+
+.new-game-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.new-game-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+#gameStatus {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.game-info {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+.player-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.player-indicator.blue {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.player-indicator.red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.player-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    overflow-x: auto;
+    width: 100%;
+}
+
+#hexBoard {
+    position: relative;
+    margin: 20px auto;
+}
+
+.hex-cell {
+    position: absolute;
+    background: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hex-cell.available {
+    cursor: pointer;
+}
+
+.hex-cell.available:hover {
+    background: #d5dbdb;
+    transform: scale(1.08);
+    z-index: 10;
+}
+
+.hex-cell.player-blue {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-color: #2471a3;
+}
+
+.hex-cell.player-red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-color: #a93226;
+}
+
+.hex-edge {
+    position: absolute;
+    pointer-events: none;
+}
+
+.hex-edge.top-edge,
+.hex-edge.bottom-edge {
+    height: 6px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 3px;
+}
+
+.hex-edge.left-edge,
+.hex-edge.right-edge {
+    width: 6px;
+    background: linear-gradient(180deg, #e74c3c, #c0392b);
+    border-radius: 3px;
+}
+
+.instructions-box {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.instructions-box h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.instructions-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.instructions-box li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.goal-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.goal-indicator .color-box {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.goal-indicator .color-box.blue {
+    background: #3498db;
+}
+
+.goal-indicator .color-box.red {
+    background: #e74c3c;
+}
+
+@media (max-width: 600px) {
+    .game-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #gameStatus {
+        font-size: 16px;
+    }
+
+    .instructions-box {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+}

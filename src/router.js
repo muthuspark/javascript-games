@@ -23,7 +23,8 @@ const gamePages = {
   'mastermind': () => import('./pages/games/MastermindPage.vue'),
   'bulls-and-cows': () => import('./pages/games/BullsAndCowsPage.vue'),
   'nim': () => import('./pages/games/NimPage.vue'),
-  'dots-and-boxes': () => import('./pages/games/DotsAndBoxesPage.vue')
+  'dots-and-boxes': () => import('./pages/games/DotsAndBoxesPage.vue'),
+  'hex': () => import('./pages/games/HexPage.vue')
 }
 
 const routes = [

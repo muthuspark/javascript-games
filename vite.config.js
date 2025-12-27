@@ -36,7 +36,8 @@ export default defineConfig({
         '/posts/mastermind/',
         '/posts/bulls-and-cows/',
         '/posts/nim/',
-        '/posts/dots-and-boxes/'
+        '/posts/dots-and-boxes/',
+        '/posts/hex/'
       ]
     }
   }

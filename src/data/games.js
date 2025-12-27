@@ -176,6 +176,14 @@ export const games = [
     description: 'Play Dots and Boxes against AI. Draw lines between dots to complete boxes and score points. Classic pencil-and-paper strategy game.',
     thumbnail: 'thumbnail.png',
     categories: ['Strategy Games', 'Classic Games', 'Puzzles']
+  },
+  {
+    slug: 'hex',
+    title: 'Hex Game - Connection Strategy Puzzle',
+    shortTitle: 'Hex',
+    description: 'Play Hex against AI. Connect your sides of the board before your opponent. A classic connection strategy game with simple rules but deep tactics.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Strategy Games', 'Logic Games', 'Classic Games']
   }
 ]
 
