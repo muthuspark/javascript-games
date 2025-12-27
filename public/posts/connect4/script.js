@@ -1,9 +1,10 @@
+(function() {
 /**
  * Creates an instance of Board.
- * 
+ *
  * @constructor
  * @this {Board}
- * @param {Game} game The main-game object. 
+ * @param {Game} game The main-game object.
  * @param {array} field The field containing our situation.
  * @param {number} player The current player.
  */
@@ -31,7 +32,7 @@ Board.prototype.isFinished = function (depth, score) {
  * Place in current board.
  *
  * @param {number} column
- * @return {boolean} 
+ * @return {boolean}
  */
 Board.prototype.place = function (column) {
     // Check if column valid
@@ -111,25 +112,9 @@ Board.prototype.score = function () {
     var diagonal_points1 = 0;
     var diagonal_points2 = 0;
 
-    // Board-size: 7x6 (height x width)
-    // Array indices begin with 0
-    // => e.g. height: 0, 1, 2, 3, 4, 5
-
     // Vertical points
-    // Check each column for vertical score
-    // 
-    // Possible situations
-    //  0  1  2  3  4  5  6
-    // [x][ ][ ][ ][ ][ ][ ] 0
-    // [x][x][ ][ ][ ][ ][ ] 1
-    // [x][x][x][ ][ ][ ][ ] 2
-    // [x][x][x][ ][ ][ ][ ] 3
-    // [ ][x][x][ ][ ][ ][ ] 4
-    // [ ][ ][x][ ][ ][ ][ ] 5
     for (var row = 0; row < this.game.rows - 3; row++) {
-        // FÃ¼r jede Column Ã¼berprÃ¼fen
         for (var column = 0; column < this.game.columns; column++) {
-            // Die Column bewerten und zu den Punkten hinzufÃ¼gen
             var score = this.scorePosition(row, column, 1, 0);
             if (score == this.game.score) return this.game.score;
             if (score == -this.game.score) return -this.game.score;
@@ -138,16 +123,6 @@ Board.prototype.score = function () {
     }
 
     // Horizontal points
-    // Check each row's score
-    // 
-    // Possible situations
-    //  0  1  2  3  4  5  6
-    // [x][x][x][x][ ][ ][ ] 0
-    // [ ][x][x][x][x][ ][ ] 1
-    // [ ][ ][x][x][x][x][ ] 2
-    // [ ][ ][ ][x][x][x][x] 3
-    // [ ][ ][ ][ ][ ][ ][ ] 4
-    // [ ][ ][ ][ ][ ][ ][ ] 5
     for (var row = 0; row < this.game.rows; row++) {
         for (var column = 0; column < this.game.columns - 3; column++) {
             var score = this.scorePosition(row, column, 0, 1);
@@ -157,18 +132,7 @@ Board.prototype.score = function () {
         }
     }
 
-
-
     // Diagonal points 1 (left-bottom)
-    //
-    // Possible situation
-    //  0  1  2  3  4  5  6
-    // [x][ ][ ][ ][ ][ ][ ] 0
-    // [ ][x][ ][ ][ ][ ][ ] 1
-    // [ ][ ][x][ ][ ][ ][ ] 2
-    // [ ][ ][ ][x][ ][ ][ ] 3
-    // [ ][ ][ ][ ][ ][ ][ ] 4
-    // [ ][ ][ ][ ][ ][ ][ ] 5
     for (var row = 0; row < this.game.rows - 3; row++) {
         for (var column = 0; column < this.game.columns - 3; column++) {
             var score = this.scorePosition(row, column, 1, 1);
@@ -179,15 +143,6 @@ Board.prototype.score = function () {
     }
 
     // Diagonal points 2 (right-bottom)
-    //
-    // Possible situation
-    //  0  1  2  3  4  5  6
-    // [ ][ ][ ][x][ ][ ][ ] 0
-    // [ ][ ][x][ ][ ][ ][ ] 1
-    // [ ][x][ ][ ][ ][ ][ ] 2
-    // [x][ ][ ][ ][ ][ ][ ] 3
-    // [ ][ ][ ][ ][ ][ ][ ] 4
-    // [ ][ ][ ][ ][ ][ ][ ] 5
     for (var row = 3; row < this.game.rows; row++) {
         for (var column = 0; column <= this.game.columns - 4; column++) {
             var score = this.scorePosition(row, column, -1, +1);
@@ -230,7 +185,7 @@ Board.prototype.copy = function () {
 }
 
 /**
- * Minimax Implementation 
+ * Minimax Implementation
  * @plain javascript version
  */
 function Game() {
@@ -243,12 +198,13 @@ function Game() {
     this.winning_array = []; // Winning (chips) array
     this.iterations = 0; // Iteration count
 
-    that = this;
+    var that = this;
 
     that.init();
 }
 
 Game.prototype.init = function () {
+    var that = this;
     // Generate 'real' board
     // Create 2-dimensional array
     var game_board = new Array(that.rows);
@@ -280,9 +236,9 @@ Game.prototype.init = function () {
 
     for (var i = 0; i < td.length; i++) {
         if (td[i].addEventListener) {
-            td[i].addEventListener('click', that.act, false);
+            td[i].addEventListener('click', that.act.bind(that), false);
         } else if (td[i].attachEvent) {
-            td[i].attachEvent('click', that.act)
+            td[i].attachEvent('click', that.act.bind(that))
         }
     }
 }
@@ -291,6 +247,7 @@ Game.prototype.init = function () {
  * On-click event
  */
 Game.prototype.act = function (e) {
+    var that = this;
     var element = e.target || window.event.srcElement;
 
     // Human round
@@ -301,6 +258,7 @@ Game.prototype.act = function (e) {
 }
 
 Game.prototype.place = function (column) {
+    var that = this;
     // If not finished
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         for (var y = that.rows - 1; y >= 0; y--) {
@@ -324,6 +282,7 @@ Game.prototype.place = function (column) {
 }
 
 Game.prototype.generateComputerDecision = function () {
+    var that = this;
     if (that.board.score() != that.score && that.board.score() != -that.score && !that.board.isFull()) {
         that.iterations = 0; // Reset iteration count
         // AI is thinking
@@ -341,6 +300,7 @@ Game.prototype.generateComputerDecision = function () {
  * Minimax principle
  */
 Game.prototype.maximizePlay = function (board, depth) {
+    var that = this;
     // Call score of our board
     var score = board.score();
 
@@ -372,6 +332,7 @@ Game.prototype.maximizePlay = function (board, depth) {
 }
 
 Game.prototype.minimizePlay = function (board, depth) {
+    var that = this;
     var score = board.score();
 
     if (board.isFinished(depth, score)) return [null, score];
@@ -408,6 +369,7 @@ Game.prototype.switchRound = function (round) {
 }
 
 Game.prototype.updateStatus = function () {
+    var that = this;
     // Human won
     if (that.board.score() == -that.score) {
         that.status = 1;
@@ -430,6 +392,7 @@ Game.prototype.updateStatus = function () {
 }
 
 Game.prototype.markWin = function () {
+    var that = this;
     document.getElementById('game_board').className = "finished";
     for (var i = 0; i < that.winning_array.length; i++) {
         var name = document.getElementById('game_board').rows[that.winning_array[i][0]].cells[that.winning_array[i][1]].className;
@@ -438,6 +401,7 @@ Game.prototype.markWin = function () {
 }
 
 Game.prototype.restartGame = function () {
+    var that = this;
     // Dropdown value
     var difficulty = document.getElementById('difficulty');
     var depth = difficulty.options[difficulty.selectedIndex].value;
@@ -456,6 +420,8 @@ function Start() {
     window.Game = new Game();
 }
 
-// window.onload = function() {
-//     Start()
-// };
+// Expose functions to window for onclick handlers
+window.Start = Start;
+window.Board = Board;
+window.Game = Game;
+})();

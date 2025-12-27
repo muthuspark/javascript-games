@@ -14,19 +14,6 @@
 
     <section class="game-section" aria-label="Game Area">
       <div id="connect4">
-        <div class="instructions">
-          <h2>How to Play</h2>
-          <ol>
-            <li>The game is played between two players: <span class="highlight">Player 1</span> and <span class="highlight">Player 2</span>.</li>
-            <li>Each player takes turns choosing one of the 7 columns and drops their disc into it. <span class="highlight">Player 1</span> uses <span class="highlight">red discs</span>, and <span class="highlight">Player 2</span> uses <span class="highlight">yellow discs</span>.</li>
-            <li>The discs fall straight down to the next available space in the column.</li>
-            <li>The goal is to form a line of four discs of your own color. This line can be horizontal, vertical, or diagonal.</li>
-            <li>If all the spaces on the grid are filled and neither player has connected four discs, the game ends in a draw.</li>
-          </ol>
-          <h2>Winning the Game</h2>
-          <p>A player wins by forming a continuous line of four of their discs either horizontally, vertically, or diagonally. The first player to do so is declared the winner!</p>
-        </div>
-
         <div class="box-left">
           <table id="game_board"></table>
         </div>
@@ -67,14 +54,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'connect4')
+const game = {
+  slug: 'connect4',
+  title: 'Connect 4 Game Online - Free to Play',
+  shortTitle: 'Connect 4',
+  description: 'Play Connect 4 online against AI. Drop colored discs into a 7x6 grid and be first to connect four in a row. Multiple difficulty levels available.',
+  metaDescription: 'Play Connect 4 online free against computer AI. 8 difficulty levels from beginner to expert. Classic strategy game - connect four discs to win.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Strategy Games', 'Classic Games'],
+  keywords: ['connect 4', 'connect four', 'four in a row', 'connect 4 online', 'strategy game'],
+  initCode: 'Start();',
+  faqs: [
+    {
+      question: 'How do you play Connect 4?',
+      answer: 'Take turns dropping colored discs into columns. The first player to connect four discs horizontally, vertically, or diagonally wins.'
+    },
+    {
+      question: 'What is the best strategy for Connect 4?',
+      answer: 'Control the center column, build multiple threats at once, and block your opponent while setting up your own winning combinations.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -82,11 +88,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

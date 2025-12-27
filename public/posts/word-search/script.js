@@ -1,3 +1,4 @@
+(function() {
 const wordDatabase = {
     programming: [
         'JAVASCRIPT', 'PYTHON', 'JAVA', 'RUBY', 'PHP', 'SQL', 'REACT', 'NODE',
@@ -42,7 +43,7 @@ const wordDatabase = {
     cars: [
         'TESLA', 'TOYOTA', 'BMW', 'MERCEDES', 'FORD', 'AUDI', 'VOLKSWAGEN',
         'HONDA', 'CHEVROLET', 'NISSAN', 'FERRARI', 'LAMBORGHINI', 'JAGUAR',
-        'PORSCHE', 'LEXUS', 'MASERATI', 'BUGATTI', 'MCLAREN', 'SUBARU', 
+        'PORSCHE', 'LEXUS', 'MASERATI', 'BUGATTI', 'MCLAREN', 'SUBARU',
         'HYUNDAI', 'KIA', 'MAZDA', 'JEEP'
     ],
     professions: [
@@ -86,7 +87,7 @@ const wordDatabase = {
     planets: [
         'MERCURY', 'VENUS', 'EARTH', 'MARS', 'JUPITER', 'SATURN', 'URANUS',
         'NEPTUNE', 'PLUTO'
-    ]    
+    ]
 };
 
 
@@ -125,12 +126,12 @@ class WordSearchGame {
         return [...word].every((char, i) => {
             const newRow = row + i * dirRow;
             const newCol = col + i * dirCol;
-            
+
             if (newRow < 0 || newRow >= this.gridSize || newCol < 0 || newCol >= this.gridSize) {
                 return false;
             }
-            
-            return this.gameBoard[newRow][newCol] === '' || 
+
+            return this.gameBoard[newRow][newCol] === '' ||
                    this.gameBoard[newRow][newCol] === char;
         });
     }
@@ -182,7 +183,7 @@ class WordSearchGame {
     createCategoryButtons() {
         const container = document.createElement('div');
         container.className = 'category-buttons';
-        
+
         Object.keys(wordDatabase).forEach(category => {
             const button = document.createElement('button');
             button.textContent = category.charAt(0).toUpperCase() + category.slice(1);
@@ -196,11 +197,11 @@ class WordSearchGame {
         document.getElementById('categoryButtons').innerHTML = '';
         document.getElementById('categoryButtons').appendChild(container);
     }
-    
+
 
     changeCategory(category) {
         this.currentCategory = category;
-        this.updateCategoryButtons(); 
+        this.updateCategoryButtons();
         this.newGame();
     }
 
@@ -297,11 +298,11 @@ class WordSearchGame {
 
     updateSelection(e) {
         if (this.selectedCells.length === 0) return;
-        
+
         const cell = e.target;
         const row = parseInt(cell.dataset.row);
         const col = parseInt(cell.dataset.col);
-        
+
         if (this.selectedCells.some(([r, c]) => r === row && c === col)) return;
 
         const firstCell = this.selectedCells[0];
@@ -310,7 +311,7 @@ class WordSearchGame {
 
         const rowDiff = row - firstCell[0];
         const colDiff = col - firstCell[1];
-        
+
         if (Math.abs(rowDiff) === Math.abs(colDiff) || rowDiff === 0 || colDiff === 0) {
             this.selectCellsInLine(firstCell, row, col);
         }
@@ -318,7 +319,7 @@ class WordSearchGame {
 
     clearSelection(firstCell) {
         document.querySelectorAll('.cell.selected').forEach(cell => {
-            if (parseInt(cell.dataset.row) !== firstCell[0] || 
+            if (parseInt(cell.dataset.row) !== firstCell[0] ||
                 parseInt(cell.dataset.col) !== firstCell[1]) {
                 cell.classList.remove('selected');
             }
@@ -388,3 +389,7 @@ class WordSearchGame {
         this.selectedCells = [];
     }
 }
+
+// Expose class to window
+window.WordSearchGame = WordSearchGame;
+})();

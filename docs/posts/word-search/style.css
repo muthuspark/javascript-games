@@ -7,7 +7,7 @@
   gap: 2px;
   background: #f0f0f0;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .cell {
@@ -20,7 +20,7 @@
   border: 1px solid #ddd;
   cursor: pointer;
   user-select: none;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .cell.selected {
@@ -40,7 +40,7 @@
   margin: 5px;
   padding: 5px 10px;
   background: #f0f0f0;
-  border-radius: 15px;
+  border-radius: 0;
 }
 
 .word-item.found {
@@ -54,7 +54,7 @@
   background: #3d3d3d;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0;
   cursor: pointer;
 }
 

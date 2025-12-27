@@ -1,11 +1,10 @@
 <template>
   <article class="container py-4">
     <!-- Hero Section -->
-    <header class="text-center mb-5">
-      <h1 class="display-5 fw-bold mb-3">Free Online Brain Training Games</h1>
-      <p class="lead text-muted mx-auto" style="max-width: 700px;">
-        Challenge your mind with our collection of free puzzle games. Play Sudoku, Minesweeper,
-        Tic Tac Toe, and more. No downloads required - play instantly in your browser!
+    <header class="mb-5">
+      <h1 class="page-title mb-3">Brain Training Games</h1>
+      <p class="page-subtitle">
+        Free puzzle games. No downloads. Play in your browser.
       </p>
     </header>
 
@@ -21,24 +20,20 @@
 
     <!-- SEO Content Section -->
     <section class="mt-5 pt-4 border-top" aria-labelledby="about-games-heading">
-      <h2 id="about-games-heading" class="h4 mb-3">About Our Brain Training Games</h2>
+      <h2 id="about-games-heading" class="section-title mb-3">About</h2>
       <div class="row">
         <div class="col-md-6">
-          <h3 class="h5">Why Play Puzzle Games?</h3>
-          <p class="text-muted">
-            Puzzle games are excellent for brain training and cognitive development.
-            Regular play can improve logical thinking, memory, concentration, and problem-solving skills.
-            Our games range from classic favorites like Sudoku and Minesweeper to unique challenges
-            like the Knight's Tour and N-Queens puzzle.
+          <h3 class="subsection-title">Why Play Puzzle Games?</h3>
+          <p class="body-text">
+            Puzzle games improve logical thinking, memory, and concentration.
+            From Sudoku to the Knight's Tour—all skill levels welcome.
           </p>
         </div>
         <div class="col-md-6">
-          <h3 class="h5">Play Anywhere, Anytime</h3>
-          <p class="text-muted">
-            All our games are free to play and work directly in your browser.
-            No downloads, no registration required. Whether you have 5 minutes or an hour,
-            our games adapt to your schedule with adjustable difficulty levels and
-            multiple game modes.
+          <h3 class="subsection-title">Play Anywhere</h3>
+          <p class="body-text">
+            All games work directly in your browser.
+            No downloads, no registration. Just play.
           </p>
         </div>
       </div>
@@ -46,7 +41,7 @@
 
     <!-- FAQ Section for SEO -->
     <section class="mt-5 pt-4 border-top" aria-labelledby="faq-heading">
-      <h2 id="faq-heading" class="h4 mb-4">Frequently Asked Questions</h2>
+      <h2 id="faq-heading" class="section-title mb-4">FAQ</h2>
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item" v-for="(faq, index) in faqs" :key="index">
           <h3 class="accordion-header">
@@ -153,12 +148,36 @@ useHead({
 </script>
 
 <style scoped>
-.accordion-button:not(.collapsed) {
-  background-color: rgba(76, 175, 80, 0.1);
-  color: #2e7d32;
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #000;
 }
 
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+.page-subtitle {
+  font-size: 1rem;
+  color: #666;
+  max-width: 400px;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000;
+}
+
+.subsection-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.body-text {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
 }
 </style>

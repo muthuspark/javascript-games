@@ -27,11 +27,12 @@ import Footer from './components/Footer.vue'
   position: absolute;
   top: -100px;
   left: 0;
-  background: #4CAF50;
-  color: white;
-  padding: 8px 16px;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
   z-index: 9999;
   text-decoration: none;
+  font-size: 0.875rem;
 }
 
 .skip-link:focus {

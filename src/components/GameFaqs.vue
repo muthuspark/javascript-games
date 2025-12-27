@@ -1,6 +1,6 @@
 <template>
   <section v-if="faqs?.length" class="mt-5 pt-4 border-top" aria-labelledby="faq-heading">
-    <h2 id="faq-heading" class="h4 mb-4">Frequently Asked Questions</h2>
+    <h2 id="faq-heading" class="section-title mb-4">FAQ</h2>
     <div class="accordion" id="gameFaqAccordion">
       <div class="accordion-item" v-for="(faq, index) in faqs" :key="index">
         <h3 class="accordion-header">
@@ -35,12 +35,11 @@ defineProps({
 </script>
 
 <style scoped>
-.accordion-button:not(.collapsed) {
-  background-color: rgba(76, 175, 80, 0.1);
-  color: #2e7d32;
-}
-
-.accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+.section-title {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000;
 }
 </style>

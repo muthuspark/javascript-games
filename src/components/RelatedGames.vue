@@ -1,6 +1,6 @@
 <template>
   <section class="mt-5 pt-4 border-top" aria-labelledby="related-heading" v-if="relatedGames.length">
-    <h2 id="related-heading" class="h4 mb-4">You Might Also Like</h2>
+    <h2 id="related-heading" class="section-title mb-4">More Games</h2>
     <div class="row row-cols-1 row-cols-md-3 g-3">
       <div v-for="game in relatedGames" :key="game.slug" class="col">
         <router-link
@@ -46,18 +46,38 @@ const relatedGames = computed(() => {
 </script>
 
 <style scoped>
+.section-title {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000;
+}
+
 .related-game-card {
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #ccc;
+  border-radius: 0;
   color: inherit;
+  transition: background-color 0.15s;
 }
 
 .related-game-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
 }
 
 .related-game-card .card-img-top {
-  height: 120px;
+  height: 100px;
   object-fit: cover;
+  border-bottom: 1px solid #ccc;
+  filter: grayscale(20%);
+}
+
+.related-game-card:hover .card-img-top {
+  filter: grayscale(0%);
+}
+
+.related-game-card .card-title {
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 </style>

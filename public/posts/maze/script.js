@@ -1,5 +1,6 @@
-let canvas = null;//document.getElementById('mazeCanvas');
-let ctx = null; //canvas.getContext('2d');
+(function() {
+let canvas = null;
+let ctx = null;
 let maze = [];
 let cellSize = 30;
 let playerPos = { x: 1, y: 1 };
@@ -144,9 +145,14 @@ document.addEventListener('keydown', handleKeyPress);
 
 window.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowUp' && !event.shiftKey) {
-      event.preventDefault(); 
+      event.preventDefault();
     }
     if (event.key === 'ArrowDown' && !event.shiftKey) {
-        event.preventDefault(); 
+        event.preventDefault();
     }
   });
+
+// Expose functions to window for onclick handlers
+window.generateNewMaze = generateNewMaze;
+window.resetPlayer = resetPlayer;
+})();

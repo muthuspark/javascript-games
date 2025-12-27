@@ -41,14 +41,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'minesweeper')
+const game = {
+  slug: 'minesweeper',
+  title: 'Minesweeper Online - Classic Puzzle Game',
+  shortTitle: 'Minesweeper',
+  description: 'Play classic Minesweeper online. Reveal squares while avoiding hidden mines. Numbers indicate adjacent mines. Three difficulty levels available.',
+  metaDescription: 'Play Minesweeper online free with easy, medium, and hard modes. Classic puzzle game - uncover squares without hitting mines. No download needed.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Logic Games', 'Classic Games'],
+  keywords: ['minesweeper', 'minesweeper online', 'mine sweeper game', 'puzzle game', 'logic puzzle'],
+  initCode: 'initGame();',
+  faqs: [
+    {
+      question: 'How do you play Minesweeper?',
+      answer: 'Click to reveal squares. Numbers show how many mines are adjacent. Right-click to flag suspected mines. Reveal all non-mine squares to win.'
+    },
+    {
+      question: 'What do the numbers mean in Minesweeper?',
+      answer: 'Each number indicates how many of the 8 surrounding squares contain mines. Use this information to deduce safe squares.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -56,11 +75,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

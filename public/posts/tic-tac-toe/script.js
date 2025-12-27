@@ -1,3 +1,4 @@
+(function() {
 let currentPlayer = 'X';
 let gameState = [];
 let gameActive = true;
@@ -169,3 +170,7 @@ function updateStatus(message) {
 function startNewGame() {
     initializeGame();
 }
+
+// Expose functions to window for onclick handlers
+window.startNewGame = startNewGame;
+})();

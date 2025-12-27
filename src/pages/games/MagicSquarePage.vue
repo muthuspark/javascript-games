@@ -44,14 +44,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'magicsquare')
+const game = {
+  slug: 'magicsquare',
+  title: 'Magic Square Puzzle - Math Brain Game',
+  shortTitle: 'Magic Square',
+  description: 'Arrange numbers in a grid so rows, columns, and diagonals all sum to the same magic number. Great for math practice.',
+  metaDescription: 'Play Magic Square puzzles online. Arrange numbers so all rows, columns, and diagonals have the same sum. Fun math brain training game.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Math Games', 'Educational'],
+  keywords: ['magic square', 'math puzzle', 'number puzzle', 'magic square solver', 'math game'],
+  initCode: 'initGame();',
+  faqs: [
+    {
+      question: 'What is a Magic Square?',
+      answer: 'A Magic Square is a grid of numbers where every row, column, and diagonal adds up to the same total, called the magic constant.'
+    },
+    {
+      question: 'How do you calculate the magic constant?',
+      answer: 'For an n×n magic square using numbers 1 to n², the magic constant is n(n²+1)/2. For a 3x3 square, it is 15.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -59,11 +78,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

@@ -14,15 +14,6 @@
 
     <section class="game-section" aria-label="Game Area">
       <div class="container">
-        <div class="instructions">
-          <h2>How to Play</h2>
-          <p>Fill in the grid so that each number appears exactly once in each row and column.</p>
-          <p>1. Click an empty cell to select it</p>
-          <p>2. Click a number from the number pad to fill the cell</p>
-          <p>3. Use hints if you get stuck</p>
-          <p>4. Complete the grid without any conflicts to win!</p>
-        </div>
-
         <div class="level-select">
           <button onclick="setLevel(3)">3x3</button>
           <button onclick="setLevel(4)">4x4</button>
@@ -57,14 +48,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'latin-square')
+const game = {
+  slug: 'latin-square',
+  title: 'Latin Square Puzzle - Logic Number Game',
+  shortTitle: 'Latin Square',
+  description: 'Fill the grid so each number appears exactly once in each row and column. Similar to Sudoku but without box constraints.',
+  metaDescription: 'Play Latin Square puzzles online. Fill the grid so each number appears once per row and column. Great logic training game for all skill levels.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Logic Games', 'Number Games'],
+  keywords: ['latin square', 'logic puzzle', 'number grid', 'latin square puzzle', 'math puzzle'],
+  initCode: 'initializePuzzle(); renderGrid();',
+  faqs: [
+    {
+      question: 'What is a Latin Square?',
+      answer: 'A Latin Square is a grid where each symbol (usually numbers) appears exactly once in each row and once in each column.'
+    },
+    {
+      question: 'How is Latin Square different from Sudoku?',
+      answer: 'Latin Square only requires unique numbers in rows and columns. Sudoku adds the constraint of unique numbers in 3x3 boxes too.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -72,11 +82,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

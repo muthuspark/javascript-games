@@ -14,17 +14,6 @@
 
     <section class="game-section" aria-label="Game Area">
       <div class="maze">
-        <div class="instructions">
-          <h2>How to Play</h2>
-          <ol>
-            <li>Select a maze size from the dropdown menu</li>
-            <li>Click "Generate Maze" to create a new maze</li>
-            <li>Use arrow keys or WASD to move the player (red square)</li>
-            <li>Reach the green end point to win</li>
-            <li>Click "Reset Player" to return to start position</li>
-            <li>Generate a new maze anytime for a fresh challenge</li>
-          </ol>
-        </div>
         <div class="game-container">
           <div class="controls">
             <select id="mazeSize">
@@ -61,14 +50,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'maze')
+const game = {
+  slug: 'maze',
+  title: 'Maze Game Online - Navigate Through Puzzles',
+  shortTitle: 'Maze Game',
+  description: 'Navigate through randomly generated mazes using keyboard controls. Choose from 10x10 to 90x90 grid sizes for varying difficulty levels.',
+  metaDescription: 'Play free online maze games with adjustable difficulty. Navigate through randomly generated mazes from 10x10 to 90x90. Use arrow keys or WASD to play.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Navigation Games'],
+  keywords: ['maze game', 'online maze', 'puzzle maze', 'labyrinth game', 'maze solver'],
+  initCode: 'generateNewMaze();',
+  faqs: [
+    {
+      question: 'How do you play the maze game?',
+      answer: 'Use arrow keys or WASD to move the red square through the maze. Navigate from the start to the green exit point to win.'
+    },
+    {
+      question: 'What maze sizes are available?',
+      answer: 'Choose from 10x10 up to 90x90 grid sizes. Larger mazes are more challenging and take longer to solve.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -76,11 +84,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

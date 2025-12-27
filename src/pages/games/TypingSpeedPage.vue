@@ -13,13 +13,6 @@
     </header>
 
     <section class="game-section" aria-label="Game Area">
-      <div class="instructions">
-        <h2>How to Play</h2>
-        <ol>
-          <li>Click on the paragraph and start typing, as you type you would start seeing the focus shifting to the next character.</li>
-          <li>You have 60 seconds to type all the sentences you see.</li>
-        </ol>
-      </div>
       <div id="typingspeed">
         <div class="wrapper">
           <input type="text" class="input-field">
@@ -82,14 +75,34 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'typing-speed')
+const game = {
+  slug: 'typing-speed',
+  title: 'Typing Speed Test - WPM Calculator',
+  shortTitle: 'Typing Test',
+  description: 'Test your typing speed and accuracy. Measure words per minute (WPM) and characters per minute (CPM) with 60-second challenges.',
+  metaDescription: 'Free online typing speed test. Measure your WPM and accuracy in 60 seconds. Track your progress and improve your typing skills.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Challenge', 'Educational', 'Skills'],
+  keywords: ['typing test', 'typing speed', 'wpm test', 'typing practice', 'keyboard speed'],
+  initCode: 'const game = new TypingGame();',
+  extraScripts: ['https://unpkg.com/txtgen/dist/txtgen.min.js'],
+  faqs: [
+    {
+      question: 'What is a good typing speed?',
+      answer: 'Average typing speed is 40 WPM. 60-70 WPM is considered good. Professional typists often exceed 80-100 WPM.'
+    },
+    {
+      question: 'How can I improve my typing speed?',
+      answer: 'Practice regularly, use proper finger placement, look at the screen instead of the keyboard, and focus on accuracy before speed.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -102,6 +115,6 @@ useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

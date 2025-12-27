@@ -1,9 +1,9 @@
+(function() {
 const BOARD_SIZE = 8;
 let currentPosition = null;
 let visitedPositions = new Set();
 let moveCount = 0;
-// let startTime = null;
-// let timerInterval = null;
+let startTime = null;
 let bestScores = JSON.parse(localStorage.getItem('knightsTourBestScores')) || [];
 
 // Knight's possible moves
@@ -17,8 +17,6 @@ function initializeGame() {
     visitedPositions = new Set([positionToKey(currentPosition)]);
     moveCount = 1;
     startTime = Date.now();
-    // updateTimer();
-    // timerInterval = setInterval(updateTimer, 1000);
     renderBoard();
     displayBestScores();
 }
@@ -60,17 +58,11 @@ function handleMove(row, col) {
 }
 
 function handleWin() {
-    // clearInterval(timerInterval);
-    // const time = Math.floor((Date.now() - startTime) / 1000);
     document.getElementById('status').textContent =
         `Congratulations! You completed the tour!`;
-
-    // updateBestScores(time);
-    // displayBestScores();
 }
 
 function handleLoss() {
-    // clearInterval(timerInterval);
     document.getElementById('status').textContent =
         'No more moves available. Game Over!';
 }
@@ -150,7 +142,12 @@ function showHint() {
 }
 
 function resetGame() {
-    // clearInterval(timerInterval);
     document.getElementById('status').textContent = '';
     initializeGame();
 }
+
+// Expose functions to window for onclick handlers
+window.initializeGame = initializeGame;
+window.resetGame = resetGame;
+window.showHint = showHint;
+})();

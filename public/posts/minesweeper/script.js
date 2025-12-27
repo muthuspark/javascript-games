@@ -1,3 +1,4 @@
+(function() {
 let board = [];
 let gameConfig = {
     easy: { rows: 9, cols: 9, mines: 10 },
@@ -18,12 +19,12 @@ function initGame() {
     if (!currentConfig) {
         currentConfig = gameConfig.easy;
     }
-    
+
     gameOver = false;
     flagsPlaced = 0;
     revealedCells = 0;
     board = [];
-    
+
     // Initialize empty board
     for (let i = 0; i < currentConfig.rows; i++) {
         board[i] = [];
@@ -88,7 +89,7 @@ function updateBoard() {
             cell.className = 'cell';
             cell.dataset.row = row;
             cell.dataset.col = col;
-            
+
             if (board[row][col].isRevealed) {
                 cell.classList.add('revealed');
                 if (board[row][col].isMine) {
@@ -112,7 +113,7 @@ function handleLeftClick(event) {
     if (gameOver) return;
     const row = parseInt(event.target.dataset.row);
     const col = parseInt(event.target.dataset.col);
-    
+
     if (!board[row][col].isFlagged) {
         revealCell(row, col);
         updateBoard();
@@ -123,10 +124,10 @@ function handleLeftClick(event) {
 function handleRightClick(event) {
     event.preventDefault();
     if (gameOver) return;
-    
+
     const row = parseInt(event.target.dataset.row);
     const col = parseInt(event.target.dataset.col);
-    
+
     if (!board[row][col].isRevealed) {
         toggleFlag(row, col);
         updateBoard();
@@ -164,7 +165,7 @@ function revealCell(row, col) {
 
 function toggleFlag(row, col) {
     if (!board[row][col].isFlagged && flagsPlaced >= currentConfig.mines) return;
-    
+
     board[row][col].isFlagged = !board[row][col].isFlagged;
     flagsPlaced += board[row][col].isFlagged ? 1 : -1;
 }
@@ -182,17 +183,22 @@ function revealAllMines() {
 function checkWinCondition() {
     const totalCells = currentConfig.rows * currentConfig.cols;
     const targetRevealed = totalCells - currentConfig.mines;
-    
+
     if (revealedCells === targetRevealed && !gameOver) {
         gameOver = true;
-        updateStatus('You Won! 🎉');
+        updateStatus('You Won!');
     }
 }
 
 function updateStatus(message) {
     const statusDiv = document.getElementById('status');
     const mineCountDiv = document.getElementById('mine-count');
-    
+
     mineCountDiv.textContent = `Mines: ${currentConfig.mines - flagsPlaced}`;
     statusDiv.textContent = message || '';
 }
+
+// Expose functions to window for onclick handlers
+window.setDifficulty = setDifficulty;
+window.initGame = initGame;
+})();

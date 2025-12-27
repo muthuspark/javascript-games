@@ -1,3 +1,4 @@
+(function() {
 let currentSize = 3;
 let selectedCell = null;
 let puzzle = [];
@@ -189,3 +190,12 @@ function setLevel(size) {
     currentSize = size;
     resetPuzzle();
 }
+
+// Expose functions to window for onclick handlers
+window.initializePuzzle = initializePuzzle;
+window.renderGrid = renderGrid;
+window.setLevel = setLevel;
+window.getHint = getHint;
+window.checkSolution = checkSolution;
+window.resetPuzzle = resetPuzzle;
+})();

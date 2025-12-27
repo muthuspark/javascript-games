@@ -13,16 +13,6 @@
     </header>
 
     <section class="game-section" aria-label="Game Area">
-      <div class="instructions">
-        <h2>How to Play</h2>
-        <ol>
-          <li>The game is played on a 3x3, 4x4 or 5x5 grid.</li>
-          <li>Players take turns marking an empty cell with their symbol (X or O).</li>
-          <li>The goal is to be the first player to form a straight line of 3,4 or 5 of your symbols.</li>
-          <li>The line can be horizontal, vertical, or diagonal.</li>
-          <li>If all squares are filled and no player has formed a line of their symbols, the game is a draw.</li>
-        </ol>
-      </div>
       <div class="controls">
         <select id="difficulty">
           <option value="easy">Easy</option>
@@ -55,14 +45,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'tic-tac-toe')
+const game = {
+  slug: 'tic-tac-toe',
+  title: 'Tic Tac Toe Online - Play Against AI',
+  shortTitle: 'Tic Tac Toe',
+  description: 'Play Tic Tac Toe online against AI with adjustable difficulty. Choose 3x3, 4x4, or 5x5 grid sizes. Classic X and O game for all ages.',
+  metaDescription: 'Play free Tic Tac Toe online against computer AI. Multiple grid sizes (3x3, 4x4, 5x5) and difficulty levels. Classic noughts and crosses game.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Strategy Games', 'Classic Games'],
+  keywords: ['tic tac toe', 'noughts and crosses', 'x and o game', 'tic tac toe online', 'play tic tac toe'],
+  initCode: 'startNewGame();',
+  faqs: [
+    {
+      question: 'How do you win at Tic Tac Toe?',
+      answer: 'Get three (or more on larger grids) of your symbols in a row horizontally, vertically, or diagonally before your opponent does.'
+    },
+    {
+      question: 'Can you play Tic Tac Toe against computer?',
+      answer: 'Yes! This version features AI opponents with easy, medium, and hard difficulty levels.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -70,11 +79,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

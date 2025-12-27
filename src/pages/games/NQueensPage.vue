@@ -14,17 +14,6 @@
 
     <section class="game-section" aria-label="Game Area">
       <div class="container">
-        <div class="instructions">
-          <h2>How to Play</h2>
-          <p>Place N queens on an NxN chess board where no two queens threaten each other.</p>
-          <ol>
-            <li>Click a cell to place or remove a queen</li>
-            <li>Queens cannot share the same row, column, or diagonal</li>
-            <li>Threatened squares will be highlighted in red</li>
-            <li>Place all queens without conflicts to win!</li>
-          </ol>
-        </div>
-
         <div class="level-select">
           <button onclick="setLevel(4)">4x4</button>
           <button onclick="setLevel(5)">5x5</button>
@@ -64,14 +53,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'n-queens')
+const game = {
+  slug: 'n-queens',
+  title: 'N-Queens Puzzle - Chess Logic Game',
+  shortTitle: 'N-Queens',
+  description: 'Place N queens on an NxN chessboard so no two queens threaten each other. Classic chess puzzle from 4x4 to 12x12.',
+  metaDescription: 'Play the N-Queens puzzle online. Place queens on a chessboard without them threatening each other. Classic computer science puzzle game.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Chess', 'Logic Games'],
+  keywords: ['n queens', 'eight queens', 'chess puzzle', 'queen placement', 'logic puzzle'],
+  initCode: 'initializePuzzle();',
+  faqs: [
+    {
+      question: 'What is the N-Queens puzzle?',
+      answer: 'Place N queens on an NxN chessboard so no two queens can attack each other. Queens attack horizontally, vertically, and diagonally.'
+    },
+    {
+      question: 'How many solutions does the 8 Queens puzzle have?',
+      answer: 'The 8 Queens puzzle has 92 distinct solutions, or 12 fundamental solutions when accounting for symmetry.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -79,11 +87,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

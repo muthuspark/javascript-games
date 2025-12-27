@@ -13,14 +13,6 @@
     </header>
 
     <section class="game-section" aria-label="Game Area">
-      <div class="instructions">
-        <h2>How to Play</h2>
-        <ol>
-          <li>Select your desired level from the dropdown</li>
-          <li>Click "New Game" or "Shuffle" to mix up the tiles</li>
-          <li>Try to arrange the numbers in order with the empty space in the bottom right</li>
-        </ol>
-      </div>
       <div class="game-container">
         <div class="controls">
           <select id="levelSelect" class="level-select" onchange="changeLevel()">
@@ -63,14 +55,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'sliding-puzzle')
+const game = {
+  slug: 'sliding-puzzle',
+  title: 'Sliding Puzzle Game - Number Tile Puzzle',
+  shortTitle: 'Sliding Puzzle',
+  description: 'Slide numbered tiles to arrange them in order. Choose from 3x3 to 7x8 grid sizes. Features AI solver to demonstrate solutions.',
+  metaDescription: 'Play sliding tile puzzles online free. Arrange numbered tiles in order by sliding them. 10 difficulty levels with AI solver. Classic 15 puzzle.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Logic Games'],
+  keywords: ['sliding puzzle', '15 puzzle', 'tile puzzle', 'number puzzle', 'sliding tile game'],
+  initCode: 'newGame();',
+  faqs: [
+    {
+      question: 'How do you solve a sliding puzzle?',
+      answer: 'Slide tiles into the empty space to rearrange them in numerical order. Start by solving the top row, then work your way down.'
+    },
+    {
+      question: 'What is the 15 puzzle?',
+      answer: 'The 15 puzzle is a classic sliding puzzle with 15 numbered tiles in a 4x4 grid. You slide tiles to arrange them from 1 to 15.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -78,11 +89,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

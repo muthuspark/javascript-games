@@ -1,3 +1,4 @@
+(function() {
 let board = [];
 let emptyCell = { row: 0, col: 0 };
 let moveCount = 0;
@@ -328,3 +329,9 @@ async function startSolving() {
     isSolving = false;
     solveButton.disabled = false;
 }
+
+// Expose functions to window for onclick handlers
+window.newGame = newGame;
+window.changeLevel = changeLevel;
+window.startSolving = startSolving;
+})();

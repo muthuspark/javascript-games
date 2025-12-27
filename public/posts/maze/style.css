@@ -25,7 +25,7 @@
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .maze button:hover {
@@ -35,5 +35,5 @@
 .maze select {
     padding: 10px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 0;
 }

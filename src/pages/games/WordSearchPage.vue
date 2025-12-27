@@ -14,23 +14,6 @@
 
     <section class="game-section" aria-label="Game Area">
       <div class="game-container">
-        <div class="instructions">
-          <h2>How to Play</h2>
-          <ol>
-            <li>Find words from the list below in the grid of letters</li>
-            <li>Words can be placed in any of these directions:
-              <ul>
-                <li>Horizontally (→)</li>
-                <li>Vertically (↓)</li>
-                <li>Diagonally (↘ or ↗)</li>
-                <li>Backwards in any direction (← ↑ ↙ ↖)</li>
-              </ul>
-            </li>
-            <li>Click and drag your mouse over the letters to select a word</li>
-            <li>When you find a word, it will be highlighted in green and crossed off the list</li>
-            <li>Find all words to win the game!</li>
-          </ol>
-        </div>
         <div id="grid" class="grid"></div>
         <hr>
         <div class="optiongrid">
@@ -72,14 +55,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'word-search')
+const game = {
+  slug: 'word-search',
+  title: 'Word Search Puzzle - Find Hidden Words',
+  shortTitle: 'Word Search',
+  description: 'Find hidden words in a grid of letters. Words can be horizontal, vertical, diagonal, or backwards. Multiple categories and grid sizes.',
+  metaDescription: 'Play free word search puzzles online. Find hidden words in letter grids with multiple categories. Great for vocabulary and brain training.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Word Games', 'Educational'],
+  keywords: ['word search', 'word find', 'word puzzle', 'hidden words', 'word search puzzle'],
+  initCode: 'const game = new WordSearchGame(); game.newGame();',
+  faqs: [
+    {
+      question: 'How do you play Word Search?',
+      answer: 'Find words from the list hidden in the letter grid. Words can go horizontally, vertically, diagonally, and even backwards. Click and drag to select.'
+    },
+    {
+      question: 'Are word searches good for your brain?',
+      answer: 'Yes! Word searches improve vocabulary, pattern recognition, and concentration. They are great for all ages.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -87,11 +89,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

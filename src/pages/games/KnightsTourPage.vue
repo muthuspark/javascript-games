@@ -14,18 +14,6 @@
 
     <section class="game-section" aria-label="Game Area">
       <div class="container">
-        <div class="instructions">
-          <h2>How to Play</h2>
-          <p>Move the knight to visit every square exactly once on the chessboard.</p>
-          <ol>
-            <li>Click highlighted squares to move the knight</li>
-            <li>Visit all squares to win</li>
-            <li>Try to complete the tour in the shortest time</li>
-            <li>Green squares show visited positions</li>
-            <li>Yellow squares show possible moves</li>
-          </ol>
-        </div>
-
         <div class="board" id="board"></div>
         <div class="controls">
           <button onclick="resetGame()">New Game</button>
@@ -33,6 +21,11 @@
         </div>
 
         <div class="status" id="status"></div>
+
+        <div class="best-scores">
+          <h3>Best Scores</h3>
+          <div id="bestScores"></div>
+        </div>
       </div>
     </section>
 
@@ -51,14 +44,33 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'knights-tour')
+const game = {
+  slug: 'knights-tour',
+  title: "Knight's Tour Puzzle - Chess Movement Game",
+  shortTitle: "Knight's Tour",
+  description: "Move a chess knight to visit every square exactly once. Classic mathematical puzzle with hints available.",
+  metaDescription: "Play the Knight's Tour puzzle online. Move a chess knight to visit every square on the board exactly once. Classic Hamiltonian path puzzle.",
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Chess', 'Math Games'],
+  keywords: ['knights tour', 'chess puzzle', 'knight moves', 'hamiltonian path', 'chess game'],
+  initCode: 'initializeGame();',
+  faqs: [
+    {
+      question: "What is the Knight's Tour?",
+      answer: "A puzzle where you move a chess knight to visit every square on the board exactly once. The knight moves in an L-shape: two squares in one direction, then one square perpendicular."
+    },
+    {
+      question: "Is there always a solution to the Knight's Tour?",
+      answer: "On a standard 8x8 board, solutions exist starting from any square. Smaller boards may not have solutions from all starting positions."
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -66,11 +78,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

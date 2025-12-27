@@ -54,13 +54,14 @@ const truncatedDescription = computed(() => {
 
 <style scoped>
 .game-card {
-  transition: transform 0.2s, box-shadow 0.2s;
-  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #fff;
+  transition: background-color 0.15s;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
 }
 
 .card-link {
@@ -71,34 +72,32 @@ const truncatedDescription = computed(() => {
 }
 
 .card-img-top {
-  height: 180px;
+  height: 160px;
   width: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
+  border-bottom: 1px solid #ccc;
+  filter: grayscale(20%);
 }
 
 .game-card:hover .card-img-top {
-  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
 .card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1a1a1a;
   margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 
 .card-text {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   line-height: 1.5;
+  color: #666;
 }
 
 .card-categories {
   margin-top: 0.75rem;
-}
-
-.badge {
-  font-weight: 500;
-  font-size: 0.75rem;
 }
 </style>

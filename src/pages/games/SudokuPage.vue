@@ -44,14 +44,37 @@
 </template>
 
 <script setup>
-import { games } from '../../data/games.js'
 import { useGameLoader } from '../../composables/useGameLoader.js'
 import { useGameSeo } from '../../composables/useGameSeo.js'
 import Breadcrumb from '../../components/Breadcrumb.vue'
 import GameFaqs from '../../components/GameFaqs.vue'
 import RelatedGames from '../../components/RelatedGames.vue'
 
-const game = games.find(g => g.slug === 'sudoku')
+const game = {
+  slug: 'sudoku',
+  title: 'Play Sudoku Online Free',
+  shortTitle: 'Sudoku',
+  description: 'Play classic Sudoku puzzles online for free. Fill the 9x9 grid so each row, column, and 3x3 box contains digits 1-9. Multiple difficulty levels from easy to hard.',
+  metaDescription: 'Play free online Sudoku puzzles with easy, medium, and hard difficulty levels. Train your brain with this classic number placement game. No download required.',
+  thumbnail: 'thumbnail.png',
+  categories: ['Puzzles', 'Logic Games', 'Number Games'],
+  keywords: ['sudoku online', 'free sudoku', 'sudoku puzzle', 'number puzzle', 'brain games'],
+  initCode: 'newGame();',
+  faqs: [
+    {
+      question: 'How do you play Sudoku?',
+      answer: 'Fill the 9x9 grid so that each row, column, and 3x3 box contains the numbers 1-9 exactly once. Start with the given numbers and use logic to fill in the rest.'
+    },
+    {
+      question: 'What are the rules of Sudoku?',
+      answer: 'Each row must contain numbers 1-9 without repetition. Each column must contain numbers 1-9 without repetition. Each 3x3 box must contain numbers 1-9 without repetition.'
+    },
+    {
+      question: 'Is Sudoku good for your brain?',
+      answer: 'Yes! Sudoku improves logical thinking, memory, and concentration. Regular play can help keep your mind sharp and may reduce cognitive decline.'
+    }
+  ]
+}
 
 const breadcrumbItems = [
   { name: 'Home', path: '/' },
@@ -59,11 +82,11 @@ const breadcrumbItems = [
   { name: game.shortTitle || game.title, path: `/posts/${game.slug}/` }
 ]
 
-useGameLoader(game.slug, game.initCode, game.extraScripts)
+useGameLoader(game.slug, game.initCode)
 useGameSeo(game)
 </script>
 
 <style scoped>
-h1 { font-weight: 600; }
+h1 { font-weight: 400; }
 .game-section { min-height: 400px; }
 </style>

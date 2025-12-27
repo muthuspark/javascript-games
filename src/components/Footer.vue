@@ -1,33 +1,25 @@
 <template>
-  <footer class="footer mt-auto py-4 bg-body-tertiary border-top" role="contentinfo">
+  <footer class="footer mt-auto py-4" role="contentinfo">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-start">
-          <p class="mb-2 mb-md-0 text-muted">
-            &copy; {{ currentYear }} <a href="/about" class="text-decoration-none">Muthukrishnan</a>. All rights reserved.
+          <p class="mb-2 mb-md-0">
+            &copy; {{ currentYear }} <a href="/about">Muthukrishnan</a>
           </p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <nav aria-label="Footer navigation">
-            <router-link to="/" class="text-muted text-decoration-none me-3">Games</router-link>
-            <router-link to="/about" class="text-muted text-decoration-none me-3">About</router-link>
+          <nav aria-label="Footer navigation" class="footer-nav">
+            <router-link to="/">Games</router-link>
+            <router-link to="/about">About</router-link>
             <a
               href="https://github.com/muthuspark/javascript-games"
-              class="text-muted text-decoration-none"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View source code on GitHub"
             >
-              <i class="bi bi-github" aria-hidden="true"></i> Source
+              Source
             </a>
           </nav>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col text-center">
-          <p class="small text-muted mb-0">
-            Free online puzzle games for brain training. Play Sudoku, Minesweeper, Tic Tac Toe, and more!
-          </p>
         </div>
       </div>
     </div>
@@ -40,10 +32,26 @@ const currentYear = new Date().getFullYear()
 
 <style scoped>
 .footer {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  border-top: 1px solid #ccc;
+  background: #fff;
+  color: #666;
+}
+
+.footer a {
+  color: #1a1a1a;
+  text-decoration: underline;
 }
 
 .footer a:hover {
-  color: #4CAF50 !important;
+  text-decoration: none;
+}
+
+.footer-nav a {
+  margin-left: 1.5rem;
+}
+
+.footer-nav a:first-child {
+  margin-left: 0;
 }
 </style>

@@ -7,7 +7,7 @@ button {
     padding: 8px 16px;
     margin: 5px;
     border: none;
-    border-radius: 4px;
+    border-radius: 0;
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
@@ -30,7 +30,7 @@ button:disabled {
     margin: 0 auto;
     background-color: #333;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .cell {
@@ -70,7 +70,7 @@ button:disabled {
 .status {
     text-align: center;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .number-select {

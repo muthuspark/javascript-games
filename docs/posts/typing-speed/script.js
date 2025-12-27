@@ -1,3 +1,4 @@
+(function() {
 class TypingGame {
     constructor() {
         // DOM elements
@@ -160,6 +161,10 @@ class TypingGame {
     }
 
     initTimer() {
+        if (!this.elements.timeTag) {
+            clearInterval(this.state.timer);
+            return;
+        }
         if (this.state.timeLeft > 0) {
             this.state.timeLeft--;
             this.updateStats();
@@ -199,7 +204,7 @@ class TypingScoreCard {
     addScore(score) {
         const table = document.getElementById('history');
 
-        // Create a new row element 
+        // Create a new row element
         const newRow = document.createElement("tr");
 
         ['date', 'wpm', 'cpm', 'mistakes'].forEach(key => {
@@ -254,18 +259,18 @@ class TypingMetricsChart {
             const maxValue = Math.max(...data);
             const minValue = Math.min(...data);
             const range = maxValue - minValue;
-            
+
             if (range === 0) {
                 return height / 2; // Center the line if all values are the same
             }
-            
+
             return padding + ((height - 2 * padding) * (1 - (value - minValue) / range));
         };
 
         // Draw the line
         const linePath = document.createElementNS(svgNS, "path");
         let d = "";
-        
+
         if (data.length === 1) {
             // For single point, draw a small horizontal line
             const x = xScale(0);
@@ -279,7 +284,7 @@ class TypingMetricsChart {
                 d += (i === 0) ? `M${x},${y}` : ` L${x},${y}`;
             }
         }
-        
+
         linePath.setAttribute("d", d);
         linePath.setAttribute("stroke", "blue");
         linePath.setAttribute("fill", "none");
@@ -304,3 +309,9 @@ class TypingMetricsChart {
         chartGroup.appendChild(yAxis);
     }
 }
+
+// Expose classes to window
+window.TypingGame = TypingGame;
+window.TypingScoreCard = TypingScoreCard;
+window.TypingMetricsChart = TypingMetricsChart;
+})();

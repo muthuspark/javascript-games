@@ -141,7 +141,7 @@
     float: left;
     background: #2563eb;
     padding: 1rem;
-    border-radius: 0.5em;
+    border-radius: 0;
 }
 
 #options {
@@ -221,7 +221,7 @@ select {
 
 .text {
     font-size:12px;
-    font-weight:bold;
+    font-weight:normal;
     color: #4C4C4C;
 }
 

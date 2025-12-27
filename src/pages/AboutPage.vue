@@ -1,53 +1,52 @@
 <template>
   <article class="container py-5" itemscope itemtype="https://schema.org/ProfilePage">
     <div class="row justify-content-center">
-      <div class="col-lg-8">
+      <div class="col-lg-7">
         <!-- Profile Header -->
-        <header class="text-center mb-4">
-          <img
-            src="/profile.png"
-            alt="Muthukrishnan - Creator of Brain Busters"
-            class="rounded-circle profile-img mb-3"
-            width="150"
-            height="150"
-            loading="eager"
-            itemprop="image"
-          >
-          <h1 itemprop="name">About the Creator</h1>
-          <p class="lead text-muted" itemprop="description">
-            Engineering Manager, Patent Holder & Game Developer
-          </p>
-
-          <!-- Social Links -->
-          <nav class="social-links mb-4" aria-label="Social media links">
-            <a
-              href="https://twitter.com/krimuthu"
-              class="btn btn-outline-secondary me-2"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow on Twitter"
+        <header class="about-header mb-5">
+          <div class="profile-section">
+            <img
+              src="/profile.png"
+              alt="Muthukrishnan - Creator of Brain Busters"
+              class="profile-img"
+              width="120"
+              height="120"
+              loading="eager"
+              itemprop="image"
             >
-              <i class="bi bi-twitter" aria-hidden="true"></i> Twitter
-            </a>
-            <a
-              href="https://linkedin.com/in/krimuthu"
-              class="btn btn-outline-secondary me-2"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Connect on LinkedIn"
-            >
-              <i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn
-            </a>
-            <a
-              href="https://github.com/muthuspark"
-              class="btn btn-outline-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View GitHub profile"
-            >
-              <i class="bi bi-github" aria-hidden="true"></i> Github
-            </a>
-          </nav>
+            <div class="profile-info">
+              <h1 itemprop="name">Muthukrishnan</h1>
+              <p class="tagline" itemprop="description">
+                Engineering Manager, Patent Holder & Game Developer
+              </p>
+              <nav class="social-links" aria-label="Social media links">
+                <a
+                  href="https://twitter.com/krimuthu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow on Twitter"
+                >
+                  <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://linkedin.com/in/krimuthu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Connect on LinkedIn"
+                >
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://github.com/muthuspark"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View GitHub profile"
+                >
+                  <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+              </nav>
+            </div>
+          </div>
         </header>
 
         <!-- Bio Content -->
@@ -55,19 +54,23 @@
           <h2 id="bio-heading" class="visually-hidden">Biography</h2>
 
           <div itemprop="mainContentOfPage">
-            <p>I'm <strong itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Muthukrishnan</span></strong>, currently working as an Engineering Manager at Sanas AI Inc. I have over 16 years of experience in building scalable SaaS applications from the ground up. Throughout my career, I've had the privilege of working in dynamic environments, from startups to established enterprises, contributing to the growth and success of each.</p>
+            <p>I'm <strong itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Muthukrishnan</span></strong>, currently working as an Engineering Manager at Sanas AI Inc. I have over 16 years of experience in building scalable SaaS applications from the ground up.</p>
 
-            <p>As a hands-on leader, I've built and scaled applications that have grown from hundreds of users to millions, and I have filed about five patents. These patents cover a range of technologies, from optical character recognition (OCR) to systems for cross-application walkthroughs and UI element retrieval.</p>
+            <p>As a hands-on leader, I've built and scaled applications that have grown from hundreds of users to millions, and I have filed about five patents covering technologies from OCR to cross-application walkthroughs.</p>
 
-            <p>In my previous role at Whatfix, I'm proud to have architected and launched the Desktop business, which now generates over $2 million in revenue. I built the team from scratch, guiding them to deliver innovative solutions that address real-world challenges.</p>
+            <p>In my previous role at Whatfix, I architected and launched the Desktop business, which now generates over $2 million in revenue. I built the team from scratch, guiding them to deliver innovative solutions.</p>
 
-            <h3 class="h5 mt-4">Technical Expertise</h3>
-            <p>My expertise extends across system design, software architecture, and various programming languages like Java, JavaScript, and Python. I'm deeply committed to process optimization and fostering an agile culture that drives efficiency and quality.</p>
+            <div class="info-block">
+              <h3>Technical Expertise</h3>
+              <p>System design, software architecture, and programming languages including Java, JavaScript, and Python. Committed to process optimization and fostering an agile culture.</p>
+            </div>
 
-            <h3 class="h5 mt-4">Why Brain Busters?</h3>
-            <p>I created Brain Busters as a passion project to combine my love of programming with classic puzzle games. These games are built with vanilla JavaScript, demonstrating that you don't always need heavy frameworks to create engaging interactive experiences.</p>
+            <div class="info-block">
+              <h3>Why Brain Busters?</h3>
+              <p>A passion project combining my love of programming with classic puzzle games. Built with vanilla JavaScript to demonstrate that engaging experiences don't require heavy frameworks.</p>
+            </div>
 
-            <p>When I'm not working, I enjoy sharing my insights through writing. You can always reach out to me via LinkedIn, my blog, or GitHub for a conversation about technology, engineering management, or the future of SaaS.</p>
+            <p class="text-muted">Feel free to reach out via LinkedIn or GitHub for conversations about technology, engineering management, or the future of SaaS.</p>
           </div>
         </section>
       </div>
@@ -126,25 +129,94 @@ useHead({
 </script>
 
 <style scoped>
+.about-header {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2rem;
+}
+
+.profile-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  border: 3px solid #4CAF50;
+  border: 1px solid #ccc;
+  flex-shrink: 0;
+}
+
+.profile-info h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #666;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.social-links a:hover {
+  color: #000;
 }
 
 .about-content p {
-  margin-bottom: 1rem;
-  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #333;
 }
 
-.social-links .btn {
-  padding: 0.5rem 1rem;
+.info-block {
+  background: #f8f9fa;
+  border-left: 2px solid #ccc;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
 }
 
-.social-links .btn:hover {
-  background-color: #4CAF50;
-  border-color: #4CAF50;
-  color: white;
+.info-block h3 {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem 0;
+  color: #000;
+}
+
+.info-block p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .info-block {
+    border-left: none;
+    border-top: 2px solid #ccc;
+  }
 }
 </style>

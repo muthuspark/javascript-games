@@ -5,7 +5,7 @@
 
 .wrapper {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .wrapper .input-field {
@@ -16,7 +16,7 @@
 
 .wrapper .content-box {
     padding: 13px 20px 0;
-    border-radius: 10px;
+    border-radius: 0;
     border: 1px solid #bfbfbf;
 }
 
@@ -43,7 +43,7 @@
     color: #cb3439;
     outline: 1px solid #fff;
     background: #ffc0cb;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .typing-text p span.active {
@@ -58,7 +58,7 @@
     bottom: 0;
     left: 0;
     opacity: 0;
-    border-radius: 5px;
+    border-radius: 0;
     background: #45a049;
     animation: blink 1s ease-in-out infinite;
 }
@@ -87,7 +87,7 @@
     padding: 8px 0;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0;
     background: #45a049;
     transition: transform 0.3s ease;
 }
@@ -221,6 +221,6 @@ li:not(:first-child) span {
 .scorecard {
     padding: 1em;
     border: 1px solid #bfbfbf;
-    border-radius: 8px;
+    border-radius: 0;
     margin-top: 2em;
 }

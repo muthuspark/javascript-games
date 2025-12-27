@@ -1,3 +1,4 @@
+(function() {
 let gameSize = 3;
 let board = [];
 let solution = [];
@@ -159,7 +160,7 @@ function handleInput(event) {
         board[row][col] = value;
         checkBoard();
         if (isBoardComplete() && isBoardCorrect()) {
-            updateStatus('Congratulations! You solved the magic square! 🎉');
+            updateStatus('Congratulations! You solved the magic square!');
         }
     }
 }
@@ -269,3 +270,10 @@ function updateStatus(message) {
     const statusDiv = document.getElementById('status');
     statusDiv.textContent = message;
 }
+
+// Expose functions to window for onclick handlers
+window.initGame = initGame;
+window.setDifficulty = setDifficulty;
+window.giveHint = giveHint;
+window.solve = solve;
+})();
