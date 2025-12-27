@@ -1,5 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+_site/
+
+# Vite
+.vite/
+*.local
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+.env
+*.log
+
+# Old Quarto files (can be removed)
 /.quarto/
 create_post.py
-_site
 README_files/
-.env
+**/*.quarto_ipynb
