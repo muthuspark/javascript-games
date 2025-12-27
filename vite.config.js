@@ -37,7 +37,8 @@ export default defineConfig({
         '/posts/bulls-and-cows/',
         '/posts/nim/',
         '/posts/dots-and-boxes/',
-        '/posts/hex/'
+        '/posts/hex/',
+        '/posts/set-game/'
       ]
     }
   }

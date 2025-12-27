@@ -184,6 +184,14 @@ export const games = [
     description: 'Play Hex against AI. Connect your sides of the board before your opponent. A classic connection strategy game with simple rules but deep tactics.',
     thumbnail: 'thumbnail.png',
     categories: ['Strategy Games', 'Logic Games', 'Classic Games']
+  },
+  {
+    slug: 'set-game',
+    title: 'Set Game - Find Matching Card Sets',
+    shortTitle: 'Set Game',
+    description: 'Find sets of three cards where each feature is either all the same or all different. A challenging visual logic puzzle that trains pattern recognition.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Logic Games', 'Pattern Games']
   }
 ]
 

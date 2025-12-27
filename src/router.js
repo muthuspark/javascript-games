@@ -24,7 +24,8 @@ const gamePages = {
   'bulls-and-cows': () => import('./pages/games/BullsAndCowsPage.vue'),
   'nim': () => import('./pages/games/NimPage.vue'),
   'dots-and-boxes': () => import('./pages/games/DotsAndBoxesPage.vue'),
-  'hex': () => import('./pages/games/HexPage.vue')
+  'hex': () => import('./pages/games/HexPage.vue'),
+  'set-game': () => import('./pages/games/SetGamePage.vue')
 }
 
 const routes = [

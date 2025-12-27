@@ -106,7 +106,54 @@
             }
         }
 
-        // Optimal strategy (hard difficulty or 50% of medium)
+        // Check for Misère endgame (all piles have 0 or 1 objects)
+        const allSingletons = piles.every(p => p <= 1);
+
+        if (allSingletons) {
+            // Misère endgame: we want to leave an ODD number of 1s
+            // Count piles with 1 object
+            const onesCount = piles.filter(p => p === 1).length;
+
+            if (onesCount % 2 === 1) {
+                // Odd number of 1s - we're in losing position, take any 1
+                for (let i = 0; i < piles.length; i++) {
+                    if (piles[i] === 1) {
+                        return { pile: i, count: 1 };
+                    }
+                }
+            } else {
+                // Even number of 1s - we're in winning position, take one to make odd
+                for (let i = 0; i < piles.length; i++) {
+                    if (piles[i] === 1) {
+                        return { pile: i, count: 1 };
+                    }
+                }
+            }
+        }
+
+        // Check if we're about to enter endgame (only one pile > 1)
+        const pilesGreaterThanOne = piles.filter(p => p > 1);
+        if (pilesGreaterThanOne.length === 1) {
+            const onesCount = piles.filter(p => p === 1).length;
+            const bigPileIndex = piles.findIndex(p => p > 1);
+            const bigPileSize = piles[bigPileIndex];
+
+            // We need to leave an ODD number of 1s after our move
+            // If there are N piles with 1, and we reduce the big pile to 0 or 1:
+            // - Reduce to 0: leaves N ones
+            // - Reduce to 1: leaves N+1 ones
+            // We want to leave ODD number of ones for opponent
+
+            if (onesCount % 2 === 0) {
+                // Currently even 1s, reduce big pile to 1 (makes odd)
+                return { pile: bigPileIndex, count: bigPileSize - 1 };
+            } else {
+                // Currently odd 1s, reduce big pile to 0 (keeps odd)
+                return { pile: bigPileIndex, count: bigPileSize };
+            }
+        }
+
+        // Standard Nim strategy (before endgame)
         if (nimSum === 0) {
             // Losing position, make random move
             return getRandomMove();
