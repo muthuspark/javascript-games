@@ -192,6 +192,14 @@ export const games = [
     description: 'Find sets of three cards where each feature is either all the same or all different. A challenging visual logic puzzle that trains pattern recognition.',
     thumbnail: 'thumbnail.png',
     categories: ['Puzzles', 'Logic Games', 'Pattern Games']
+  },
+  {
+    slug: 'tangram',
+    title: 'Tangram Puzzle - Classic Shape Puzzle Game',
+    shortTitle: 'Tangram',
+    description: 'Arrange seven geometric pieces to match silhouette puzzles. Drag, rotate, and flip pieces to create shapes. A timeless Chinese puzzle game.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Pattern Games', 'Classic Games']
   }
 ]
 

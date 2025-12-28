@@ -38,7 +38,8 @@ export default defineConfig({
         '/posts/nim/',
         '/posts/dots-and-boxes/',
         '/posts/hex/',
-        '/posts/set-game/'
+        '/posts/set-game/',
+        '/posts/tangram/'
       ]
     }
   }

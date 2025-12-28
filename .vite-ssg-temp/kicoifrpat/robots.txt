@@ -1,0 +1,21 @@
+# Robots.txt for Brain Busters - games.muthu.co
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://games.muthu.co/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Block common bot traps and irrelevant paths
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /assets/*.js
+Disallow: /assets/*.css
+
+# Allow important resources
+Allow: /posts/
+Allow: /about
+Allow: /*.html

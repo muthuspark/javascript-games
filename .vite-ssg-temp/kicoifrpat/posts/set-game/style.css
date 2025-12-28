@@ -1,0 +1,211 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#game_main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    padding: 15px;
+    background: #34495e;
+    width: 100%;
+    max-width: 560px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+#board .card {
+    width: 100%;
+    max-width: 120px;
+    height: 80px;
+    background: #fff;
+    border: 3px solid #bdc3c7;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+#board .card:hover {
+    border-color: #3498db;
+    transform: translateY(-2px);
+}
+
+#board .card.selected {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
+}
+
+#board .card.valid {
+    border-color: #27ae60;
+    background: #d5f4e0;
+}
+
+#board .card.invalid {
+    border-color: #e74c3c;
+    background: #fde2e2;
+    animation: shake 0.3s ease;
+}
+
+#board .card.hint {
+    border-color: #f39c12;
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.6);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shapes {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+}
+
+.shapes-1 .shape {
+    width: 40px;
+    height: 40px;
+}
+
+.shapes-2 .shape {
+    width: 35px;
+    height: 35px;
+}
+
+.shapes-3 .shape {
+    width: 30px;
+    height: 30px;
+}
+
+.shape {
+    display: block;
+}
+
+.controls {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    margin: 10px;
+    font-size: 1.1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stat-item {
+    background: #ecf0f1;
+    padding: 8px 15px;
+    border: 1px solid #bdc3c7;
+}
+
+.stat-label {
+    color: #7f8c8d;
+    font-size: 0.85em;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    #board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 10px;
+    }
+
+    #board .card {
+        max-width: 95px;
+        height: 65px;
+    }
+
+    .shapes-1 .shape {
+        width: 32px;
+        height: 32px;
+    }
+
+    .shapes-2 .shape {
+        width: 28px;
+        height: 28px;
+    }
+
+    .shapes-3 .shape {
+        width: 24px;
+        height: 24px;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .stat-item {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 400px) {
+    #board .card {
+        max-width: 80px;
+        height: 55px;
+    }
+
+    .shapes-1 .shape {
+        width: 28px;
+        height: 28px;
+    }
+
+    .shapes-2 .shape {
+        width: 24px;
+        height: 24px;
+    }
+
+    .shapes-3 .shape {
+        width: 20px;
+        height: 20px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls button {
+        width: 100%;
+        min-height: 44px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    #board .card:hover {
+        border-color: #bdc3c7;
+        transform: none;
+    }
+
+    #board .card.selected:hover {
+        border-color: #3498db;
+    }
+}

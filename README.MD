@@ -7,7 +7,7 @@ Welcome to **Brain Busters**! This repository contains a collection of browser-b
 
 ## Features
 
-- 24 fun and interactive browser-based games
+- 25 fun and interactive browser-based games
 - Built using Vue 3, Vite, HTML, CSS, and JavaScript
 - Responsive design for seamless gameplay on desktop and mobile devices
 - Static Site Generation for fast page loads
@@ -29,6 +29,7 @@ Welcome to **Brain Busters**! This repository contains a collection of browser-b
 | **Mastermind** | Crack the secret color code using logic and deduction |
 | **Bulls and Cows** | Guess the secret number using logic clues |
 | **Set Game** | Find sets of three cards where each feature is all same or all different |
+| **Tangram** | Arrange seven geometric pieces to match silhouette puzzles |
 
 ### Strategy Games
 | Game | Description |

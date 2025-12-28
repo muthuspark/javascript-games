@@ -1,0 +1,126 @@
+.controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.difficulty-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: normal;
+    transition: background-color 0.2s;
+}
+
+.easy { background-color: #4CAF50; color: white; }
+.medium { background-color: #FFC107; color: black; }
+.hard { background-color: #f44336; color: white; }
+.new-game { background-color: #2196F3; color: white; }
+
+button:hover {
+    opacity: 0.9;
+}
+
+.game-board {
+    display: inline-grid;
+    gap: 1px;
+    background-color: #999;
+    border: 2px solid #999;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #ddd;
+}
+
+.revealed {
+    background-color: #eee;
+}
+
+.mine {
+    background-color: #ff9999;
+}
+
+.flag::before {
+    content: '🚩';
+}
+
+.mine::before {
+    content: '💣';
+}
+
+.status {
+    margin: 20px;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+/* Number colors */
+.n1 { color: blue; }
+.n2 { color: green; }
+.n3 { color: red; }
+.n4 { color: darkblue; }
+.n5 { color: darkred; }
+.n6 { color: darkcyan; }
+.n7 { color: black; }
+.n8 { color: gray; }
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .controls {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .difficulty-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        min-height: 44px;
+        padding: 10px 14px;
+    }
+
+    .cell {
+        width: clamp(24px, 7vw, 30px);
+        height: clamp(24px, 7vw, 30px);
+        font-size: clamp(10px, 3vw, 14px);
+    }
+
+    .status {
+        margin: 15px 10px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 360px) {
+    .cell {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,225 @@
+#game_main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.puzzle-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.puzzle-preview {
+    text-align: center;
+}
+
+.puzzle-preview h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+#puzzleCanvas {
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    background: #f5f5f5;
+}
+
+.puzzle-details {
+    text-align: center;
+}
+
+.puzzle-details h2 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+.difficulty {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #3498db;
+    color: white;
+}
+
+.stats {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-top: 8px;
+}
+
+#gameCanvas {
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+    background: #fff;
+    cursor: grab;
+    touch-action: none;
+}
+
+#gameCanvas:active {
+    cursor: grabbing;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.control-group {
+    display: flex;
+    gap: 5px;
+}
+
+.controls button {
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.btn-rotate {
+    background: #3498db;
+    color: white;
+}
+
+.btn-rotate:hover {
+    background: #2980b9;
+}
+
+.btn-flip {
+    background: #9b59b6;
+    color: white;
+}
+
+.btn-flip:hover {
+    background: #8e44ad;
+}
+
+.btn-nav {
+    background: #2c3e50;
+    color: white;
+}
+
+.btn-nav:hover {
+    background: #1a252f;
+}
+
+.btn-action {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-action:hover {
+    background: #219a52;
+}
+
+.btn-reset {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #c0392b;
+}
+
+.btn-complete {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-complete:hover {
+    background: #d68910;
+}
+
+.instructions {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 14px;
+    color: #495057;
+    max-width: 500px;
+    width: 100%;
+}
+
+.instructions h4 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.instructions ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+}
+
+.instructions kbd {
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .puzzle-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .puzzle-details h2 {
+        font-size: 20px;
+    }
+
+    .controls button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .instructions {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .control-group {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .controls button {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .puzzle-details h2 {
+        font-size: 18px;
+    }
+}

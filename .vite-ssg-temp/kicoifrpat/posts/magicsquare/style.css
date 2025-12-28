@@ -1,0 +1,159 @@
+.controls {
+    margin: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-panel {
+    margin: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: normal;
+    transition: background-color 0.2s;
+}
+
+.easy {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.medium {
+    background-color: #FFC107;
+    color: black;
+}
+
+.hard {
+    background-color: #f44336;
+    color: white;
+}
+
+.hint {
+    background-color: #2196F3;
+    color: white;
+}
+
+.solve {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.new-game {
+    background-color: #607D8B;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.game-board {
+    display: inline-grid;
+    gap: 4px;
+    background-color: #999;
+    padding: 4px;
+    border-radius: 0;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.cell input {
+    width: 90%;
+    height: 90%;
+    border: none;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.cell input:focus {
+    outline: none;
+    background-color: #e3f2fd;
+}
+
+.correct {
+    background-color: #C8E6C9;
+}
+
+.hint-cell {
+    background-color: #BBDEFB;
+}
+
+.sum-indicator {
+    margin: 5px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 0;
+    font-weight: normal;
+}
+
+.status {
+    margin-bottom: 20px;
+}
+
+.align-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .controls {
+        gap: 10px;
+        margin: 15px 10px;
+    }
+
+    button {
+        min-height: 44px;
+        padding: 10px 14px;
+    }
+
+    .info-panel {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .cell {
+        width: clamp(45px, 18vw, 60px);
+        height: clamp(45px, 18vw, 60px);
+        font-size: clamp(1em, 4vw, 1.5em);
+    }
+
+    .cell input {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 360px) {
+    .cell {
+        width: 40px;
+        height: 40px;
+    }
+
+    button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
