@@ -263,4 +263,14 @@
       <image:title>Tangram Puzzle - Classic Shape Puzzle Game</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://games.muthu.co/posts/binary-puzzle/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/binary-puzzle/thumbnail.png</image:loc>
+      <image:title>Binary Puzzle (Takuzu) - Logic Number Game</image:title>
+    </image:image>
+  </url>
 </urlset>
