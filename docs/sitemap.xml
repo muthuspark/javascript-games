@@ -1,154 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- Homepage -->
   <url>
     <loc>https://games.muthu.co/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- About Page -->
   <url>
     <loc>https://games.muthu.co/about</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- Game Pages -->
   <url>
     <loc>https://games.muthu.co/posts/sudoku/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/sudoku/thumbnail.png</image:loc>
       <image:title>Play Sudoku Online Free</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/maze/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/maze/thumbnail.png</image:loc>
-      <image:title>Maze Game Online</image:title>
+      <image:title>Maze Game Online - Navigate Through Puzzles</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/tic-tac-toe/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/tic-tac-toe/thumbnail.png</image:loc>
-      <image:title>Tic Tac Toe Online</image:title>
+      <image:title>Tic Tac Toe Online - Play Against AI</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/connect4/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/connect4/thumbnail.png</image:loc>
-      <image:title>Connect 4 Game Online</image:title>
+      <image:title>Connect 4 Game Online - Free to Play</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/minesweeper/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/minesweeper/thumbnail.png</image:loc>
-      <image:title>Minesweeper Online</image:title>
+      <image:title>Minesweeper Online - Classic Puzzle Game</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/word-search/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/word-search/thumbnail.png</image:loc>
-      <image:title>Word Search Puzzle</image:title>
+      <image:title>Word Search Puzzle - Find Hidden Words</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/sliding-puzzle/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/sliding-puzzle/thumbnail.png</image:loc>
-      <image:title>Sliding Puzzle Game</image:title>
+      <image:title>Sliding Puzzle Game - Number Tile Puzzle</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/latin-square/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/latin-square/thumbnail.png</image:loc>
-      <image:title>Latin Square Puzzle</image:title>
+      <image:title>Latin Square Puzzle - Logic Number Game</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/magicsquare/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/magicsquare/thumbnail.png</image:loc>
-      <image:title>Magic Square Puzzle</image:title>
+      <image:title>Magic Square Puzzle - Math Brain Game</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/n-queens/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/n-queens/thumbnail.png</image:loc>
-      <image:title>N-Queens Puzzle</image:title>
+      <image:title>N-Queens Puzzle - Chess Logic Game</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/knights-tour/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/knights-tour/thumbnail.png</image:loc>
-      <image:title>Knight's Tour Puzzle</image:title>
+      <image:title>Knight's Tour Puzzle - Chess Movement Game</image:title>
     </image:image>
   </url>
-
   <url>
     <loc>https://games.muthu.co/posts/typing-speed/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://games.muthu.co/posts/typing-speed/thumbnail.png</image:loc>
-      <image:title>Typing Speed Test</image:title>
+      <image:title>Typing Speed Test - WPM Calculator</image:title>
     </image:image>
   </url>
-
+  <url>
+    <loc>https://games.muthu.co/posts/memory-match/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/memory-match/thumbnail.png</image:loc>
+      <image:title>Memory Match Game - Card Matching Puzzle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/hangman/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/hangman/thumbnail.png</image:loc>
+      <image:title>Hangman Game - Word Guessing Puzzle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/lights-out/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/lights-out/thumbnail.png</image:loc>
+      <image:title>Lights Out Puzzle - Turn Off All Lights</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/simon-says/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/simon-says/thumbnail.png</image:loc>
+      <image:title>Simon Says Game - Memory Sequence Game</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/reaction-time/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/reaction-time/thumbnail.png</image:loc>
+      <image:title>Reaction Time Test - Test Your Reflexes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/whack-a-mole/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/whack-a-mole/thumbnail.png</image:loc>
+      <image:title>Whack-a-Mole Game - Test Your Speed</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/mastermind/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/mastermind/thumbnail.png</image:loc>
+      <image:title>Mastermind Game - Code Breaking Puzzle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/bulls-and-cows/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/bulls-and-cows/thumbnail.png</image:loc>
+      <image:title>Bulls and Cows - Number Guessing Game</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/nim/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/nim/thumbnail.png</image:loc>
+      <image:title>Nim Game - Strategic Object Removal</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/dots-and-boxes/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/dots-and-boxes/thumbnail.png</image:loc>
+      <image:title>Dots and Boxes Game - Connect the Dots</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/hex/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/hex/thumbnail.png</image:loc>
+      <image:title>Hex Game - Connection Strategy Puzzle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/set-game/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/set-game/thumbnail.png</image:loc>
+      <image:title>Set Game - Find Matching Card Sets</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://games.muthu.co/posts/tangram/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/tangram/thumbnail.png</image:loc>
+      <image:title>Tangram Puzzle - Classic Shape Puzzle Game</image:title>
+    </image:image>
+  </url>
 </urlset>
