@@ -39,7 +39,8 @@ export default defineConfig({
         '/posts/dots-and-boxes/',
         '/posts/hex/',
         '/posts/set-game/',
-        '/posts/tangram/'
+        '/posts/tangram/',
+        '/posts/binary-puzzle/'
       ]
     }
   }

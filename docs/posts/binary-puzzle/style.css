@@ -1,0 +1,192 @@
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.difficulty-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.binary-puzzle {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.binary-puzzle button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 0;
+  transition: background-color 0.3s;
+}
+
+.binary-puzzle button:hover {
+  background-color: #45a049;
+}
+
+.binary-puzzle button.difficulty {
+  background-color: #666;
+}
+
+.binary-puzzle button.difficulty.selected {
+  background-color: #4CAF50;
+}
+
+.binary-puzzle button.difficulty.easy:hover {
+  background-color: #4CAF50;
+}
+
+.binary-puzzle button.difficulty.medium:hover {
+  background-color: #ff9800;
+}
+
+.binary-puzzle button.difficulty.hard:hover {
+  background-color: #f44336;
+}
+
+.binary-puzzle button.difficulty.selected.medium {
+  background-color: #ff9800;
+}
+
+.binary-puzzle button.difficulty.selected.hard {
+  background-color: #f44336;
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  background-color: #333;
+  border: 3px solid #333;
+  padding: 0;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.cell:hover:not(.given) {
+  background-color: #e8f5e9;
+}
+
+.cell.given {
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: default;
+}
+
+.cell.invalid {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.timer {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rules {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.rules h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.rules ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.rules li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+  .grid {
+    gap: 1px;
+  }
+
+  .cell {
+    width: clamp(35px, 12vw, 50px);
+    height: clamp(35px, 12vw, 50px);
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .controls {
+    gap: 5px;
+  }
+
+  .difficulty-controls {
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .binary-puzzle button {
+    padding: 8px 12px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .timer {
+    font-size: 20px;
+  }
+
+  .message {
+    font-size: 16px;
+  }
+
+  .rules {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cell {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .binary-puzzle button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

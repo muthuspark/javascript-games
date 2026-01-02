@@ -200,6 +200,14 @@ export const games = [
     description: 'Arrange seven geometric pieces to match silhouette puzzles. Drag, rotate, and flip pieces to create shapes. A timeless Chinese puzzle game.',
     thumbnail: 'thumbnail.png',
     categories: ['Puzzles', 'Pattern Games', 'Classic Games']
+  },
+  {
+    slug: 'binary-puzzle',
+    title: 'Binary Puzzle (Takuzu) - Logic Number Game',
+    shortTitle: 'Binary Puzzle',
+    description: 'Play Binary Puzzle (Takuzu) online for free. Fill the grid with 0s and 1s following simple rules. A challenging logic puzzle that trains your brain.',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Logic Games', 'Number Games']
   }
 ]
 
