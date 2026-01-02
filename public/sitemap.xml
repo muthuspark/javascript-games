@@ -273,4 +273,14 @@
       <image:title>Binary Puzzle (Takuzu) - Logic Number Game</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://games.muthu.co/posts/sokoban/</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://games.muthu.co/posts/sokoban/thumbnail.png</image:loc>
+      <image:title>Sokoban - Classic Box Pushing Puzzle Game</image:title>
+    </image:image>
+  </url>
 </urlset>

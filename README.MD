@@ -7,7 +7,7 @@ Welcome to **Brain Busters**! This repository contains a collection of browser-b
 
 ## Features
 
-- 26 fun and interactive browser-based games
+- 27 fun and interactive browser-based games
 - Built using Vue 3, Vite, HTML, CSS, and JavaScript
 - Responsive design for seamless gameplay on desktop and mobile devices
 - Static Site Generation for fast page loads
@@ -31,6 +31,7 @@ Welcome to **Brain Busters**! This repository contains a collection of browser-b
 | **Set Game** | Find sets of three cards where each feature is all same or all different |
 | **Tangram** | Arrange seven geometric pieces to match silhouette puzzles |
 | **Binary Puzzle** | Fill grids with 0s and 1s following Takuzu rules |
+| **Sokoban** | Push boxes onto target locations in this classic puzzle game |
 
 ### Strategy Games
 | Game | Description |

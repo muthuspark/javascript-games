@@ -40,7 +40,8 @@ export default defineConfig({
         '/posts/hex/',
         '/posts/set-game/',
         '/posts/tangram/',
-        '/posts/binary-puzzle/'
+        '/posts/binary-puzzle/',
+        '/posts/sokoban/'
       ]
     }
   }

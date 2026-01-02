@@ -208,6 +208,14 @@ export const games = [
     description: 'Play Binary Puzzle (Takuzu) online for free. Fill the grid with 0s and 1s following simple rules. A challenging logic puzzle that trains your brain.',
     thumbnail: 'thumbnail.png',
     categories: ['Puzzles', 'Logic Games', 'Number Games']
+  },
+  {
+    slug: 'sokoban',
+    title: 'Sokoban - Classic Box Pushing Puzzle Game',
+    shortTitle: 'Sokoban',
+    description: 'Push boxes onto target locations in this classic Japanese puzzle game. Plan your moves carefully - once a box is pushed into a corner, it cannot be retrieved!',
+    thumbnail: 'thumbnail.png',
+    categories: ['Puzzles', 'Logic Games', 'Classic Games']
   }
 ]
 
