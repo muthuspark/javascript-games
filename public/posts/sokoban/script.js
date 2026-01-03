@@ -102,9 +102,9 @@
       map: [
         'WWWWWWWW',
         'WTT....W',
-        'W..BB..W',
-        'W..WW..W',
-        'W..P...W',
+        'WB.B...W',
+        'W......W',
+        'W...P..W',
         'WWWWWWWW'
       ]
     },
