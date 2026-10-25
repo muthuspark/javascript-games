@@ -62,4 +62,4 @@ public/posts/
 - Bootstrap 5.3.3 (CDN) for layout
 - Bootstrap Icons (CDN)
 - Google Fonts (Sniglet)
-- Google Analytics and AdSense integrated in index.html
+- Google Analytics integrated in index.html
