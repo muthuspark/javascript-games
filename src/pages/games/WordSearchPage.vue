@@ -13,30 +13,32 @@
     </header>
 
     <section class="game-section" aria-label="Game Area">
-      <div class="game-container">
-        <div id="grid" class="grid"></div>
-        <hr>
-        <div class="optiongrid">
-          <div class="label">Words to find:</div>
-          <div>
-            <div id="wordList" class="word-list"></div>
-          </div>
+      <div class="game-container word-search-game">
+        <div class="puzzle-toolbar">
+          <p id="wordSearchProgress" class="mb-0">Loading puzzle…</p>
+          <button id="newPuzzle" type="button">New puzzle</button>
         </div>
-        <hr>
-        <div class="optiongrid">
-          <div class="label">Grid Size:</div>
-          <div>
-            <div id="gridSize" class="grid-size"></div>
-          </div>
+        <p id="wordSearchInstructions" class="game-instructions">
+          Select the first and last letter of a word, or drag with a mouse.
+          With a keyboard, use arrow keys to move, Enter or Space to select each end, and Escape to cancel.
+          Scroll within larger boards to see every letter.
+        </p>
+        <div class="board-scroll" role="region" aria-label="Scrollable word-search board">
+          <div id="grid" class="grid" role="grid" aria-label="Word-search letters" aria-describedby="wordSearchInstructions"></div>
         </div>
-        <hr>
-        <div class="optiongrid">
-          <div class="label">Category:</div>
-          <div>
-            <div id="categoryButtons"></div>
-          </div>
+        <p id="wordSearchStatus" class="puzzle-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <section aria-labelledby="wordsHeading" class="puzzle-options">
+          <h2 id="wordsHeading">Words to find</h2>
+          <ul id="wordList" class="word-list"></ul>
+        </section>
+        <div class="puzzle-options">
+          <h2 id="sizeHeading">Grid size</h2>
+          <div id="gridSize" class="option-buttons" role="group" aria-labelledby="sizeHeading"></div>
         </div>
-        <div id="toast"></div>
+        <div class="puzzle-options">
+          <h2 id="categoryHeading">Category</h2>
+          <div id="categoryButtons" class="option-buttons" role="group" aria-labelledby="categoryHeading"></div>
+        </div>
       </div>
     </section>
 
@@ -70,11 +72,11 @@ const game = {
   thumbnail: 'thumbnail.png',
   categories: ['Puzzles', 'Word Games', 'Educational'],
   keywords: ['word search', 'word find', 'word puzzle', 'hidden words', 'word search puzzle'],
-  initCode: 'const game = new WordSearchGame(); game.newGame();',
+  initCode: 'const game = new WordSearchGame(); game.newGame(); return () => game.destroy();',
   faqs: [
     {
       question: 'How do you play Word Search?',
-      answer: 'Find words from the list hidden in the letter grid. Words can go horizontally, vertically, diagonally, and even backwards. Click and drag to select.'
+      answer: 'Find words from the list hidden in the letter grid. Words can go horizontally, vertically, diagonally, and even backwards. Select the first and last letter, or drag with a mouse. Use arrow keys and Enter to play with a keyboard.'
     },
     {
       question: 'Are word searches good for your brain?',

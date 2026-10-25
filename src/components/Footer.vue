@@ -32,14 +32,19 @@ const currentYear = new Date().getFullYear()
 
 <style scoped>
 .footer {
-  font-size: 0.8rem;
-  border-top: 1px solid #ccc;
-  background: #fff;
-  color: #666;
+  font-size: var(--text-caption);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
 }
 
 .footer a {
-  color: #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  color: var(--color-text);
   text-decoration: underline;
 }
 
@@ -47,11 +52,16 @@ const currentYear = new Date().getFullYear()
   text-decoration: none;
 }
 
-.footer-nav a {
-  margin-left: 1.5rem;
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
 }
 
-.footer-nav a:first-child {
-  margin-left: 0;
+@media (min-width: 768px) {
+  .footer-nav {
+    justify-content: flex-end;
+  }
 }
 </style>

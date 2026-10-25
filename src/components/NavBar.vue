@@ -63,8 +63,8 @@
 <style scoped>
 .navbar {
   padding: 1rem 0;
-  border-bottom: 1px solid #ccc;
-  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
 
 .navbar-brand {
@@ -75,20 +75,24 @@
 }
 
 .brand-text {
-  color: #000;
+  color: var(--color-text-strong);
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: var(--text-body);
   padding: 0.5rem 1rem !important;
-  color: #1a1a1a;
+  color: var(--color-text);
   text-decoration: none;
 }
 
 .nav-link:hover {
   text-decoration: underline;
-  color: #000 !important;
+  color: var(--color-text-strong) !important;
 }
 
 .nav-link i {
@@ -97,11 +101,13 @@
 
 .router-link-active:not(.navbar-brand) {
   text-decoration: underline;
-  color: #000 !important;
+  color: var(--color-text-strong) !important;
 }
 
 .navbar-toggler {
-  border: 1px solid #ccc;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--color-border);
   border-radius: 0;
   padding: 0.5rem;
 }

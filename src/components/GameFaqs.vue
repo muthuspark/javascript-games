@@ -36,10 +36,8 @@ defineProps({
 
 <style scoped>
 .section-title {
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #000;
+  font-size: var(--text-heading);
+  font-weight: 600;
+  color: var(--color-text-strong);
 }
 </style>

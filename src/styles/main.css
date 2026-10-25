@@ -4,17 +4,27 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-gray-100: #f8f9fa;
-  --color-gray-200: #e9ecef;
-  --color-gray-400: #ced4da;
-  --color-gray-600: #6c757d;
-  --color-gray-800: #343a40;
-  --color-text: #1a1a1a;
-  --color-text-muted: #666666;
-  --color-border: #cccccc;
-  --color-border-light: #e0e0e0;
+  /* Semantic colors for the shared site shell and landing page. */
+  --color-text-strong: oklch(18% 0.008 250);
+  --color-text: oklch(25% 0.008 250);
+  --color-text-muted: oklch(45% 0.008 250);
+  --color-surface: oklch(99% 0.005 250);
+  --color-surface-subtle: oklch(96% 0.005 250);
+  --color-border: oklch(80% 0.008 250);
+  --color-border-light: oklch(89% 0.005 250);
+  --color-focus: var(--color-text-strong);
+  /* Compatibility aliases used by existing game controls. */
+  --color-black: var(--color-text-strong);
+  --color-white: var(--color-surface);
+  --color-gray-100: var(--color-surface-subtle);
+  --color-gray-200: oklch(93% 0.005 250);
+  --color-gray-400: var(--color-border);
+  --color-gray-600: var(--color-text-muted);
+  --color-gray-800: var(--color-text);
+  --text-caption: 0.875rem;
+  --text-body: 1rem;
+  --text-heading: 1.25rem;
+  --text-display: clamp(2rem, 1.5rem + 2vw, 2.5rem);
   --font-family-base: "Source Sans 3", sans-serif;
   --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --border-width: 1px;
@@ -23,7 +33,7 @@
 
 /* --- Base Typography --- */
 html {
-  font-size: 16px;
+  font-size: 100%;
   scroll-behavior: smooth;
 }
 
@@ -110,7 +120,7 @@ button:active,
 /* --- Badges - Minimal --- */
 .badge {
   font-weight: 500;
-  font-size: 0.7rem;
+  font-size: var(--text-caption);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.25rem 0.5rem;
@@ -160,7 +170,7 @@ textarea:focus {
 
 .accordion-button {
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: var(--text-body);
   background-color: var(--color-white);
   color: var(--color-text);
   border-radius: 0;
@@ -183,7 +193,7 @@ textarea:focus {
 }
 
 .accordion-body {
-  font-size: 0.875rem;
+  font-size: var(--text-body);
   color: var(--color-text-muted);
   padding: 1rem;
   background-color: var(--color-gray-100);
@@ -261,8 +271,10 @@ textarea:focus {
 }
 
 /* --- Focus States --- */
-:focus-visible {
-  outline: 2px solid var(--color-black);
+:focus-visible,
+.accordion-button:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -305,10 +317,6 @@ textarea:focus {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -324,15 +332,6 @@ textarea:focus {
 }
 
 @media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-
-  .container {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
   .controls {
     gap: 0.375rem;
   }
@@ -382,11 +381,6 @@ textarea:focus {
 }
 
 @media (max-width: 360px) {
-  .container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
   .controls button {
     min-width: 60px;
     font-size: 0.75rem;

@@ -27,8 +27,8 @@ import Footer from './components/Footer.vue'
   position: absolute;
   top: -100px;
   left: 0;
-  background: #000;
-  color: #fff;
+  background: var(--color-text-strong);
+  color: var(--color-surface);
   padding: 0.5rem 1rem;
   z-index: 9999;
   text-decoration: none;

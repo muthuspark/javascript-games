@@ -12,8 +12,8 @@
     <section aria-labelledby="games-heading">
       <h2 id="games-heading" class="visually-hidden">All Games</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div v-for="game in games" :key="game.slug" class="col">
-          <GameCard :game="game" />
+        <div v-for="(game, index) in games" :key="game.slug" class="col">
+          <GameCard :game="game" :priority="index < 3" />
         </div>
       </div>
     </section>
@@ -26,7 +26,7 @@
           <h3 class="subsection-title">Why Play Puzzle Games?</h3>
           <p class="body-text">
             Puzzle games improve logical thinking, memory, and concentration.
-            From Sudoku to the Knight's Tour—all skill levels welcome.
+            From Sudoku to the Knight's Tour, all skill levels welcome.
           </p>
         </div>
         <div class="col-md-6">
@@ -149,35 +149,34 @@ useHead({
 
 <style scoped>
 .page-title {
-  font-size: 2rem;
+  font-size: var(--text-display);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: #000;
+  color: var(--color-text-strong);
 }
 
 .page-subtitle {
-  font-size: 1rem;
-  color: #666;
-  max-width: 400px;
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  max-width: 65ch;
 }
 
 .section-title {
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #000;
+  font-size: var(--text-heading);
+  font-weight: 700;
+  color: var(--color-text-strong);
 }
 
 .subsection-title {
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-size: var(--text-heading);
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .body-text {
-  font-size: 0.875rem;
-  color: #666;
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
   line-height: 1.6;
+  max-width: 65ch;
 }
 </style>

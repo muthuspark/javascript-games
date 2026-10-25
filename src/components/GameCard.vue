@@ -1,11 +1,12 @@
 <template>
   <article class="card h-100 game-card" itemscope itemtype="https://schema.org/VideoGame">
-    <router-link :to="`/posts/${game.slug}/`" class="card-link" :aria-label="`Play ${game.title}`">
+    <router-link :to="`/posts/${game.slug}/`" class="card-link" :aria-label="`Play ${game.shortTitle || game.title}`">
       <img
         :src="`/posts/${game.slug}/${game.thumbnail}`"
-        :alt="`${game.title} - Free Online Puzzle Game`"
+        :alt="`${game.shortTitle || game.title} game preview`"
         class="card-img-top"
-        loading="lazy"
+        :loading="priority ? 'eager' : 'lazy'"
+        decoding="async"
         width="300"
         height="180"
         itemprop="image"
@@ -17,7 +18,7 @@
           <span
             v-for="category in game.categories.slice(0, 2)"
             :key="category"
-            class="badge bg-secondary me-1"
+            class="badge bg-secondary"
             itemprop="genre"
           >
             {{ category }}
@@ -37,6 +38,10 @@
 import { computed } from 'vue'
 
 const props = defineProps({
+  priority: {
+    type: Boolean,
+    default: false
+  },
   game: {
     type: Object,
     required: true
@@ -54,14 +59,14 @@ const truncatedDescription = computed(() => {
 
 <style scoped>
 .game-card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 0;
-  background: #fff;
+  background: var(--color-surface);
   transition: background-color 0.15s;
 }
 
 .game-card:hover {
-  background-color: #f8f9fa;
+  background-color: var(--color-surface-subtle);
 }
 
 .card-link {
@@ -72,32 +77,32 @@ const truncatedDescription = computed(() => {
 }
 
 .card-img-top {
-  height: 160px;
+  height: 200px;
   width: 100%;
-  object-fit: cover;
-  border-bottom: 1px solid #ccc;
-  filter: grayscale(20%);
-}
-
-.game-card:hover .card-img-top {
-  filter: grayscale(0%);
+  object-fit: contain;
+  padding: 0.75rem;
+  background: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .card-title {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #1a1a1a;
+  font-size: var(--text-heading);
+  font-weight: 600;
+  color: var(--color-text);
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
 }
 
 .card-text {
-  font-size: 0.8rem;
+  font-size: var(--text-body);
   line-height: 1.5;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .card-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
   margin-top: 0.75rem;
 }
 </style>

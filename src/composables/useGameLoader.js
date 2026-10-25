@@ -5,6 +5,9 @@ const loadedExtraScripts = new Set()
 
 export function useGameLoader(slug, initCode, extraScripts = []) {
   const loadedElements = ref([])
+  let gameCleanup
+  let initTimer
+  let disposed = false
 
   // Load a single extra script (CDN libraries) and return a promise
   const loadExtraScript = (src) => {
@@ -39,6 +42,7 @@ export function useGameLoader(slug, initCode, extraScripts = []) {
   }
 
   const loadGameAssets = async () => {
+    if (disposed) return
     const scriptPath = `/posts/${slug}/script.js`
 
     // Load extra scripts first (CDN libs like txtgen)
@@ -49,6 +53,8 @@ export function useGameLoader(slug, initCode, extraScripts = []) {
         console.error('Error loading extra scripts:', e)
       }
     }
+
+    if (disposed) return
 
     // Load game-specific CSS
     const cssPath = `/posts/${slug}/style.css`
@@ -68,10 +74,12 @@ export function useGameLoader(slug, initCode, extraScripts = []) {
     script.dataset.gameSlug = slug
 
     script.onload = () => {
-      setTimeout(() => {
+      initTimer = setTimeout(() => {
+        if (disposed) return
         try {
           if (initCode) {
-            new Function(initCode)()
+            const cleanup = new Function(initCode)()
+            if (typeof cleanup === 'function') gameCleanup = cleanup
           }
         } catch (e) {
           console.error('Error initializing game:', e)
@@ -88,6 +96,9 @@ export function useGameLoader(slug, initCode, extraScripts = []) {
   }
 
   const cleanupAssets = () => {
+    clearTimeout(initTimer)
+    gameCleanup?.()
+    gameCleanup = undefined
     // Remove CSS and scripts added by this game
     loadedElements.value.forEach(el => {
       if (el.parentNode) {
@@ -102,6 +113,7 @@ export function useGameLoader(slug, initCode, extraScripts = []) {
   })
 
   onBeforeUnmount(() => {
+    disposed = true
     cleanupAssets()
   })
 

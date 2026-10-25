@@ -221,15 +221,22 @@ class Confetti {
 
 class ConfettiManager {
     constructor() {
+        this.canvas = null;
+        this.context = null;
+        this.confetti = [];
+        this.animationFrame = null;
+        this.handleResize = () => this.resizeCanvas();
+    }
+
+    createCanvas() {
+        if (this.canvas) return;
         this.canvas = document.createElement("canvas");
         this.canvas.style = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; pointer-events: none;";
+        this.canvas.setAttribute("aria-hidden", "true");
         document.body.appendChild(this.canvas);
         this.context = this.canvas.getContext("2d");
-        this.confetti = [];
-        this.lastUpdated = Date.now();
-        window.addEventListener("resize", Utils.debounce(() => this.resizeCanvas(), 200));
+        window.addEventListener("resize", this.handleResize);
         this.resizeCanvas();
-        requestAnimationFrame(() => this.loop());
     }
 
     resizeCanvas() {
@@ -238,6 +245,8 @@ class ConfettiManager {
     }
 
     addConfetti(config = {}) {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         const { confettiesNumber, confettiRadius, confettiColors, emojies, svgIcon } = {
             ...defaultConfettiConfig,
             ...config,
@@ -262,16 +271,26 @@ class ConfettiManager {
                 svgIcon,
             }));
         }
+
+        if (this.confetti.length && this.animationFrame === null) {
+            this.createCanvas();
+            this.lastUpdated = Date.now();
+            this.animationFrame = requestAnimationFrame(() => this.loop());
+        }
     }
 
     resetAndStart(config = {}) {
         // Clear existing confetti
-        this.confetti = [];
+        this.stop();
         // Add new confetti
         this.addConfetti(config);
     }
 
     loop() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            this.stop();
+            return;
+        }
         const currentTime = Date.now();
         const deltaTime = currentTime - this.lastUpdated;
         this.lastUpdated = currentTime;
@@ -281,22 +300,25 @@ class ConfettiManager {
         this.confetti = this.confetti.filter((item) => {
             item.updatePosition(deltaTime, currentTime);
             item.draw(this.context);
-            return item.isVisible(this.canvas.height);
+            return item.isVisible(window.innerHeight);
         });
 
-        requestAnimationFrame(() => this.loop());
+        if (this.confetti.length) {
+            this.animationFrame = requestAnimationFrame(() => this.loop());
+        } else {
+            this.stop();
+        }
+    }
+
+    stop() {
+        if (this.animationFrame !== null) cancelAnimationFrame(this.animationFrame);
+        this.animationFrame = null;
+        this.confetti = [];
+        window.removeEventListener("resize", this.handleResize);
+        this.canvas?.remove();
+        this.canvas = null;
+        this.context = null;
     }
 }
 
 window.confettiManager = new ConfettiManager();
-// manager.addConfetti();
-
-// const triggerButton = document.getElementById("show-again");
-// if (triggerButton) {
-//     triggerButton.addEventListener("click", () => manager.addConfetti());
-// }
-
-// const resetInput = document.getElementById("reset");
-// if (resetInput) {
-//     resetInput.addEventListener("input", () => manager.resetAndStart());
-// }

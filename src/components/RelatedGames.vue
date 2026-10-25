@@ -9,9 +9,12 @@
         >
           <img
             :src="`/posts/${game.slug}/${game.thumbnail}`"
-            :alt="`Play ${game.shortTitle || game.title}`"
+            alt=""
             class="card-img-top"
             loading="lazy"
+            decoding="async"
+            width="300"
+            height="180"
           >
           <div class="card-body">
             <h3 class="card-title h6 mb-0">{{ game.shortTitle || game.title }}</h3>
@@ -47,37 +50,32 @@ const relatedGames = computed(() => {
 
 <style scoped>
 .section-title {
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #000;
+  font-size: var(--text-heading);
+  font-weight: 600;
+  color: var(--color-text-strong);
 }
 
 .related-game-card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 0;
   color: inherit;
   transition: background-color 0.15s;
 }
 
 .related-game-card:hover {
-  background-color: #f8f9fa;
+  background-color: var(--color-surface-subtle);
 }
 
 .related-game-card .card-img-top {
   height: 160px;
-  object-fit: cover;
-  border-bottom: 1px solid #ccc;
-  filter: grayscale(20%);
-}
-
-.related-game-card:hover .card-img-top {
-  filter: grayscale(0%);
+  object-fit: contain;
+  padding: 0.75rem;
+  background: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .related-game-card .card-title {
-  font-size: 0.875rem;
+  font-size: var(--text-body);
   font-weight: 400;
 }
 </style>

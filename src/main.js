@@ -1,5 +1,4 @@
 import { ViteSSG } from 'vite-ssg'
-import { createHead } from '@unhead/vue'
 import App from './App.vue'
 import routes from './router.js'
 
@@ -9,11 +8,7 @@ export const createApp = ViteSSG(
     routes,
     base: '/'
   },
-  ({ app, router, isClient }) => {
-    // Create and use head management
-    const head = createHead()
-    app.use(head)
-
+  ({ router, isClient }) => {
     // Track page views on route change
     if (isClient) {
       router.afterEach((to) => {

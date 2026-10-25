@@ -39,8 +39,8 @@ defineProps({
 }
 
 .breadcrumb-item a {
-  color: #4CAF50;
-  text-decoration: none;
+  color: var(--color-text);
+  text-decoration: underline;
 }
 
 .breadcrumb-item a:hover {
@@ -48,6 +48,6 @@ defineProps({
 }
 
 .breadcrumb-item.active {
-  color: #6c757d;
+  color: var(--color-text-muted);
 }
 </style>

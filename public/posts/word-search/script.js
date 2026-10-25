@@ -149,306 +149,302 @@ const wordDatabase = {
 
 const gridsizes = [10, 20, 30, 40];
 
-// Game Configuration
 class WordSearchGame {
     constructor() {
-        this.gameBoard = [];
-        this.wordLocations = new Map();
-        this.selectedCells = [];
-        this.foundWords = new Set();
-        this.currentCategory = 'programming';
-        this.words = [];
-        this.wordsPerGame = 10;
         this.gridSize = 10;
-        this.directions = [
-            [0, 1],   // horizontal
-            [1, 0],   // vertical
-            [1, 1],   // diagonal down
-            [-1, 1],  // diagonal up
-        ];
+        this.currentCategory = 'programming';
+        this.wordsPerGame = 10;
+        this.directions = [-1, 0, 1].flatMap(row =>
+            [-1, 0, 1].filter(col => row || col).map(col => [row, col]));
+        this.grid = document.getElementById('grid');
+        this.wordList = document.getElementById('wordList');
+        this.status = document.getElementById('wordSearchStatus');
+        this.progress = document.getElementById('wordSearchProgress');
+        this.events = new AbortController();
+        const options = { signal: this.events.signal };
+        this.grid.addEventListener('keydown', event => this.onKeyDown(event), options);
+        this.grid.addEventListener('click', event => this.onClick(event), options);
+        this.grid.addEventListener('pointerdown', event => this.onPointerDown(event), options);
+        this.grid.addEventListener('pointermove', event => this.onPointerMove(event), options);
+        this.grid.addEventListener('pointerup', event => this.onPointerUp(event), options);
+        this.grid.addEventListener('pointercancel', () => this.cancelSelection(), options);
+        document.getElementById('newPuzzle').addEventListener('click', () => this.newGame(), options);
+        document.getElementById('gridSize').addEventListener('click', event => {
+            const button = event.target.closest('[data-size]');
+            if (button) { this.gridSize = Number(button.dataset.size); this.newGame(); }
+        }, options);
+        document.getElementById('categoryButtons').addEventListener('click', event => {
+            const button = event.target.closest('[data-category]');
+            if (button) { this.currentCategory = button.dataset.category; this.newGame(); }
+        }, options);
+        this.renderOptions();
     }
 
-    // Game initialization
-    initializeBoard() {
-        this.gameBoard = Array(this.gridSize).fill().map(() => Array(this.gridSize).fill(''));
-        this.wordLocations.clear();
-        this.foundWords.clear();
-        this.selectedCells = [];
+    shuffle(items) {
+        const result = [...items];
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [result[i], result[j]] = [result[j], result[i]];
+        }
+        return result;
     }
 
-    // Word placement logic
-    canPlaceWord(word, row, col, dirRow, dirCol) {
-        return [...word].every((char, i) => {
-            const newRow = row + i * dirRow;
-            const newCol = col + i * dirCol;
-
-            if (newRow < 0 || newRow >= this.gridSize || newCol < 0 || newCol >= this.gridSize) {
-                return false;
-            }
-
-            return this.gameBoard[newRow][newCol] === '' ||
-                   this.gameBoard[newRow][newCol] === char;
+    canPlaceWord(word, row, col, dr, dc) {
+        return [...word].every((letter, i) => {
+            const cell = this.gameBoard[row + dr * i]?.[col + dc * i];
+            return cell === '' || cell === letter;
         });
     }
 
     placeWord(word) {
-        const maxAttempts = 100;
-        let attempts = 0;
-
-        while (attempts < maxAttempts) {
-            const direction = this.directions[Math.floor(Math.random() * this.directions.length)];
-            const row = Math.floor(Math.random() * this.gridSize);
-            const col = Math.floor(Math.random() * this.gridSize);
-
-            if (this.canPlaceWord(word, row, col, direction[0], direction[1])) {
-                const positions = [];
-                [...word].forEach((char, i) => {
-                    const newRow = row + i * direction[0];
-                    const newCol = col + i * direction[1];
-                    this.gameBoard[newRow][newCol] = char;
-                    positions.push([newRow, newCol]);
+        const starts = this.shuffle(Array.from({ length: this.gridSize ** 2 }, (_, i) => i));
+        const directions = this.shuffle(this.directions);
+        for (const start of starts) {
+            const row = Math.floor(start / this.gridSize), col = start % this.gridSize;
+            for (const [dr, dc] of directions) {
+                if (!this.canPlaceWord(word, row, col, dr, dc)) continue;
+                const positions = [...word].map((letter, i) => {
+                    const r = row + dr * i, c = col + dc * i;
+                    this.gameBoard[r][c] = letter;
+                    return [r, c];
                 });
                 this.wordLocations.set(word, positions);
                 return true;
             }
-            attempts++;
         }
         return false;
     }
 
-    fillEmptyCells() {
-        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        this.gameBoard.forEach((row, i) => {
-            row.forEach((cell, j) => {
-                if (cell === '') {
-                    this.gameBoard[i][j] = letters[Math.floor(Math.random() * letters.length)];
-                }
-            });
-        });
-    }
-
-    // Game state management
-    selectRandomWords() {
-        const categoryWords = wordDatabase[this.currentCategory];
-        return [...categoryWords]
-            .sort(() => Math.random() - 0.5)
-            .slice(0, this.wordsPerGame);
-    }
-
-    createCategoryButtons() {
-        const container = document.createElement('div');
-        container.className = 'category-buttons';
-
-        Object.keys(wordDatabase).forEach(category => {
-            const button = document.createElement('button');
-            button.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-            button.onclick = () => this.changeCategory(category);
-            button.className = 'category-btn';
-            if (category === this.currentCategory) {
-                button.classList.add('active-btn');
-            }
-            container.appendChild(button);
-        });
-        document.getElementById('categoryButtons').innerHTML = '';
-        document.getElementById('categoryButtons').appendChild(container);
-    }
-
-
-    changeCategory(category) {
-        this.currentCategory = category;
-        this.updateCategoryButtons();
-        this.newGame();
-    }
-
-    changeGridSize(size) {
-        this.gridSize = size;
-        this.newGame();
-    }
-
     newGame() {
-        this.words = this.selectRandomWords();
-        this.createBoard();
-    }
-
-    // UI Rendering
-    createBoard() {
-        this.initializeBoard();
-        this.words.forEach(word => this.placeWord(word));
-        this.fillEmptyCells();
+        this.cancelSelection();
+        this.gameBoard = Array.from({ length: this.gridSize }, () => Array(this.gridSize).fill(''));
+        this.wordLocations = new Map();
+        this.foundWords = new Set();
+        this.words = [];
+        const candidates = this.shuffle(wordDatabase[this.currentCategory].filter(word => word.length <= this.gridSize));
+        for (const word of candidates) {
+            if (this.placeWord(word)) this.words.push(word);
+            if (this.words.length === this.wordsPerGame) break;
+        }
+        this.gameBoard = this.gameBoard.map(row => row.map(letter =>
+            letter || String.fromCharCode(65 + Math.floor(Math.random() * 26))));
         this.renderBoard();
         this.renderWordList();
-        this.renderGridSizeButtons();
-        this.createCategoryButtons();
+        this.updateOptions();
+        this.updateProgress();
+        this.announce(`New ${this.categoryLabel(this.currentCategory)} puzzle, ${this.gridSize} by ${this.gridSize}. Find ${this.words.length} words.`);
     }
 
-    renderBoard() {
-        const grid = document.getElementById('grid');
-        grid.style.gridTemplateColumns = `repeat(${this.gridSize}, 40px)`;
-        grid.innerHTML = '';
-
-        this.gameBoard.forEach((row, i) => {
-            row.forEach((cell, j) => {
-                const cellElement = this.createCellElement(i, j, cell);
-                grid.appendChild(cellElement);
-            });
-        });
-
-        document.addEventListener('mouseup', () => this.endSelection());
+    categoryLabel(category) {
+        return category === 'bodyParts' ? 'Body parts' : category[0].toUpperCase() + category.slice(1);
     }
 
-    createCellElement(row, col, value) {
-        const cell = document.createElement('div');
-        cell.className = 'cell';
-        cell.textContent = value;
-        cell.dataset.row = row;
-        cell.dataset.col = col;
-        cell.addEventListener('mousedown', (e) => this.startSelection(e));
-        cell.addEventListener('mouseover', (e) => this.updateSelection(e));
-        return cell;
-    }
-
-    renderWordList() {
-        const wordListElement = document.getElementById('wordList');
-        wordListElement.innerHTML = '';
-        this.words.forEach(word => {
-            const wordElement = document.createElement('div');
-            wordElement.className = `word-item${this.foundWords.has(word) ? ' found' : ''}`;
-            wordElement.textContent = word;
-            wordListElement.appendChild(wordElement);
-        });
-    }
-
-    renderGridSizeButtons() {
-        const gridSizeElement = document.getElementById('gridSize');
-        gridSizeElement.innerHTML = '';
-        gridsizes.forEach(size => {
+    renderOptions() {
+        const sizes = document.getElementById('gridSize');
+        for (const size of gridsizes) {
             const button = document.createElement('button');
-            button.textContent = `${size}x${size}`;
-            button.addEventListener('click', () => this.changeGridSize(size));
-            if(size === this.gridSize) {
-                button.classList.add('active-btn');
-            }
-            gridSizeElement.appendChild(button);
-        });
-    }
-
-    updateCategoryButtons() {
-        const categoryBtns = document.getElementsByClassName('category-btn');
-        Array.from(categoryBtns).forEach(btn => {
-            const btnCategory = btn.textContent.toLowerCase();
-            btn.classList.toggle('active-btn', btnCategory === this.currentCategory);
-        });
-    }
-
-    // Selection handling
-    startSelection(e) {
-        this.selectedCells = [];
-        const cell = e.target;
-        cell.classList.add('selected');
-        this.selectedCells.push([
-            parseInt(cell.dataset.row),
-            parseInt(cell.dataset.col)
-        ]);
-    }
-
-    updateSelection(e) {
-        if (this.selectedCells.length === 0) return;
-
-        const cell = e.target;
-        const row = parseInt(cell.dataset.row);
-        const col = parseInt(cell.dataset.col);
-
-        if (this.selectedCells.some(([r, c]) => r === row && c === col)) return;
-
-        const firstCell = this.selectedCells[0];
-        this.clearSelection(firstCell);
-        this.selectedCells = [firstCell];
-
-        const rowDiff = row - firstCell[0];
-        const colDiff = col - firstCell[1];
-
-        if (Math.abs(rowDiff) === Math.abs(colDiff) || rowDiff === 0 || colDiff === 0) {
-            this.selectCellsInLine(firstCell, row, col);
+            button.type = 'button';
+            button.dataset.size = size;
+            button.textContent = `${size} × ${size}`;
+            sizes.appendChild(button);
+        }
+        const categories = document.getElementById('categoryButtons');
+        for (const category of Object.keys(wordDatabase)) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.dataset.category = category;
+            button.textContent = this.categoryLabel(category);
+            categories.appendChild(button);
         }
     }
 
-    clearSelection(firstCell) {
-        document.querySelectorAll('.cell.selected').forEach(cell => {
-            if (parseInt(cell.dataset.row) !== firstCell[0] ||
-                parseInt(cell.dataset.col) !== firstCell[1]) {
-                cell.classList.remove('selected');
-            }
-        });
+    updateOptions() {
+        for (const button of document.querySelectorAll('#gridSize button')) {
+            button.setAttribute('aria-pressed', String(Number(button.dataset.size) === this.gridSize));
+        }
+        for (const button of document.querySelectorAll('#categoryButtons button')) {
+            button.setAttribute('aria-pressed', String(button.dataset.category === this.currentCategory));
+        }
     }
 
-    selectCellsInLine(firstCell, targetRow, targetCol) {
-        const direction = [
-            Math.sign(targetRow - firstCell[0]) || 0,
-            Math.sign(targetCol - firstCell[1]) || 0
-        ];
+    renderBoard() {
+        const fragment = document.createDocumentFragment();
+        this.cells = [];
+        this.grid.style.setProperty('--grid-size', this.gridSize);
+        this.grid.setAttribute('aria-rowcount', this.gridSize);
+        this.grid.setAttribute('aria-colcount', this.gridSize);
+        this.gameBoard.forEach((letters, row) => {
+            const rowElement = document.createElement('div');
+            rowElement.className = 'word-search-row';
+            rowElement.setAttribute('role', 'row');
+            letters.forEach((letter, col) => {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.textContent = letter;
+                cell.dataset.row = row;
+                cell.dataset.col = col;
+                cell.setAttribute('role', 'gridcell');
+                cell.setAttribute('aria-label', `${letter}, row ${row + 1}, column ${col + 1}`);
+                cell.setAttribute('aria-selected', 'false');
+                cell.tabIndex = row === 0 && col === 0 ? 0 : -1;
+                rowElement.appendChild(cell);
+                this.cells.push(cell);
+            });
+            fragment.appendChild(rowElement);
+        });
+        this.grid.replaceChildren(fragment);
+    }
 
-        let currentRow = firstCell[0];
-        let currentCol = firstCell[1];
+    renderWordList() {
+        const fragment = document.createDocumentFragment();
+        for (const word of this.words) {
+            const item = document.createElement('li');
+            const found = this.foundWords.has(word);
+            item.className = `word-item${found ? ' found' : ''}`;
+            item.textContent = found ? `✓ ${word}` : word;
+            fragment.appendChild(item);
+        }
+        this.wordList.replaceChildren(fragment);
+    }
 
-        while (currentRow !== targetRow || currentCol !== targetCol) {
-            currentRow += direction[0];
-            currentCol += direction[1];
-            const currentCell = document.querySelector(
-                `.cell[data-row="${currentRow}"][data-col="${currentCol}"]`
-            );
-            currentCell.classList.add('selected');
-            this.selectedCells.push([currentRow, currentCol]);
+    announce(message) { this.status.textContent = message; }
+    updateProgress() { this.progress.textContent = `${this.foundWords.size} of ${this.words.length} words found`; }
+    cellAt(row, col) { return this.cells[row * this.gridSize + col]; }
+    eventCell(event) { return event.target.closest('.cell'); }
+
+    focusCell(cell) {
+        const previous = this.grid.querySelector('[tabindex="0"]');
+        if (previous) previous.tabIndex = -1;
+        cell.tabIndex = 0;
+        cell.focus({ preventScroll: true });
+        cell.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
+
+    selectTo(cell) {
+        this.clearHighlight();
+        if (!this.anchor) return;
+        const [row, col] = this.anchor;
+        const dr = Number(cell.dataset.row) - row, dc = Number(cell.dataset.col) - col;
+        if (dr && dc && Math.abs(dr) !== Math.abs(dc)) return;
+        const length = Math.max(Math.abs(dr), Math.abs(dc)) + 1;
+        this.selectedCells = Array.from({ length }, (_, i) =>
+            this.cellAt(row + Math.sign(dr) * i, col + Math.sign(dc) * i));
+        for (const selected of this.selectedCells) {
+            selected.classList.add('selected');
+            selected.setAttribute('aria-selected', 'true');
+        }
+    }
+
+    clearHighlight() {
+        for (const cell of this.selectedCells || []) {
+            cell.classList.remove('selected');
+            cell.setAttribute('aria-selected', 'false');
+        }
+        this.selectedCells = [];
+    }
+
+    cancelSelection() {
+        this.clearHighlight();
+        this.anchor = null;
+        this.pointer = null;
+    }
+
+    chooseCell(cell) {
+        this.focusCell(cell);
+        if (!this.anchor) {
+            this.anchor = [Number(cell.dataset.row), Number(cell.dataset.col)];
+            this.selectTo(cell);
+            this.announce('Start selected. Choose the last letter, or press Escape to cancel.');
+        } else {
+            this.selectTo(cell);
+            this.endSelection();
+        }
+    }
+
+    onClick(event) {
+        // A completed drag also emits a click; only use clicks for endpoint selection.
+        if (this.ignoreClick) { this.ignoreClick = false; return; }
+        const cell = this.eventCell(event);
+        if (cell) this.chooseCell(cell);
+    }
+
+    onKeyDown(event) {
+        const cell = this.eventCell(event);
+        if (!cell) return;
+        const moves = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1] };
+        if (moves[event.key]) {
+            event.preventDefault();
+            const [dr, dc] = moves[event.key];
+            const row = Math.max(0, Math.min(this.gridSize - 1, Number(cell.dataset.row) + dr));
+            const col = Math.max(0, Math.min(this.gridSize - 1, Number(cell.dataset.col) + dc));
+            const next = this.cellAt(row, col);
+            this.focusCell(next);
+            if (this.anchor) this.selectTo(next);
+        } else if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            this.chooseCell(cell);
+        } else if (event.key === 'Escape') {
+            event.preventDefault();
+            this.cancelSelection();
+            this.announce('Selection cancelled.');
+        }
+    }
+
+    onPointerDown(event) {
+        if (event.button !== 0 || !event.isPrimary) return;
+        const cell = this.eventCell(event);
+        if (!cell) return;
+        this.ignoreClick = false;
+        this.pointer = { id: event.pointerId, start: cell, dragged: false };
+        // Touch uses two taps so swiping still scrolls the board.
+    }
+
+    onPointerMove(event) {
+        if (!this.pointer || this.pointer.id !== event.pointerId || event.pointerType === 'touch') return;
+        const cell = document.elementFromPoint(event.clientX, event.clientY)?.closest('.cell');
+        if (!cell || !this.grid.contains(cell)) return;
+        if (!this.pointer.dragged && cell !== this.pointer.start) {
+            this.pointer.dragged = true;
+            this.anchor = [Number(this.pointer.start.dataset.row), Number(this.pointer.start.dataset.col)];
+            this.grid.setPointerCapture(event.pointerId);
+        }
+        if (this.pointer.dragged) this.selectTo(cell);
+    }
+
+    onPointerUp(event) {
+        if (!this.pointer || this.pointer.id !== event.pointerId) return;
+        const dragged = this.pointer.dragged;
+        if (this.grid.hasPointerCapture(event.pointerId)) this.grid.releasePointerCapture(event.pointerId);
+        this.pointer = null;
+        if (dragged) {
+            this.ignoreClick = true;
+            this.endSelection();
         }
     }
 
     endSelection() {
-        if (this.selectedCells.length === 0) return;
-
-        const word = this.selectedCells
-            .map(([row, col]) => this.gameBoard[row][col])
-            .join('');
-        const reversedWord = [...word].reverse().join('');
-
-        if (this.words.includes(word) || this.words.includes(reversedWord)) {
-            const foundWord = this.words.includes(word) ? word : reversedWord;
-            if (!this.foundWords.has(foundWord)) {
-                this.handleWordFound(foundWord);
-            }
+        const selected = this.selectedCells.map(cell => cell.textContent).join('');
+        const reversed = [...selected].reverse().join('');
+        const word = this.words.find(word => word === selected || word === reversed);
+        if (word && !this.foundWords.has(word)) {
+            this.foundWords.add(word);
+            for (const cell of this.selectedCells) cell.classList.add('found');
+            this.renderWordList();
+            this.updateProgress();
+            this.announce(this.foundWords.size === this.words.length
+                ? 'Puzzle complete! You found every word. Choose New puzzle to play again.'
+                : `${word} found. ${this.foundWords.size} of ${this.words.length} words found.`);
+        } else {
+            this.announce(word ? `${word} was already found.` : 'No matching word. Try another selection.');
         }
-
-        this.clearAllSelections();
+        this.cancelSelection();
     }
 
-    handleWordFound(word) {
-        this.foundWords.add(word);
-        this.selectedCells.forEach(([row, col]) => {
-            const cell = document.querySelector(
-                `.cell[data-row="${row}"][data-col="${col}"]`
-            );
-            cell.classList.add('found');
-        });
-        this.renderWordList();
-        this.renderGridSizeButtons();
-
-        if (this.foundWords.size === this.words.length) {
-            setTimeout(() => {
-                GamePopup.show({
-                    title: 'Congratulations!',
-                    message: 'You found all words!',
-                    showConfetti: true
-                });
-            }, 100);
-        }
-    }
-
-    clearAllSelections() {
-        document.querySelectorAll('.cell.selected').forEach(cell => {
-            cell.classList.remove('selected');
-        });
-        this.selectedCells = [];
+    destroy() {
+        this.events.abort();
+        this.cancelSelection();
     }
 }
 
-// Expose class to window
 window.WordSearchGame = WordSearchGame;
 })();

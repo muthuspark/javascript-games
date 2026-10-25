@@ -1,1 +1,0 @@
-import{p as f,f as u,q as o,v,x as d,h as l,y as i,z as h,A as p}from"./app-D0gwhWDn.js";function U(t,a={}){const e=a.head||f();if(e)return e.ssr?e.push(t,a):m(e,t,a)}function m(t,a,e={}){const s=u(!1),n=u({});o(()=>{n.value=s.value?{}:d(a)});const r=t.push(n.value,e);return v(n,c=>{r.patch(c)}),p()&&(l(()=>{r.dispose()}),i(()=>{s.value=!0}),h(()=>{s.value=!1})),r}export{U as u};
